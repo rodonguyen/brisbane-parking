@@ -19,4 +19,5 @@ Include steps to reproduce, impact, and any suggested fix if you have one.
 ## Scope notes
 
 - Local SQLite and disk cache hold derived open data, not user accounts
-- No authentication is implemented; treat the API as a local/dev service unless you add your own hardening before exposing it
+- Frontend auth (Clerk) is optional for browsing; the public API remains unauthenticated unless you add your own hardening before exposing it
+- Treat the API as a local/dev service unless you add rate limits, auth, or network controls for production

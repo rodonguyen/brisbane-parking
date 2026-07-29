@@ -155,10 +155,13 @@ function PrivacyBody() {
         App handles when you use it in a browser.
       </p>
 
-      <h2>We do not ask you to sign in</h2>
+      <h2>Accounts and sign-in</h2>
       <p>
-        The App has no accounts, no login, and no profile. We do not intentionally collect
-        your name, email address, phone number, or payment details.
+        You can browse the map without an account. After a short free trial of meter
+        detail views, the App may ask you to sign in (for example with Google via Clerk)
+        to open more meters. If you sign in, Clerk processes authentication on our behalf
+        and we may receive a user id and email address associated with your account. We
+        use that only to recognize signed-in sessions and do not sell it.
       </p>
 
       <h2>Information processed to run the App</h2>
@@ -175,17 +178,24 @@ function PrivacyBody() {
           and tile coordinates) under their own policies.
         </li>
         <li>
-          <strong>First-visit preference.</strong> The App may store a simple flag in your
-          browser’s <code>localStorage</code> so returning visitors can skip the landing
-          screen. That flag stays on your device; it is not sent to us as a profile.
+          <strong>Local preferences.</strong> The App may store simple flags in your
+          browser’s <code>localStorage</code> (for example a first-visit flag, and which
+          meters you opened during the free trial). Those values stay on your device; they
+          are not sent to us as a profile.
+        </li>
+        <li>
+          <strong>Authentication (when you sign in).</strong> Sign-in is handled by Clerk.
+          Clerk’s privacy policy applies to that service. We receive session-related
+          identifiers needed to know you are signed in.
         </li>
       </ul>
 
       <h2>Cookies and tracking</h2>
       <p>
         The App does not set advertising cookies and does not include third-party
-        analytics or ad networks in its own code. Your browser or network may still apply
-        their own logging. If that changes, this policy will be updated.
+        analytics or ad networks in its own code. Clerk may set cookies or similar
+        storage needed for authentication sessions. Your browser or network may still
+        apply their own logging.
       </p>
 
       <h2>How we use information</h2>
@@ -204,9 +214,10 @@ function PrivacyBody() {
 
       <h2>Your choices</h2>
       <p>
-        You can clear site data in your browser to remove the local visit flag. You can
-        stop using the App at any time. Blocking third-party map tiles may limit map
-        display.
+        You can clear site data in your browser to remove local flags (including the free
+        trial meter list). If you created a Clerk account, you can manage or delete it
+        through the account menu or Clerk’s flows. You can stop using the App at any
+        time. Blocking third-party map tiles may limit map display.
       </p>
 
       <h2>Children</h2>
