@@ -96,6 +96,12 @@ Sources:
 - https://data.brisbane.qld.gov.au/explore/dataset/brisbane-parking-meters
 - https://data.brisbane.qld.gov.au/explore/dataset/parking-occupancy-forecasting
 
+## Deploy
+
+Production is Netlify for the frontend plus a remote FastAPI + SQLite API. Set `VITE_API_BASE` to the public API origin. See [`DEPLOY.md`](DEPLOY.md) for the general steps.
+
+Personal live URLs, host paths, and ops checklist: RodoVault `Projects/Brisbane-Parking-Finder.md` (outside this repo).
+
 ## Contributing
 
 See `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md`. Security reports: `SECURITY.md`.

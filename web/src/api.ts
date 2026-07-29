@@ -125,8 +125,15 @@ export function formatPct(chance: number | null | undefined): string {
   return `${Math.round(chance * 100)}%`
 }
 
+/** Empty in local Vite (uses /api proxy). Set VITE_API_BASE on Netlify to the public API origin. */
+const API_BASE = (import.meta.env.VITE_API_BASE as string | undefined)?.replace(/\/$/, '') ?? ''
+
+function apiUrl(path: string): string {
+  return `${API_BASE}${path}`
+}
+
 export async function fetchMeta(): Promise<MetaResponse> {
-  const res = await fetch('/api/meta')
+  const res = await fetch(apiUrl('/api/meta'))
   if (!res.ok) throw new Error(`Failed to load meta (${res.status})`)
   return res.json()
 }
@@ -144,13 +151,13 @@ export async function fetchMetersInView(
     limit: String(limit),
   })
   if (suburb && suburb !== 'ALL') params.set('suburb', suburb)
-  const res = await fetch(`/api/meters?${params}`)
+  const res = await fetch(apiUrl(`/api/meters?${params}`))
   if (!res.ok) throw new Error(`Failed to load meters (${res.status})`)
   return res.json()
 }
 
 export async function fetchMeterInsight(meterNo: string): Promise<MeterInsight> {
-  const res = await fetch(`/api/meters/${encodeURIComponent(meterNo)}`)
+  const res = await fetch(apiUrl(`/api/meters/${encodeURIComponent(meterNo)}`))
   if (!res.ok) throw new Error(`Failed to load meter (${res.status})`)
   return res.json()
 }

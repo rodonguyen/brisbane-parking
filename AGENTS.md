@@ -17,6 +17,7 @@ Map of Brisbane City Council paid parking meters showing **next-hour free-bay ch
 | Dataset field meanings | [`data/docs/`](data/docs/) (`meter-locations.md`, `occupancy-forecasting.md`) |
 | Licence / BCC attribution | [`LICENSE`](LICENSE), [`NOTICE`](NOTICE) |
 | Frontend design taste | [`.agents/skills/design-taste-frontend/SKILL.md`](.agents/skills/design-taste-frontend/SKILL.md) |
+| Production deploy (Netlify + remote API) | [`DEPLOY.md`](DEPLOY.md); personal ops: RodoVault `Projects/Brisbane-Parking-Finder.md` |
 
 Do not invent secrets; local dev needs no API keys (see `.env.example`).
 

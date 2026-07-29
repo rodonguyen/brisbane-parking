@@ -45,3 +45,9 @@ data/*.csv
 *.ntvs*
 *.njsproj
 *.sln
+
+# Local Netlify folder
+.netlify
+
+# Local scratch / screenshots
+tmp/
