@@ -169,7 +169,7 @@ function MapApp() {
 
       <div className="legend">
         <span>
-          <i style={{ background: '#0f8a4a' }} /> Likely
+          <i style={{ background: '#2f7d6d' }} /> Likely
         </span>
         <span>
           <i style={{ background: '#d97706' }} /> Mixed
@@ -178,7 +178,7 @@ function MapApp() {
           <i style={{ background: '#c23030' }} /> Unlikely
         </span>
         <span>
-          <i style={{ background: '#2f7d6d' }} /> Free
+          <i style={{ background: '#16c45a' }} /> Free
         </span>
         <span>
           <i style={{ background: '#9a958c' }} /> No parking

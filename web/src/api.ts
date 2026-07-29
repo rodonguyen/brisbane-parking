@@ -113,8 +113,10 @@ export type MeterInsight = {
   nearby: NearbyMeter[]
 }
 
-/** Muted teal — off-meter / free street parking (not a chance %). */
-export const FREE_PIN_COLOR = '#2f7d6d'
+/** Muted teal — high free-bay chance during paid hours. */
+export const LIKELY_PIN_COLOR = '#2f7d6d'
+/** Bright green — off-meter / free street parking (not a chance %). */
+export const FREE_PIN_COLOR = '#16c45a'
 /** Grey — clearway / no stopping / other no-parking. */
 export const NO_PARKING_PIN_COLOR = '#9a958c'
 
@@ -126,7 +128,7 @@ export function chanceColor(
   if (parkStatus === 'free') return FREE_PIN_COLOR
   if (parkStatus === 'restricted' || parkable === false) return NO_PARKING_PIN_COLOR
   if (chance == null) return '#6e675c'
-  if (chance >= 0.6) return '#0f8a4a'
+  if (chance >= 0.6) return LIKELY_PIN_COLOR
   if (chance >= 0.35) return '#d97706'
   return '#c23030'
 }
