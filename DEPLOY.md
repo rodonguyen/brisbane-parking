@@ -12,8 +12,11 @@ Production split: static frontend on Netlify, FastAPI + SQLite on a always-on ho
 ```bash
 cd web
 npx netlify-cli env:set VITE_API_BASE "https://YOUR-API-ORIGIN"
+npx netlify-cli env:set VITE_CLERK_PUBLISHABLE_KEY "pk_…" --context production --context deploy-preview --context branch-deploy
 npx netlify-cli deploy --prod
 ```
+
+**Continuous deployment:** the Netlify site `brisbane-parking-finder` is linked to GitHub `rodonguyen/brisbane-parking` (`master`, base directory `web/`). Pushes to `master` build and publish automatically. Required build env: `VITE_API_BASE`, `VITE_CLERK_PUBLISHABLE_KEY` (publishable `pk_` only). Manual CLI deploys still work as a fallback.
 
 ## API host
 
