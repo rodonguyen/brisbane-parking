@@ -26,12 +26,14 @@ npx netlify-cli deploy --prod
    python -m uvicorn py.server:app --host 127.0.0.1 --port 8080
    ```
 
-4. Put a public HTTPS reverse proxy / tunnel in front of that port so Netlify’s origin can `fetch` `/api/*`. CORS is already open on the API.
-5. After changing chance/lookup logic, clear `api/.cache/` (or wait for ~24h expiry).
+4. Put a public HTTPS reverse proxy / tunnel in front of that port so Netlify’s origin can `fetch` `/api/*`.
+5. Set **`CORS_ORIGINS`** to your Netlify origin(s) (comma-separated, no trailing slash). Defaults are Vite localhost only.
+6. For production, set **`BPF_ENV=production`** (disables OpenAPI docs) and keep uvicorn on `127.0.0.1`.
+7. After changing chance/lookup logic, clear `api/.cache/` (or wait for ~24h expiry).
 
 Helpers under `scripts/` upload sources/DB when `PI_HOST` and `PI_PASSWORD` are set (optional `PI_USER`, `PI_REMOTE_ROOT`). Do not commit real hostnames, IPs, or passwords.
 
 ## Checks
 
-- `GET /api/health` on the public API origin
+- `GET /api/health` on the public API origin (verifies SQLite)
 - Open the Netlify site, zoom the map in past ~12.8, confirm pins load

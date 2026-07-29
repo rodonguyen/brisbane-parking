@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import shlex
 import sys
 from pathlib import Path
 
@@ -20,6 +21,7 @@ LOCAL_ROOT = Path(__file__).resolve().parents[1]
 FILES = [
     "api/requirements.txt",
     "api/py/__init__.py",
+    "api/py/bbox.py",
     "api/py/cache.py",
     "api/py/db.py",
     "api/py/hours.py",
@@ -104,13 +106,16 @@ def main() -> None:
         fh.write(UNIT)
     sftp.close()
 
+    # Non-TTY SSH cannot prompt for sudo; pipe the login password.
+    pw = shlex.quote(PASSWORD)
     run(
         client,
-        f"sudo cp {REMOTE_ROOT}/brisbane-parking-api.service "
+        f"printf '%s\\n' {pw} | sudo -S cp {REMOTE_ROOT}/brisbane-parking-api.service "
         "/etc/systemd/system/brisbane-parking-api.service && "
-        "sudo systemctl daemon-reload",
+        f"printf '%s\\n' {pw} | sudo -S systemctl daemon-reload && "
+        f"printf '%s\\n' {pw} | sudo -S systemctl restart brisbane-parking-api",
     )
-    print("API sources + systemd unit ready (DB still needed)")
+    print("API sources deployed; brisbane-parking-api restarted (DB still needed if missing)")
     client.close()
 
 

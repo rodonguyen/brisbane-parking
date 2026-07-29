@@ -147,19 +147,18 @@ class InsightEngine:
         limit: int = 1000,
     ) -> dict[str, Any]:
         now_str, date_str, next_hour, day_cls, season_s, _ = brisbane_clock()
-        limit = max(1, min(limit, 2000))
+        limit = max(1, min(limit, 1000))
 
-        has_bbox = all(v is not None for v in (west, south, east, north))
-        if has_bbox:
-            # Quantize bbox for cache hits while panning slightly
-            qw, qs, qe, qn = (
-                round(west, 3),  # type: ignore[arg-type]
-                round(south, 3),  # type: ignore[arg-type]
-                round(east, 3),  # type: ignore[arg-type]
-                round(north, 3),  # type: ignore[arg-type]
-            )
-        else:
-            qw = qs = qe = qn = None
+        if any(v is None for v in (west, south, east, north)):
+            raise ValueError("bbox (west, south, east, north) is required")
+
+        # Quantize bbox for cache hits while panning slightly
+        qw, qs, qe, qn = (
+            round(west, 3),  # type: ignore[arg-type]
+            round(south, 3),  # type: ignore[arg-type]
+            round(east, 3),  # type: ignore[arg-type]
+            round(north, 3),  # type: ignore[arg-type]
+        )
 
         sub_key = (suburb or "ALL").upper()
         key = f"map:{date_str}:{next_hour}:{qw}:{qs}:{qe}:{qn}:{sub_key}:{limit}"
@@ -171,12 +170,9 @@ class InsightEngine:
             SELECT meter_no, street, suburb, latitude, longitude, mobile_zone,
                    operational_day, operational_time, restrictions
             FROM meters
-            WHERE 1=1
+            WHERE longitude BETWEEN ? AND ? AND latitude BETWEEN ? AND ?
         """
-        params: list[Any] = []
-        if has_bbox:
-            sql += " AND longitude BETWEEN ? AND ? AND latitude BETWEEN ? AND ?"
-            params.extend([west, east, south, north])
+        params: list[Any] = [west, east, south, north]
         if suburb and suburb.upper() != "ALL":
             sql += " AND suburb = ?"
             params.append(suburb)
@@ -215,7 +211,7 @@ class InsightEngine:
             "meters": meters,
             "count": len(meters),
             "limit": limit,
-            "truncated": has_bbox,
+            "truncated": len(meters) >= limit,
         }
         self.cache.set_json(key, resp)
         return resp
