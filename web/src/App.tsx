@@ -12,18 +12,28 @@ import {
 } from './api'
 import { DetailPanel } from './DetailPanel'
 import { hasVisitedBefore, Landing, markVisited } from './Landing'
+import { LegalPage } from './LegalPage'
 import { ParkingMap } from './ParkingMap'
+import { getRoute, subscribe, type AppRoute } from './route'
+import { SpaLink } from './SpaLink'
 
 /** Below this zoom the viewport covers too much city — skip loading pins. */
 const MIN_LOAD_ZOOM = 12.8
 
 export default function App() {
+  const [route, setRoute] = useState<AppRoute>(() => getRoute())
   const [showLanding, setShowLanding] = useState(() => !hasVisitedBefore())
+
+  useEffect(() => subscribe(setRoute), [])
 
   const enterMap = useCallback(() => {
     markVisited()
     setShowLanding(false)
   }, [])
+
+  if (route === 'terms' || route === 'privacy') {
+    return <LegalPage doc={route} />
+  }
 
   if (showLanding) {
     return <Landing onEnter={enterMap} />
@@ -216,8 +226,16 @@ function MapApp() {
       </main>
 
       <footer className="footer">
-        Forecast occupancy from Brisbane City Council open data (CC BY 4.0). Not live sensors.
-        {meta ? ` · ${meta.meter_count} meters total` : ''}
+        <span>
+          Forecast occupancy from Brisbane City Council open data (CC BY 4.0). Not live
+          sensors.
+          {meta ? ` · ${meta.meter_count} meters total` : ''}
+        </span>
+        <span className="footer-links">
+          <SpaLink to="terms">Terms</SpaLink>
+          <span aria-hidden="true"> · </span>
+          <SpaLink to="privacy">Privacy</SpaLink>
+        </span>
       </footer>
     </div>
   )

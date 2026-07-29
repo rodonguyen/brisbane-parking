@@ -1,3 +1,5 @@
+import { SpaLink } from './SpaLink'
+
 const VISITED_KEY = 'brisbane-parking-visited'
 
 export function hasVisitedBefore(): boolean {
@@ -49,7 +51,10 @@ export function Landing({ onEnter }: Props) {
       </main>
 
       <p className="landing-note">
-        Forecast data © Brisbane City Council (CC BY 4.0). Not live sensors.
+        Forecast data © Brisbane City Council (CC BY 4.0). Not live sensors.{' '}
+        <SpaLink to="terms">Terms</SpaLink>
+        <span aria-hidden="true"> · </span>
+        <SpaLink to="privacy">Privacy</SpaLink>
       </p>
     </div>
   )

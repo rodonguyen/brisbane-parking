@@ -1,0 +1,236 @@
+import { SpaLink } from './SpaLink'
+import type { AppRoute } from './route'
+
+type Doc = 'terms' | 'privacy'
+
+type Props = {
+  doc: Doc
+}
+
+const TITLES: Record<Doc, string> = {
+  terms: 'Terms of Use',
+  privacy: 'Privacy Policy',
+}
+
+const UPDATED = '29 July 2026'
+
+export function LegalPage({ doc }: Props) {
+  const other: AppRoute = doc === 'terms' ? 'privacy' : 'terms'
+  const otherLabel = doc === 'terms' ? 'Privacy Policy' : 'Terms of Use'
+
+  return (
+    <div className="legal">
+      <header className="legal-top">
+        <SpaLink to="home" className="legal-back">
+          Back to Brisbane Parking
+        </SpaLink>
+        <p className="legal-brand">Brisbane Parking</p>
+        <h1 className="legal-title">{TITLES[doc]}</h1>
+        <p className="legal-updated">Last updated {UPDATED}</p>
+      </header>
+
+      <main className="legal-body">
+        {doc === 'terms' ? <TermsBody /> : <PrivacyBody />}
+      </main>
+
+      <footer className="legal-footer">
+        <SpaLink to={other}>{otherLabel}</SpaLink>
+        <span aria-hidden="true"> · </span>
+        <SpaLink to="home">Map</SpaLink>
+      </footer>
+    </div>
+  )
+}
+
+function TermsBody() {
+  return (
+    <>
+      <p>
+        Brisbane Parking Finder (“the App”) is an independent civic utility. It is not
+        affiliated with, endorsed by, or operated by Brisbane City Council or any other
+        government body.
+      </p>
+
+      <h2>Acceptance</h2>
+      <p>
+        By using the App you agree to these Terms of Use. If you do not agree, do not use
+        the App.
+      </p>
+
+      <h2>What the App provides</h2>
+      <p>
+        The App shows map pins and estimates for paid street parking meters in Brisbane,
+        including a next-hour “chance free” figure derived from historical occupancy
+        forecasts and related open data. It is a planning aid only. It is not live bay
+        sensing, not enforcement advice, and not a guarantee that a bay will be free or
+        that parking is lawful at a given time or place.
+      </p>
+
+      <h2>Your responsibility</h2>
+      <p>
+        You alone are responsible for how you use and interpret the App, including any
+        decision to drive, park, wait, or rely on a forecast, pin colour, chart, status,
+        or other output.
+      </p>
+      <ul>
+        <li>
+          Always check signs, meters, clearways, operating hours, and local rules at the
+          kerb before you park.
+        </li>
+        <li>
+          Forecasts can be wrong, incomplete, outdated, or based on zone averages when
+          meter-level data is missing.
+        </li>
+        <li>
+          Parking fines, towing, traffic offences, time spent circling, fuel, and any
+          other loss or inconvenience arising from your use or interpretation of the App
+          are your responsibility.
+        </li>
+      </ul>
+      <p>
+        The operators of the App are not responsible for your parking decisions or for
+        any reliance you place on the App’s information.
+      </p>
+
+      <h2>No warranties</h2>
+      <p>
+        The App is provided “as is” and “as available”, without warranties of any kind,
+        whether express or implied, including accuracy, fitness for a particular purpose,
+        availability, or non-infringement. Data may contain errors. Features may change or
+        stop without notice.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, the App’s authors, contributors, and
+        operators are not liable for any claim, loss, damage, cost, or expense (including
+        parking fines, consequential loss, or lost time) arising from or related to your
+        use of the App, inability to use it, or reliance on its content. Where liability
+        cannot be excluded, it is limited to re-supply of the service or the minimum
+        amount required by applicable law.
+      </p>
+
+      <h2>Data and attribution</h2>
+      <p>
+        Parking meter and occupancy forecasting data are © Brisbane City Council and
+        licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). Map
+        basemap tiles are provided by third parties (see the Privacy Policy). Source code
+        is offered under the MIT License where published.
+      </p>
+
+      <h2>Acceptable use</h2>
+      <p>
+        Do not misuse the App, attempt to disrupt it, scrape it in a way that harms
+        service availability, or use it for unlawful purposes. The App may rate-limit or
+        refuse access where needed to keep the service usable.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        These terms may be updated from time to time. Continued use after an update means
+        you accept the revised terms. The “Last updated” date at the top of this page
+        will change when we revise them.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by the laws of Queensland, Australia. Courts in that
+        jurisdiction have non-exclusive jurisdiction, subject to any non-excludable
+        consumer rights that apply to you.
+      </p>
+
+      <p className="legal-note">
+        This page is a plain-language summary of how the App is offered. It is not legal
+        advice.
+      </p>
+    </>
+  )
+}
+
+function PrivacyBody() {
+  return (
+    <>
+      <p>
+        This Privacy Policy explains what limited information the Brisbane Parking Finder
+        App handles when you use it in a browser.
+      </p>
+
+      <h2>We do not ask you to sign in</h2>
+      <p>
+        The App has no accounts, no login, and no profile. We do not intentionally collect
+        your name, email address, phone number, or payment details.
+      </p>
+
+      <h2>Information processed to run the App</h2>
+      <ul>
+        <li>
+          <strong>Map and meter requests.</strong> When you view the map or open a meter,
+          your browser requests data from the App’s API (for example viewport bounds,
+          suburb filter, or a meter id). Servers typically see standard request metadata
+          such as IP address, user agent, and time of request in ordinary web logs.
+        </li>
+        <li>
+          <strong>Basemap tiles.</strong> Street map imagery is loaded from CARTO
+          basemap servers. Those providers may process technical data (such as IP address
+          and tile coordinates) under their own policies.
+        </li>
+        <li>
+          <strong>First-visit preference.</strong> The App may store a simple flag in your
+          browser’s <code>localStorage</code> so returning visitors can skip the landing
+          screen. That flag stays on your device; it is not sent to us as a profile.
+        </li>
+      </ul>
+
+      <h2>Cookies and tracking</h2>
+      <p>
+        The App does not set advertising cookies and does not include third-party
+        analytics or ad networks in its own code. Your browser or network may still apply
+        their own logging. If that changes, this policy will be updated.
+      </p>
+
+      <h2>How we use information</h2>
+      <p>
+        Technical request data, if retained on the API host, is used only to operate,
+        secure, and debug the service (for example to understand load or fix errors). We
+        do not sell personal information.
+      </p>
+
+      <h2>Retention</h2>
+      <p>
+        Browser <code>localStorage</code> remains until you clear site data. Server logs,
+        if kept, are retained only as long as needed for operations and then discarded or
+        rotated according to the host’s normal practice.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        You can clear site data in your browser to remove the local visit flag. You can
+        stop using the App at any time. Blocking third-party map tiles may limit map
+        display.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        The App is a general parking utility and is not directed at children. Do not
+        submit personal information about a child through any channel related to the App.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        We may update this policy as the App evolves. The “Last updated” date at the top
+        of this page will change when we revise it.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For privacy questions about this App, open an issue on the project’s public
+        repository if one is linked from the site or source distribution.
+      </p>
+
+      <p className="legal-note">
+        Forecast outputs are estimates. How you use them is covered in the{' '}
+        <SpaLink to="terms">Terms of Use</SpaLink>.
+      </p>
+    </>
+  )
+}
