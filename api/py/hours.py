@@ -29,7 +29,7 @@ DAY_ALIASES = {
 @dataclass(frozen=True)
 class ParkStatus:
     parkable: bool
-    status: str  # operating | closed | restricted
+    status: str  # operating | free | restricted
     reason: str
     label: str
 
@@ -257,11 +257,12 @@ def evaluate_parkability(
         )
 
     if not is_within_operating_hours(operational_day, operational_time, when):
+        # Off-meter: usually free street parking unless a restriction matched above.
         return ParkStatus(
-            parkable=False,
-            status="closed",
+            parkable=True,
+            status="free",
             reason="Outside paid parking hours",
-            label="Closed",
+            label="Free",
         )
 
     return ParkStatus(

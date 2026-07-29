@@ -51,7 +51,7 @@ def list_meters(
     east: float | None = Query(None),
     north: float | None = Query(None),
     suburb: str | None = Query(None),
-    limit: int = Query(250, ge=1, le=400),
+    limit: int = Query(1000, ge=1, le=2000),
 ):
     return engine.map_meters(
         west=west,

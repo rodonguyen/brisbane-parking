@@ -83,7 +83,7 @@ function MapApp() {
       const seq = ++fetchSeq.current
       setPinsLoading(true)
       try {
-        const data = await fetchMetersInView(bbox, suburb, 250)
+        const data = await fetchMetersInView(bbox, suburb, 1000)
         if (seq === fetchSeq.current) {
           setMapData(data)
           setError(null)
@@ -122,7 +122,7 @@ function MapApp() {
 
   const avgChance = useMemo(() => {
     const vals = meters
-      .filter((m) => m.parkable !== false)
+      .filter((m) => m.park_status === 'operating' || (m.park_status == null && m.parkable !== false))
       .map((m) => m.chance_free)
       .filter((v): v is number => v != null)
     if (!vals.length) return null
@@ -178,7 +178,10 @@ function MapApp() {
           <i style={{ background: '#c23030' }} /> Unlikely
         </span>
         <span>
-          <i style={{ background: '#9a958c' }} /> Closed / restricted
+          <i style={{ background: '#2f7d6d' }} /> Free
+        </span>
+        <span>
+          <i style={{ background: '#9a958c' }} /> No parking
         </span>
         {pinsLoading && <span className="legend-status">Updating view…</span>}
       </div>

@@ -1,3 +1,5 @@
+export type ParkStatus = 'operating' | 'free' | 'restricted'
+
 export type MapPin = {
   meter_no: string
   street: string
@@ -9,7 +11,7 @@ export type MapPin = {
   occupancy_pred: number | null
   lookup_method: string | null
   parkable?: boolean
-  park_status?: 'operating' | 'closed' | 'restricted'
+  park_status?: ParkStatus
   park_reason?: string
 }
 
@@ -33,7 +35,7 @@ export type MeterSummary = {
   occupancy_pred: number | null
   lookup_method: string | null
   parkable?: boolean
-  park_status?: 'operating' | 'closed' | 'restricted'
+  park_status?: ParkStatus
   park_reason?: string
 }
 
@@ -42,6 +44,7 @@ export type HourPoint = {
   occupancy_pred: number
   chance_free: number
   parkable?: boolean
+  park_status?: ParkStatus
 }
 
 export type ContextPoint = {
@@ -58,6 +61,7 @@ export type NearbyMeter = {
   distance_m: number
   chance_free: number | null
   occupancy_pred: number | null
+  park_status?: ParkStatus
 }
 
 export type MetaResponse = {
@@ -100,7 +104,7 @@ export type MeterInsight = {
   next_hour_occupancy: number | null
   next_hour_label: string
   parkable?: boolean
-  park_status?: 'operating' | 'closed' | 'restricted'
+  park_status?: ParkStatus
   park_reason?: string
   lookup_method: string
   today_series: HourPoint[]
@@ -109,11 +113,18 @@ export type MeterInsight = {
   nearby: NearbyMeter[]
 }
 
+/** Muted teal — off-meter / free street parking (not a chance %). */
+export const FREE_PIN_COLOR = '#2f7d6d'
+/** Grey — clearway / no stopping / other no-parking. */
+export const NO_PARKING_PIN_COLOR = '#9a958c'
+
 export function chanceColor(
   chance: number | null | undefined,
   parkable: boolean | undefined = true,
+  parkStatus?: ParkStatus | null,
 ): string {
-  if (parkable === false) return '#9a958c'
+  if (parkStatus === 'free') return FREE_PIN_COLOR
+  if (parkStatus === 'restricted' || parkable === false) return NO_PARKING_PIN_COLOR
   if (chance == null) return '#6e675c'
   if (chance >= 0.6) return '#0f8a4a'
   if (chance >= 0.35) return '#d97706'
@@ -141,7 +152,7 @@ export async function fetchMeta(): Promise<MetaResponse> {
 export async function fetchMetersInView(
   bbox: BBox,
   suburb?: string,
-  limit = 250,
+  limit = 1000,
 ): Promise<MapResponse> {
   const params = new URLSearchParams({
     west: String(bbox.west),

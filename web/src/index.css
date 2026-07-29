@@ -144,16 +144,6 @@ select {
   inset: 0;
 }
 
-/* Soft paper wash so basemap street/POI detail recedes under pins */
-.map-shell::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background: rgba(239, 230, 214, 0.14);
-}
-
 .legend-status {
   margin-left: auto;
   font-style: italic;

@@ -54,12 +54,12 @@ def _apply_parkability(
     meter["park_status"] = status.status
     meter["park_reason"] = status.reason
     meter["lookup_method"] = method
-    if not status.parkable:
-        meter["occupancy_pred"] = occ
-        meter["chance_free"] = None
-        return
     meter["occupancy_pred"] = occ
-    meter["chance_free"] = chance_free(occ) if occ is not None else None
+    # Chance % only applies during paid operating hours.
+    if status.status == "operating" and occ is not None:
+        meter["chance_free"] = chance_free(occ)
+    else:
+        meter["chance_free"] = None
 
 
 def resolve_occupancy(
@@ -144,10 +144,10 @@ class InsightEngine:
         east: float | None = None,
         north: float | None = None,
         suburb: str | None = None,
-        limit: int = 250,
+        limit: int = 1000,
     ) -> dict[str, Any]:
         now_str, date_str, next_hour, day_cls, season_s, _ = brisbane_clock()
-        limit = max(1, min(limit, 400))
+        limit = max(1, min(limit, 2000))
 
         has_bbox = all(v is not None for v in (west, south, east, north))
         if has_bbox:
@@ -243,19 +243,24 @@ class InsightEngine:
         )
         _apply_parkability(meter, date_str, next_hour, occ, method)
 
-        today_series = [
-            {
-                "hour": int(r[0]),
-                "occupancy_pred": float(r[1]),
-                "chance_free": chance_free(float(r[1])),
-                "parkable": evaluate_parkability(
-                    operational_day=meter["operational_day"],
-                    operational_time=meter["operational_time"],
-                    restrictions=meter.get("restrictions") or "",
-                    date_str=date_str,
-                    hour=int(r[0]),
-                ).parkable,
+        def _series_point(hour: int, occ_pred: float) -> dict[str, Any]:
+            st = evaluate_parkability(
+                operational_day=meter["operational_day"],
+                operational_time=meter["operational_time"],
+                restrictions=meter.get("restrictions") or "",
+                date_str=date_str,
+                hour=hour,
+            )
+            return {
+                "hour": hour,
+                "occupancy_pred": occ_pred,
+                "chance_free": chance_free(occ_pred),
+                "parkable": st.parkable,
+                "park_status": st.status,
             }
+
+        today_series = [
+            _series_point(int(r[0]), float(r[1]))
             for r in self.conn.execute(
                 """SELECT hour, occupancy_pred FROM occupancy
                    WHERE mobile_zone=? AND date=? ORDER BY hour""",
@@ -264,18 +269,7 @@ class InsightEngine:
         ]
 
         typical_series = [
-            {
-                "hour": int(r[0]),
-                "occupancy_pred": float(r[1]),
-                "chance_free": chance_free(float(r[1])),
-                "parkable": evaluate_parkability(
-                    operational_day=meter["operational_day"],
-                    operational_time=meter["operational_time"],
-                    restrictions=meter.get("restrictions") or "",
-                    date_str=date_str,
-                    hour=int(r[0]),
-                ).parkable,
-            }
+            _series_point(int(r[0]), float(r[1]))
             for r in self.conn.execute(
                 """SELECT hour, AVG(occupancy_pred), COUNT(*) FROM occupancy
                    WHERE mobile_zone=? AND day_class=? AND season=?
@@ -308,11 +302,12 @@ class InsightEngine:
 
         nearby = self._nearby(meter, date_str, next_hour, day_cls, season_s)
 
-        park_label = chance_label(
-            meter["chance_free"],
-            parkable=meter["parkable"],
-            status_label="Closed" if meter["park_status"] == "closed" else "No parking",
-        )
+        if meter["park_status"] == "free":
+            park_label = "Free"
+        elif not meter["parkable"]:
+            park_label = "No parking"
+        else:
+            park_label = chance_label(meter["chance_free"])
 
         insight = {
             "meter": meter,
@@ -371,10 +366,21 @@ class InsightEngine:
                 date_str=date_str,
                 hour=hour,
             )
-            if not status.parkable:
+            if status.status == "restricted":
                 continue
-            chance = chance_free(occ) if occ is not None else None
-            if self_chance is not None and chance is not None and chance <= self_chance:
+            if status.status == "free":
+                chance = None
+                # Prefer free/off-meter bays when suggesting alternatives.
+                sort_chance = 1.0
+            else:
+                chance = chance_free(occ) if occ is not None else None
+                sort_chance = chance if chance is not None else -1.0
+            if (
+                self_chance is not None
+                and status.status == "operating"
+                and chance is not None
+                and chance <= self_chance
+            ):
                 continue
             scored.append(
                 {
@@ -383,10 +389,13 @@ class InsightEngine:
                     "suburb": row["suburb"],
                     "distance_m": round(dist),
                     "chance_free": chance,
-                    "occupancy_pred": occ,
+                    "occupancy_pred": occ if status.status == "operating" else None,
                     "parkable": True,
                     "park_status": status.status,
+                    "_sort_chance": sort_chance,
                 }
             )
-        scored.sort(key=lambda x: (-(x["chance_free"] or -1), x["distance_m"]))
+        scored.sort(key=lambda x: (-x["_sort_chance"], x["distance_m"]))
+        for item in scored:
+            item.pop("_sort_chance", None)
         return scored[:3]

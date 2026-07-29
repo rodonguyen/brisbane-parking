@@ -1,7 +1,11 @@
 import { useEffect, useRef } from 'react'
 import * as maplibregl from 'maplibre-gl'
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
 import type { BBox, MapPin } from './api'
 import { chanceColor } from './api'
+
+// MapLibre v6: bundlers don't resolve the worker from import.meta.url.
+maplibregl.setWorkerUrl(maplibreWorkerUrl)
 
 type Props = {
   meters: MapPin[]
@@ -46,9 +50,10 @@ function pinsToGeoJson(
         street: m.street,
         suburb: m.suburb,
         chance_free: m.chance_free,
-        color: chanceColor(m.chance_free, m.parkable !== false),
+        color: chanceColor(m.chance_free, m.parkable !== false, m.park_status),
         selected: m.meter_no === selectedId ? 1 : 0,
         parkable: m.parkable === false ? 0 : 1,
+        free: m.park_status === 'free' ? 1 : 0,
       },
       geometry: {
         type: 'Point' as const,
@@ -105,12 +110,9 @@ export function ParkingMap({
             type: 'raster',
             source: 'basemap',
             paint: {
-              // Push basemap into the background so pins dominate
-              'raster-saturation': -0.55,
-              'raster-contrast': -0.2,
-              'raster-brightness-min': 0.08,
-              'raster-brightness-max': 0.92,
-              'raster-opacity': 0.88,
+              'raster-saturation': 0,
+              'raster-contrast': 0,
+              'raster-opacity': 1,
             },
           },
         ],

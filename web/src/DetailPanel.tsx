@@ -28,17 +28,20 @@ function hourLabel(h: number) {
 
 export function DetailPanel({ insight, loading, onClose, onSelectNearby }: Props) {
   const m = insight.meter
-  const parkable = insight.parkable !== false
+  const parkStatus = insight.park_status
+  const isFree = parkStatus === 'free'
+  const isBlocked = parkStatus === 'restricted' || insight.parkable === false
   const chance = insight.next_hour_chance_free
-  const color = chanceColor(chance, parkable)
+  const color = chanceColor(chance, insight.parkable !== false, parkStatus)
 
   const seriesMap = new Map<number, { hour: number; today?: number; typical?: number }>()
   for (const p of insight.typical_series) {
-    if (p.parkable === false) continue
+    // Chance chart only for paid operating hours
+    if (p.park_status ? p.park_status !== 'operating' : p.parkable === false) continue
     seriesMap.set(p.hour, { hour: p.hour, typical: Math.round(p.chance_free * 100) })
   }
   for (const p of insight.today_series) {
-    if (p.parkable === false) continue
+    if (p.park_status ? p.park_status !== 'operating' : p.parkable === false) continue
     const prev = seriesMap.get(p.hour) ?? { hour: p.hour }
     prev.today = Math.round(p.chance_free * 100)
     seriesMap.set(p.hour, prev)
@@ -50,6 +53,13 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby }: Props
     chance: Math.round(c.chance_free * 100),
     samples: c.sample_count,
   }))
+
+  const heroKicker = isFree
+    ? `Next hour (${hourLabel(insight.next_hour)})`
+    : isBlocked
+      ? `Next hour (${hourLabel(insight.next_hour)})`
+      : `Chance of a spot · next hour (${hourLabel(insight.next_hour)})`
+  const heroValue = isFree ? 'Free' : isBlocked ? 'No' : formatPct(chance)
 
   return (
     <aside className={`detail-panel ${loading ? 'is-loading' : ''}`} aria-live="polite">
@@ -68,12 +78,8 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby }: Props
       </div>
 
       <div className="chance-hero" style={{ ['--chance' as string]: color }}>
-        <p className="chance-kicker">
-          {parkable
-            ? `Chance of a spot · next hour (${hourLabel(insight.next_hour)})`
-            : `Next hour (${hourLabel(insight.next_hour)})`}
-        </p>
-        <p className="chance-value">{parkable ? formatPct(chance) : 'No'}</p>
+        <p className="chance-kicker">{heroKicker}</p>
+        <p className="chance-value">{heroValue}</p>
         <p className="chance-label">{insight.next_hour_label}</p>
         <p className="chance-meta">
           {insight.park_reason
@@ -217,7 +223,8 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby }: Props
                     <em>{n.suburb}</em>
                   </span>
                   <span className="nearby-meta">
-                    {Math.round(n.distance_m)}m · {formatPct(n.chance_free)}
+                    {Math.round(n.distance_m)}m ·{' '}
+                    {n.park_status === 'free' ? 'Free' : formatPct(n.chance_free)}
                   </span>
                 </button>
               </li>
