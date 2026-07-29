@@ -1,0 +1,15 @@
+{
+  "name": "brisbane-parking",
+  "private": true,
+  "description": "Brisbane parking meter map — root scripts delegate to web/ and api/",
+  "scripts": {
+    "install:web": "npm --prefix web install",
+    "dev:web": "npm --prefix web run dev",
+    "build:web": "npm --prefix web run build",
+    "lint:web": "npm --prefix web run lint",
+    "preview:web": "npm --prefix web run preview",
+    "install:api": "python -m pip install -r api/requirements.txt",
+    "ingest": "cd api && python -m py.ingest",
+    "dev:api": "cd api && python -m py.server"
+  }
+}

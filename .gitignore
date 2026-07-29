@@ -1,0 +1,47 @@
+# Logs and OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Node / frontend
+node_modules/
+web/dist/
+web/dist-ssr/
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.Python
+
+# Rust
+api/target/
+CARGO_TARGET_DIR
+**/target/
+
+# Generated app data
+api/parking.db
+api/parking.db-*
+api/.cache/
+
+# BCC datasets (large; download locally — see data/README.md)
+data/*.csv
+*.csv
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.sw?
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

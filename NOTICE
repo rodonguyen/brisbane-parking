@@ -1,0 +1,17 @@
+Brisbane Parking Finder
+Copyright (c) 2026 Brisbane Parking Finder contributors
+
+This product's source code is licensed under the MIT License (see LICENSE).
+
+Third-party data
+----------------
+Parking meter locations and occupancy forecasting data are © Brisbane City
+Council and licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Sources:
+- https://data.brisbane.qld.gov.au/explore/dataset/brisbane-parking-meters
+- https://data.brisbane.qld.gov.au/explore/dataset/parking-occupancy-forecasting
+
+When redistributing derived works that include or are based on these datasets,
+retain BCC attribution as required by CC BY 4.0.

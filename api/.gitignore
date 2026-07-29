@@ -1,0 +1,8 @@
+# Local / generated (also covered by root .gitignore)
+/target
+__pycache__/
+*.py[cod]
+.cache/
+parking.db
+parking.db-*
+.venv/
