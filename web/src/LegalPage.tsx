@@ -188,6 +188,14 @@ function PrivacyBody() {
           Clerk’s privacy policy applies to that service. We receive session-related
           identifiers needed to know you are signed in.
         </li>
+        <li>
+          <strong>Voluntary support payments.</strong> If you buy a coffee, checkout is
+          handled by Stripe inside a dialog in the App. Card details go to Stripe and
+          never reach our servers. Stripe then notifies our API that a payment
+          succeeded, and we store the checkout id, amount, the email address Stripe
+          collected, and your Clerk user id if you were signed in. We use those records
+          only to recognize supporters and to honour supporter access.
+        </li>
       </ul>
 
       <h2>Cookies and tracking</h2>
@@ -209,7 +217,9 @@ function PrivacyBody() {
       <p>
         Browser <code>localStorage</code> remains until you clear site data. Server logs,
         if kept, are retained only as long as needed for operations and then discarded or
-        rotated according to the host’s normal practice.
+        rotated according to the host’s normal practice. Supporter payment records are
+        kept for as long as supporter access is offered, or until you ask us to delete
+        them; Stripe keeps its own transaction records under its policies.
       </p>
 
       <h2>Your choices</h2>

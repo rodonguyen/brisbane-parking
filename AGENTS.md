@@ -29,6 +29,11 @@ web/src/
   Landing.tsx      # landing / entry
   ParkingMap.tsx   # MapLibre map, viewport fetches, pins
   DetailPanel.tsx  # meter detail + Recharts
+  SupportButtons.tsx # topbar coffee icon + footer tip-jar trigger
+  SupportDialog.tsx  # Stripe embedded Checkout in a modal
+  support.ts       # tip-jar copy + publishable-key guard (pure, tested)
+  supportConfig.ts # env-bound Stripe key + Stripe.js loader
+  useSupporter.ts  # supporter status from /api/support/status
   api.ts           # fetch helpers + shared types
   index.css        # styles
 
@@ -40,8 +45,11 @@ api/py/            # SUPPORTED API — edit here by default
   cache.py         # 24h JSON cache under api/.cache/
   timectx.py       # Brisbane clock, day_class, season, chance_free
   hours.py         # operating hours / parkability
+  stripepay.py     # $5 Checkout session params, webhook parsing
+  supportdb.py     # supporters.db (separate from parking.db on purpose)
+  clerkauth.py     # Clerk JWT verification via JWKS (no secret key)
 
-api/src/           # Optional Rust/Axum mirror — keep parity if you change behaviour
+api/src/           # Optional Rust/Axum mirror — no payment routes; keep parity elsewhere
 data/              # CSVs (gitignored) + docs/
 ```
 
@@ -77,6 +85,9 @@ Root `npm run ingest` / `dev:api` / `dev:web` also work.
 - `GET /api/meta` — clock, suburbs, meter count
 - `GET /api/meters?west=&south=&east=&north=&suburb=&limit=` — map pins (bbox required; max span ~0.5°)
 - `GET /api/meters/{meter_no}` — chance, series, context, nearby
+- `POST /api/support/session` — Stripe embedded Checkout secret ($5 coffee); 503 unless `STRIPE_SECRET_KEY` is set
+- `GET /api/support/status` — `{supporter}` for the verified Clerk caller
+- `POST /api/support/webhook` — Stripe signed events; rate-limit exempt
 
 Vite proxies `/api` → `127.0.0.1:8080`. Optional API env: `CORS_ORIGINS`, `RATE_LIMIT_PER_MIN`, `BPF_ENV=production`.
 

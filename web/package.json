@@ -8,10 +8,13 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "tsx --test src/trial.test.ts"
+    "test": "tsx --test src/*.test.ts"
   },
   "dependencies": {
     "@clerk/react": "^6.12.8",
+    "@phosphor-icons/react": "^2.1.10",
+    "@stripe/react-stripe-js": "^6.8.0",
+    "@stripe/stripe-js": "^9.12.1",
     "date-fns": "^4.4.0",
     "maplibre-gl": "^6.0.0",
     "react": "^19.2.7",

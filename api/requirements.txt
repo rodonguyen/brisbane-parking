@@ -1,3 +1,6 @@
 fastapi>=0.115.0,<1
 uvicorn[standard]>=0.32.0,<1
 pydantic>=2.0.0,<3
+# Supporter payments. The API still runs without these; the tip jar just stays off.
+stripe>=15.4.0,<16
+pyjwt[crypto]>=2.10.0,<3

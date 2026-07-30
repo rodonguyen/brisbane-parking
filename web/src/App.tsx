@@ -2,7 +2,6 @@ import {
   Show,
   SignInButton,
   SignUpButton,
-  UserButton,
   useAuth,
 } from '@clerk/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -22,6 +21,9 @@ import { LegalPage } from './LegalPage'
 import { ParkingMap } from './ParkingMap'
 import { getRoute, subscribe, type AppRoute } from './route'
 import { SpaLink } from './SpaLink'
+import { SupportFooterButton, SupportIconButton } from './SupportButtons'
+import { SupporterUserButton } from './SupporterUserButton'
+import { SupportDialog } from './SupportDialog'
 import {
   FREE_DISTINCT_METERS,
   canOpenMeter,
@@ -29,6 +31,8 @@ import {
   saveSeenMeters,
   withRecordedMeter,
 } from './trial'
+import { shouldShowMapError } from './appStatus'
+import { useSupporter } from './useSupporter'
 
 /** Below this zoom the viewport covers too much city — skip loading pins. */
 const MIN_LOAD_ZOOM = 12.8
@@ -70,6 +74,8 @@ function MapApp() {
   const [seenMeters, setSeenMeters] = useState<Set<string>>(() => loadSeenMeters())
   const [signInGate, setSignInGate] = useState(false)
   const [pendingMeter, setPendingMeter] = useState<string | null>(null)
+  const [supportOpen, setSupportOpen] = useState(false)
+  const { isSupporter, refresh: refreshSupporter } = useSupporter()
 
   const fetchSeq = useRef(0)
   const lastBBox = useRef<BBox | null>(null)
@@ -193,6 +199,10 @@ function MapApp() {
             </p>
           )}
           <div className="auth-controls">
+            <SupportIconButton
+              onOpen={() => setSupportOpen(true)}
+              isSupporter={isSupporter}
+            />
             <Show when="signed-out">
               {!signInGate && freeLeft < FREE_DISTINCT_METERS && (
                 <span className="trial-left">
@@ -213,7 +223,7 @@ function MapApp() {
               </SignUpButton>
             </Show>
             <Show when="signed-in">
-              <UserButton />
+              <SupporterUserButton isSupporter={isSupporter} />
             </Show>
           </div>
         </div>
@@ -235,12 +245,21 @@ function MapApp() {
         <span>
           <i style={{ background: '#9a958c' }} /> No parking
         </span>
-        {pinsLoading && <span className="legend-status">Updating view…</span>}
+        <span
+          className="legend-status"
+          data-loading={pinsLoading}
+          role="status"
+          aria-hidden={!pinsLoading}
+        >
+          Updating view…
+        </span>
       </div>
 
       <main className="stage">
         {metaLoading && <div className="overlay-msg">Loading Brisbane map…</div>}
-        {error && !metaLoading && <div className="overlay-msg error">{error}</div>}
+        {shouldShowMapError(error, metaLoading, pinsLoading) && (
+          <div className="overlay-msg error">{error}</div>
+        )}
         {!metaLoading && (
           <ParkingMap
             meters={meters}
@@ -306,12 +325,20 @@ function MapApp() {
           sensors.
           {meta ? ` · ${meta.meter_count} meters total` : ''}
         </span>
+        <SupportFooterButton onOpen={() => setSupportOpen(true)} />
         <span className="footer-links">
           <SpaLink to="terms">Terms</SpaLink>
           <span aria-hidden="true"> · </span>
           <SpaLink to="privacy">Privacy</SpaLink>
         </span>
       </footer>
+
+      {supportOpen && (
+        <SupportDialog
+          onClose={() => setSupportOpen(false)}
+          onPaid={() => void refreshSupporter()}
+        />
+      )}
     </div>
   )
 }

@@ -174,3 +174,32 @@ export async function fetchMeterInsight(meterNo: string): Promise<MeterInsight> 
   if (!res.ok) throw new Error(`Failed to load meter (${res.status})`)
   return res.json()
 }
+
+function authHeaders(token: string | null): HeadersInit {
+  return token ? { Authorization: `Bearer ${token}` } : {}
+}
+
+/**
+ * The API signs the amount and the supporter identity itself; `email` is only a
+ * prefill hint for Checkout when the Clerk token carries no email claim.
+ */
+export async function createSupportSession(
+  token: string | null,
+  email?: string | null,
+): Promise<string> {
+  const res = await fetch(apiUrl('/api/support/session'), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders(token) },
+    body: JSON.stringify({ email: email ?? null }),
+  })
+  if (!res.ok) throw new Error(`Could not start checkout (${res.status})`)
+  const data = (await res.json()) as { client_secret: string }
+  return data.client_secret
+}
+
+export async function fetchSupportStatus(token: string | null): Promise<boolean> {
+  const res = await fetch(apiUrl('/api/support/status'), { headers: authHeaders(token) })
+  if (!res.ok) return false
+  const data = (await res.json()) as { supporter: boolean }
+  return Boolean(data.supporter)
+}

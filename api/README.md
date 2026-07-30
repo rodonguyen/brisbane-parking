@@ -9,11 +9,17 @@ python -m py.ingest    # once, after CSVs are in ../data/
 python -m py.server    # http://127.0.0.1:8080
 ```
 
-Routes: `/api/health`, `/api/meta`, `/api/meters`, `/api/meters/{meter_no}`.
+Routes: `/api/health`, `/api/meta`, `/api/meters`, `/api/meters/{meter_no}`, plus the
+optional supporter routes `POST /api/support/session`, `GET /api/support/status`,
+`POST /api/support/webhook`.
 
 Optional env (see repo root `.env.example`): `CORS_ORIGINS`, `RATE_LIMIT_PER_MIN`,
 `MAX_BBOX_SPAN_DEG`, `BPF_ENV=production` (disables OpenAPI docs). `/api/meters`
 requires a bounded `west/south/east/north` bbox.
+
+Supporter payments stay off until `STRIPE_SECRET_KEY` is set, and the routes answer
+503 until then (see `DEPLOY.md`). Records go to `supporters.db`, never `parking.db`.
+Run the tests with `python -m unittest discover -s py -t .` from `api/`.
 
 ## Optional reference (Rust)
 

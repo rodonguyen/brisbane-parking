@@ -31,6 +31,9 @@ CARGO_TARGET_DIR
 api/parking.db
 api/parking.db-*
 api/.cache/
+# Payment records: never commit, and never let ingest/deploys overwrite them.
+api/supporters.db
+api/supporters.db-*
 
 # BCC datasets (large; download locally — see data/README.md)
 data/*.csv

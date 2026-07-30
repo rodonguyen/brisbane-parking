@@ -11,16 +11,21 @@ sys.path.insert(0, str(ROOT_API))
 
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import JSONResponse, Response
 
+from py import stripepay, supportdb
 from py.bbox import validate_bbox
 from py.cache import InsightCache
+from py.clerkauth import ClerkVerifier
 from py.db import connect
 from py.insight import InsightEngine
 
 DB_PATH = ROOT_API / "parking.db"
+SUPPORTERS_DB_PATH = ROOT_API / "supporters.db"
 CACHE_DIR = ROOT_API / ".cache"
+WEBHOOK_PATH = "/api/support/webhook"
 
 RATE_LIMIT_PER_MIN = int(os.environ.get("RATE_LIMIT_PER_MIN", "600"))
 IS_PROD = os.environ.get("BPF_ENV", "").strip().lower() in ("production", "prod")
@@ -60,6 +65,9 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
             return await call_next(request)
         if request.url.path == "/api/health":
             return await call_next(request)
+        # Stripe retries webhooks and signs them; throttling only loses payment records.
+        if request.url.path == WEBHOOK_PATH:
+            return await call_next(request)
 
         now = time.monotonic()
         key = self._client_key(request)
@@ -86,6 +94,14 @@ conn = connect(DB_PATH)
 cache = InsightCache(CACHE_DIR)
 engine = InsightEngine(conn, cache)
 
+support_conn = supportdb.connect(SUPPORTERS_DB_PATH)
+supportdb.init_schema(support_conn)
+support_payments = stripepay.StripeSupport(
+    os.environ.get("STRIPE_SECRET_KEY", ""),
+    os.environ.get("STRIPE_WEBHOOK_SECRET", ""),
+)
+clerk = ClerkVerifier(os.environ.get("CLERK_ISSUER", ""))
+
 app = FastAPI(
     title="Brisbane Parking API",
     docs_url=None if IS_PROD else "/docs",
@@ -97,7 +113,7 @@ _origins = _cors_origins()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_origins,
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 app.add_middleware(RateLimitMiddleware, max_requests=RATE_LIMIT_PER_MIN)
@@ -143,6 +159,57 @@ def meter_detail(meter_no: str):
     if insight is None:
         raise HTTPException(status_code=404, detail="meter not found")
     return insight
+
+
+class SupportSessionRequest(BaseModel):
+    """`email` is only a prefill hint; identity comes from the verified Clerk token."""
+
+    email: str | None = Field(default=None, max_length=stripepay.EMAIL_MAX_LEN)
+
+
+@app.post("/api/support/session")
+def create_support_session(payload: SupportSessionRequest, request: Request):
+    if not support_payments.enabled:
+        raise HTTPException(status_code=503, detail="support payments not configured")
+    identity = clerk.identity(request.headers.get("authorization"))
+    email = (identity.email if identity else None) or stripepay.clean_email(payload.email)
+    try:
+        client_secret = support_payments.create_session_secret(
+            email=email,
+            clerk_user_id=identity.user_id if identity else None,
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail="could not start checkout") from exc
+    return {"client_secret": client_secret}
+
+
+@app.get("/api/support/status")
+def support_status(request: Request):
+    identity = clerk.identity(request.headers.get("authorization"))
+    if identity is None:
+        return {"supporter": False}
+    return {
+        "supporter": supportdb.is_supporter(
+            support_conn,
+            clerk_user_id=identity.user_id,
+            email=identity.email,
+        )
+    }
+
+
+@app.post(WEBHOOK_PATH)
+async def support_webhook(request: Request):
+    if not support_payments.webhook_enabled:
+        raise HTTPException(status_code=503, detail="support payments not configured")
+    event = support_payments.parse_webhook(
+        await request.body(), request.headers.get("stripe-signature", "")
+    )
+    if event is None:
+        raise HTTPException(status_code=400, detail="invalid signature")
+    supporter = stripepay.supporter_from_event(event)
+    if supporter is not None:
+        supportdb.record(support_conn, supporter)
+    return {"received": True}
 
 
 def main() -> None:
