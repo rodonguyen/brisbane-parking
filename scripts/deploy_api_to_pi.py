@@ -30,11 +30,14 @@ FILES = [
     "api/py/__init__.py",
     "api/py/bbox.py",
     "api/py/cache.py",
+    "api/py/clerkauth.py",
     "api/py/db.py",
     "api/py/hours.py",
     "api/py/ingest.py",
     "api/py/insight.py",
     "api/py/server.py",
+    "api/py/stripepay.py",
+    "api/py/supportdb.py",
     "api/py/timectx.py",
 ]
 
@@ -128,11 +131,6 @@ def main() -> None:
     )
 
     run(client, f"mkdir -p {REMOTE_ROOT}/api/py {REMOTE_ROOT}/api/.cache")
-    run(client, f"python3 -m venv {REMOTE_ROOT}/.venv")
-    run(
-        client,
-        f"{REMOTE_ROOT}/.venv/bin/pip install -U pip fastapi 'uvicorn[standard]' pydantic",
-    )
 
     sftp = client.open_sftp()
     for rel in FILES:
@@ -141,6 +139,13 @@ def main() -> None:
         ensure_dir(sftp, Path(remote).parent.as_posix().replace("\\", "/"))
         print("put", rel)
         sftp.put(str(local), remote)
+
+    run(client, f"python3 -m venv {REMOTE_ROOT}/.venv")
+    run(
+        client,
+        f"{REMOTE_ROOT}/.venv/bin/pip install -U pip && "
+        f"{REMOTE_ROOT}/.venv/bin/pip install -r {REMOTE_ROOT}/api/requirements.txt",
+    )
 
     service_env = ensure_env_file(sftp, f"{REMOTE_ROOT}/api/.env")
 
