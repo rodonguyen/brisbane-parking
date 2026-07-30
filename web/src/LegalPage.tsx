@@ -12,7 +12,7 @@ const TITLES: Record<Doc, string> = {
   privacy: 'Privacy Policy',
 }
 
-const UPDATED = '29 July 2026'
+const UPDATED = '30 July 2026'
 
 export function LegalPage({ doc }: Props) {
   const other: AppRoute = doc === 'terms' ? 'privacy' : 'terms'
@@ -125,6 +125,34 @@ function TermsBody() {
         refuse access where needed to keep the service usable.
       </p>
 
+      <h2>Voluntary support</h2>
+      <p>
+        You may optionally buy a coffee (currently A$5) through Stripe checkout inside
+        the App. That payment is a voluntary tip to support the project, not a purchase
+        of parking advice, a subscription, or a guaranteed product.
+      </p>
+      <ul>
+        <li>
+          Card details are processed by Stripe under Stripe’s terms and privacy policy.
+          We do not store card numbers.
+        </li>
+        <li>
+          Supporters may receive early access to premium features when those features
+          exist. Premium features are not available yet and may change, be delayed, or
+          be withdrawn without notice.
+        </li>
+        <li>
+          Tips are generally non-refundable unless required by law. If you believe a
+          payment was made in error, contact us through the project repository before
+          disputing with your bank.
+        </li>
+      </ul>
+      <p>
+        Paying does not change your parking responsibilities under these Terms. How we
+        handle supporter payment data is described in the{' '}
+        <SpaLink to="privacy">Privacy Policy</SpaLink>.
+      </p>
+
       <h2>Changes</h2>
       <p>
         These terms may be updated from time to time. Continued use after an update means
@@ -202,8 +230,10 @@ function PrivacyBody() {
       <p>
         The App does not set advertising cookies and does not include third-party
         analytics or ad networks in its own code. Clerk may set cookies or similar
-        storage needed for authentication sessions. Your browser or network may still
-        apply their own logging.
+        storage needed for authentication sessions. When you open the supporter checkout
+        dialog, Stripe may set cookies or similar storage needed to process payment.
+        Stripe’s privacy policy applies to that checkout. Your browser or network may
+        still apply their own logging.
       </p>
 
       <h2>How we use information</h2>
@@ -226,8 +256,11 @@ function PrivacyBody() {
       <p>
         You can clear site data in your browser to remove local flags (including the free
         trial meter list). If you created a Clerk account, you can manage or delete it
-        through the account menu or Clerk’s flows. You can stop using the App at any
-        time. Blocking third-party map tiles may limit map display.
+        through the account menu or Clerk’s flows. If you paid as a supporter and want
+        your payment record removed from our database, open an issue on the project
+        repository with enough detail for us to find the payment (for example the email
+        used at checkout). You can stop using the App at any time. Blocking third-party
+        map tiles may limit map display.
       </p>
 
       <h2>Children</h2>
