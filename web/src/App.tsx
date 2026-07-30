@@ -4,6 +4,7 @@ import {
   SignUpButton,
   useAuth,
 } from '@clerk/react'
+import { CircleNotchIcon } from '@phosphor-icons/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   fetchMeta,
@@ -15,12 +16,15 @@ import {
   type MetaResponse,
   type MeterInsight,
 } from './api'
+import { AttributionDialog } from './AttributionDialog'
 import { DetailPanel } from './DetailPanel'
 import { hasVisitedBefore, Landing, markVisited } from './Landing'
 import { LegalPage } from './LegalPage'
 import { ParkingMap } from './ParkingMap'
 import { getRoute, subscribe, type AppRoute } from './route'
 import { SpaLink } from './SpaLink'
+import { SUPPORT_FOOTER_SUFFIX, SUPPORT_LABEL } from './support'
+import { supportEnabled } from './supportConfig'
 import { SupportFooterButton, SupportIconButton } from './SupportButtons'
 import { SupporterUserButton } from './SupporterUserButton'
 import { SupportDialog } from './SupportDialog'
@@ -75,6 +79,7 @@ function MapApp() {
   const [signInGate, setSignInGate] = useState(false)
   const [pendingMeter, setPendingMeter] = useState<string | null>(null)
   const [supportOpen, setSupportOpen] = useState(false)
+  const [attributionOpen, setAttributionOpen] = useState(false)
   const { isSupporter, refresh: refreshSupporter } = useSupporter()
 
   const fetchSeq = useRef(0)
@@ -142,6 +147,12 @@ function MapApp() {
     }
   }, [])
 
+  const closeMeterDetail = useCallback(() => {
+    setSelectedId(null)
+    setInsight(null)
+    setFocus(null)
+  }, [])
+
   const selectMeter = useCallback(
     async (meterNo: string) => {
       const signedIn = Boolean(isSignedIn)
@@ -177,9 +188,11 @@ function MapApp() {
 
   const meters: MapPin[] = mapData?.meters ?? []
   const freeLeft = Math.max(0, FREE_DISTINCT_METERS - seenMeters.size)
+  const detailOpen = Boolean(insight && selectedId)
 
   return (
-    <div className="app">
+    <div className={`app${detailOpen ? ' app--detail-open' : ''}`}>
+      <div className="app-shell">
       <header className="topbar">
         <div className="brand-block">
           <p className="brand">Brisbane Parking</p>
@@ -249,9 +262,10 @@ function MapApp() {
           className="legend-status"
           data-loading={pinsLoading}
           role="status"
+          aria-label={pinsLoading ? 'Updating map view' : undefined}
           aria-hidden={!pinsLoading}
         >
-          Updating view…
+          <CircleNotchIcon className="legend-spinner" size={14} weight="bold" aria-hidden="true" />
         </span>
       </div>
 
@@ -305,38 +319,78 @@ function MapApp() {
             </div>
           </div>
         )}
-        {insight && selectedId && (
-          <DetailPanel
-            insight={insight}
-            loading={insightLoading}
-            onClose={() => {
-              setSelectedId(null)
-              setInsight(null)
-              setFocus(null)
-            }}
-            onSelectNearby={selectMeter}
-          />
-        )}
       </main>
 
-      <footer className="footer">
-        <span>
+      <footer className={`footer${detailOpen ? ' footer--detail-open' : ''}`}>
+        <p className="footer-mobile">
+          {supportEnabled && (
+            <>
+              <button
+                type="button"
+                className="footer-inline-link"
+                onClick={() => setSupportOpen(true)}
+              >
+                {SUPPORT_LABEL}
+              </button>{' '}
+              {SUPPORT_FOOTER_SUFFIX}
+              {' · '}
+            </>
+          )}
+          <SpaLink to="terms">Terms</SpaLink>
+          <span aria-hidden="true"> · </span>
+          <SpaLink to="privacy">Privacy</SpaLink>
+          <span aria-hidden="true"> · </span>
+          <button
+            type="button"
+            className="footer-inline-link"
+            onClick={() => setAttributionOpen(true)}
+          >
+            Open data
+          </button>
+        </p>
+        <span className="footer-desktop">
           Forecast occupancy from Brisbane City Council open data (CC BY 4.0). Not live
           sensors.
           {meta ? ` · ${meta.meter_count} meters total` : ''}
         </span>
-        <SupportFooterButton onOpen={() => setSupportOpen(true)} />
-        <span className="footer-links">
+        <span className="footer-desktop">
+          <SupportFooterButton onOpen={() => setSupportOpen(true)} />
+        </span>
+        <span className="footer-links footer-desktop">
           <SpaLink to="terms">Terms</SpaLink>
           <span aria-hidden="true"> · </span>
           <SpaLink to="privacy">Privacy</SpaLink>
         </span>
       </footer>
+      </div>
+
+      {detailOpen && insight && (
+        <div className="detail-layer">
+          <button
+            type="button"
+            className="detail-scrim"
+            aria-label="Close parking details"
+            onClick={closeMeterDetail}
+          />
+          <DetailPanel
+            insight={insight}
+            loading={insightLoading}
+            onClose={closeMeterDetail}
+            onSelectNearby={selectMeter}
+          />
+        </div>
+      )}
 
       {supportOpen && (
         <SupportDialog
           onClose={() => setSupportOpen(false)}
           onPaid={() => void refreshSupporter()}
+        />
+      )}
+      {attributionOpen && (
+        <AttributionDialog
+          meterCount={meta?.meter_count}
+          onClose={() => setAttributionOpen(false)}
         />
       )}
     </div>

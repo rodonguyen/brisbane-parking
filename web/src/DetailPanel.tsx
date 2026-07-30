@@ -63,10 +63,13 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby }: Props
 
   return (
     <aside className={`detail-panel ${loading ? 'is-loading' : ''}`} aria-live="polite">
-      <div className="detail-top">
+      <div className="detail-panel__bar">
         <button type="button" className="close-btn" onClick={onClose} aria-label="Close">
           Close
         </button>
+      </div>
+      <div className="detail-panel__scroll">
+      <div className="detail-top">
         <p className="eyebrow">
           Meter {m.meter_no} · Zone {m.mobile_zone}
         </p>
@@ -232,6 +235,7 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby }: Props
           </ul>
         </section>
       )}
+      </div>
     </aside>
   )
 }
