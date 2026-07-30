@@ -16,7 +16,7 @@ api:
 	cd api && python -m py.server
 
 web:
-	cd web && npm run dev -- --host 127.0.0.1 --port 5173
+	cd web && npm run dev
 
 dev:
 	bash api/run-dev.sh

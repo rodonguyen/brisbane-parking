@@ -344,11 +344,52 @@ select {
 .detail-panel__bar {
   flex: none;
   display: flex;
-  justify-content: flex-end;
-  padding: 0.55rem 0.85rem;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0.55rem 0.85rem 0.45rem;
   border-bottom: 1px solid var(--line);
   background: rgba(247, 242, 232, 0.96);
   backdrop-filter: blur(6px);
+  touch-action: none;
+}
+
+.detail-panel__grab {
+  display: flex;
+  justify-content: center;
+  padding: 0.15rem 0 0.45rem;
+  cursor: grab;
+}
+
+.detail-panel__handle {
+  width: 2.35rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: rgba(28, 25, 20, 0.2);
+}
+
+.detail-panel--dragging .detail-panel__grab {
+  cursor: grabbing;
+}
+
+.detail-panel--dragging {
+  animation: none !important;
+}
+
+.detail-panel__bar .close-btn {
+  align-self: flex-end;
+}
+
+@media (min-width: 821px) {
+  .detail-panel__grab {
+    display: none;
+  }
+
+  .detail-panel__bar {
+    flex-direction: row;
+    justify-content: flex-end;
+    touch-action: auto;
+    padding: 0.55rem 0.85rem;
+  }
 }
 
 .detail-panel__scroll {
@@ -815,6 +856,12 @@ select {
     pointer-events: none;
   }
 
+  .app.app--detail-open.app--detail-dragging .app-shell {
+    transform: scale(calc(0.93 + 0.07 * var(--sheet-drag-progress, 0)))
+      translateY(calc(-0.45rem * (1 - var(--sheet-drag-progress, 0))));
+    transition: none;
+  }
+
   .detail-layer {
     position: fixed;
     inset: 0;
@@ -834,6 +881,7 @@ select {
     background: rgba(28, 25, 20, 0.38);
     cursor: pointer;
     animation: scrim-in var(--detail-enter) both;
+    transition: opacity 120ms linear;
   }
 
   @keyframes scrim-in {
@@ -964,8 +1012,13 @@ select {
   }
 
   .detail-panel__bar {
-    padding: 0.4rem max(0.85rem, env(safe-area-inset-right)) 0.4rem
+    padding: 0.35rem max(0.85rem, env(safe-area-inset-right)) 0.35rem
       max(0.85rem, env(safe-area-inset-left));
+  }
+
+  .detail-panel__grab {
+    padding-top: 0.1rem;
+    padding-bottom: 0.35rem;
   }
 
   .detail-panel__scroll {

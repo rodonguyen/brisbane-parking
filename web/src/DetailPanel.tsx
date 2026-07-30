@@ -12,12 +12,14 @@ import {
 } from 'recharts'
 import type { MeterInsight } from './api'
 import { chanceColor, formatPct } from './api'
+import { useMobileViewport, useSheetDrag } from './useSheetDrag'
 
 type Props = {
   insight: MeterInsight
   loading: boolean
   onClose: () => void
   onSelectNearby: (meterNo: string) => void
+  onDrag?: (offsetY: number) => void
 }
 
 function hourLabel(h: number) {
@@ -26,7 +28,15 @@ function hourLabel(h: number) {
   return `${h12}${suffix}`
 }
 
-export function DetailPanel({ insight, loading, onClose, onSelectNearby }: Props) {
+export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag }: Props) {
+  const mobileSheet = useMobileViewport()
+  const { scrollRef, dragging, sheetStyle, onGrabPointerDown, onScrollPointerDown, onPointerMove, finishPointer } =
+    useSheetDrag({
+      enabled: mobileSheet,
+      onClose,
+      onDrag,
+    })
+
   const m = insight.meter
   const parkStatus = insight.park_status
   const isFree = parkStatus === 'free'
@@ -62,13 +72,27 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby }: Props
   const heroValue = isFree ? 'Free' : isBlocked ? 'No' : formatPct(chance)
 
   return (
-    <aside className={`detail-panel ${loading ? 'is-loading' : ''}`} aria-live="polite">
-      <div className="detail-panel__bar">
+    <aside
+      className={`detail-panel ${loading ? 'is-loading' : ''}${dragging ? ' detail-panel--dragging' : ''}`}
+      style={sheetStyle}
+      aria-live="polite"
+      onPointerMove={onPointerMove}
+      onPointerUp={finishPointer}
+      onPointerCancel={finishPointer}
+    >
+      <div className="detail-panel__bar" onPointerDown={onGrabPointerDown}>
+        <div className="detail-panel__grab" aria-hidden="true">
+          <span className="detail-panel__handle" />
+        </div>
         <button type="button" className="close-btn" onClick={onClose} aria-label="Close">
           Close
         </button>
       </div>
-      <div className="detail-panel__scroll">
+      <div
+        className="detail-panel__scroll"
+        ref={scrollRef}
+        onPointerDown={onScrollPointerDown}
+      >
       <div className="detail-top">
         <p className="eyebrow">
           Meter {m.meter_no} · Zone {m.mobile_zone}

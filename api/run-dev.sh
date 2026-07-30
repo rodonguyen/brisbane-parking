@@ -6,4 +6,4 @@ python -m py.server &
 API_PID=$!
 trap 'kill $API_PID 2>/dev/null || true' EXIT
 cd ../web
-npm run dev -- --host 127.0.0.1 --port 5173
+npm run dev

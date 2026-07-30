@@ -80,6 +80,7 @@ function MapApp() {
   const [pendingMeter, setPendingMeter] = useState<string | null>(null)
   const [supportOpen, setSupportOpen] = useState(false)
   const [attributionOpen, setAttributionOpen] = useState(false)
+  const [sheetDragY, setSheetDragY] = useState(0)
   const { isSupporter, refresh: refreshSupporter } = useSupporter()
 
   const fetchSeq = useRef(0)
@@ -189,9 +190,17 @@ function MapApp() {
   const meters: MapPin[] = mapData?.meters ?? []
   const freeLeft = Math.max(0, FREE_DISTINCT_METERS - seenMeters.size)
   const detailOpen = Boolean(insight && selectedId)
+  const sheetDragProgress = Math.min(sheetDragY / 280, 1)
+
+  useEffect(() => {
+    if (!detailOpen) setSheetDragY(0)
+  }, [detailOpen])
 
   return (
-    <div className={`app${detailOpen ? ' app--detail-open' : ''}`}>
+    <div
+      className={`app${detailOpen ? ' app--detail-open' : ''}${sheetDragY > 0 ? ' app--detail-dragging' : ''}`}
+      style={{ '--sheet-drag-progress': sheetDragProgress } as React.CSSProperties}
+    >
       <div className="app-shell">
       <header className="topbar">
         <div className="brand-block">
@@ -371,12 +380,14 @@ function MapApp() {
             className="detail-scrim"
             aria-label="Close parking details"
             onClick={closeMeterDetail}
+            style={{ opacity: 1 - sheetDragProgress * 0.85 }}
           />
           <DetailPanel
             insight={insight}
             loading={insightLoading}
             onClose={closeMeterDetail}
             onSelectNearby={selectMeter}
+            onDrag={setSheetDragY}
           />
         </div>
       )}
