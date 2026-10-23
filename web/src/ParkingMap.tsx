@@ -3,6 +3,7 @@ import * as maplibregl from 'maplibre-gl'
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
 import type { BBox, MapPin } from './api'
 import { chanceColor } from './api'
+import type { LngLat } from './directions'
 
 // MapLibre v6: bundlers don't resolve the worker from import.meta.url.
 maplibregl.setWorkerUrl(maplibreWorkerUrl)
@@ -12,6 +13,7 @@ type Props = {
   selectedId: string | null
   onSelect: (meterNo: string) => void
   onViewportChange: (bbox: BBox, zoom: number) => void
+  onUserLocation: (loc: LngLat) => void
   focus?: { lng: number; lat: number } | null
 }
 
@@ -74,12 +76,14 @@ export function ParkingMap({
   selectedId,
   onSelect,
   onViewportChange,
+  onUserLocation,
   focus,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
   const onViewportChangeRef = useRef(onViewportChange)
   const onSelectRef = useRef(onSelect)
+  const onUserLocationRef = useRef(onUserLocation)
   const readyRef = useRef(false)
 
   // Pins can arrive before the map's load event; keep the latest so load can seed them.
@@ -87,6 +91,7 @@ export function ParkingMap({
 
   onViewportChangeRef.current = onViewportChange
   onSelectRef.current = onSelect
+  onUserLocationRef.current = onUserLocation
   pinsRef.current = { meters, selectedId }
 
   useEffect(() => {
@@ -102,6 +107,16 @@ export function ParkingMap({
     })
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right')
+
+    const geolocate = new maplibregl.GeolocateControl({
+      positionOptions: { enableHighAccuracy: true },
+      trackUserLocation: true,
+      fitBoundsOptions: { maxZoom: 16 },
+    })
+    map.addControl(geolocate, 'top-right')
+    geolocate.on('geolocate', (pos) => {
+      onUserLocationRef.current({ lat: pos.coords.latitude, lng: pos.coords.longitude })
+    })
 
     const emitViewport = () => {
       onViewportChangeRef.current(readBBox(map), map.getZoom())
@@ -167,6 +182,13 @@ export function ParkingMap({
 
       readyRef.current = true
       emitViewport()
+
+      navigator.permissions
+        ?.query({ name: 'geolocation' })
+        .then((status) => {
+          if (status.state === 'granted') geolocate.trigger()
+        })
+        .catch(() => {})
     })
 
     let moveTimer: ReturnType<typeof setTimeout> | null = null

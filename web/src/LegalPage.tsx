@@ -206,6 +206,12 @@ function PrivacyBody() {
           and tile coordinates) under their own policies.
         </li>
         <li>
+          <strong>Your location.</strong> If you allow it, your browser shares your position
+          with the App to show you on the map and measure distance to a meter. It stays on
+          your device and is not sent to our servers. When you tap Apple Maps or Google Maps
+          for directions, your position and the meter location are passed to that provider.
+        </li>
+        <li>
           <strong>Local preferences.</strong> The App may store simple flags in your
           browser’s <code>localStorage</code> (for example a first-visit flag, and which
           meters you opened during the free trial). Those values stay on your device; they

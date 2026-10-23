@@ -12,6 +12,8 @@ import {
 } from 'recharts'
 import type { MeterInsight } from './api'
 import { chanceColor, formatPct } from './api'
+import type { LngLat } from './directions'
+import { directionsUrls, distanceMeters, formatDistance } from './directions'
 import { useMobileViewport, useSheetDrag } from './useSheetDrag'
 
 type Props = {
@@ -20,6 +22,7 @@ type Props = {
   onClose: () => void
   onSelectNearby: (meterNo: string) => void
   onDrag?: (offsetY: number) => void
+  userLoc: LngLat | null
 }
 
 function hourLabel(h: number) {
@@ -28,7 +31,7 @@ function hourLabel(h: number) {
   return `${h12}${suffix}`
 }
 
-export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag }: Props) {
+export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag, userLoc }: Props) {
   const mobileSheet = useMobileViewport()
   const { scrollRef, dragging, sheetStyle, onGrabPointerDown, onScrollPointerDown, onPointerMove, finishPointer } =
     useSheetDrag({
@@ -43,6 +46,8 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag 
   const isBlocked = parkStatus === 'restricted' || insight.parkable === false
   const chance = insight.next_hour_chance_free
   const color = chanceColor(chance, insight.parkable !== false, parkStatus)
+  const dest = { lat: m.latitude, lng: m.longitude }
+  const directions = directionsUrls(dest, userLoc)
 
   const seriesMap = new Map<number, { hour: number; today?: number; typical?: number }>()
   for (const p of insight.typical_series) {
@@ -114,6 +119,20 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag 
             : `${insight.day_class}${insight.is_holiday ? ' holiday' : ''} · ${insight.season} · ${insight.lookup_method}`}
         </p>
       </div>
+
+      <section className="directions" aria-label="Directions">
+        <p className="directions-label">
+          Directions{userLoc ? ` · ${formatDistance(distanceMeters(userLoc, dest))} away` : ''}
+        </p>
+        <div className="directions-links">
+          <a className="directions-btn" href={directions.apple} target="_blank" rel="noopener noreferrer">
+            Apple Maps
+          </a>
+          <a className="directions-btn" href={directions.google} target="_blank" rel="noopener noreferrer">
+            Google Maps
+          </a>
+        </div>
+      </section>
 
       <section className="facts">
         <dl>

@@ -493,6 +493,38 @@ select {
   color: var(--muted);
 }
 
+.directions {
+  margin-top: 1rem;
+}
+
+.directions-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.directions-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.directions-btn {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.directions-btn:active {
+  background: var(--line);
+}
+
 .facts {
   margin-top: 1rem;
   padding-top: 0.9rem;

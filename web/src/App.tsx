@@ -36,6 +36,7 @@ import {
   withRecordedMeter,
 } from './trial'
 import { shouldShowMapError } from './appStatus'
+import type { LngLat } from './directions'
 import { useSupporter } from './useSupporter'
 
 /** Covers every BCC meter (945 pins), so one fetch serves all pans and zooms. */
@@ -81,6 +82,7 @@ function MapApp() {
   const [insight, setInsight] = useState<MeterInsight | null>(null)
   const [insightLoading, setInsightLoading] = useState(false)
   const [viewBBox, setViewBBox] = useState<BBox | null>(null)
+  const [userLoc, setUserLoc] = useState<LngLat | null>(null)
   const [focus, setFocus] = useState<{ lng: number; lat: number } | null>(null)
   const [seenMeters, setSeenMeters] = useState<Set<string>>(() => loadSeenMeters())
   const [signInGate, setSignInGate] = useState(false)
@@ -295,6 +297,7 @@ function MapApp() {
             selectedId={selectedId}
             onSelect={selectMeter}
             onViewportChange={onViewportChange}
+            onUserLocation={setUserLoc}
             focus={focus}
           />
         )}
@@ -391,6 +394,7 @@ function MapApp() {
             onClose={closeMeterDetail}
             onSelectNearby={selectMeter}
             onDrag={setSheetDragY}
+            userLoc={userLoc}
           />
         </div>
       )}
