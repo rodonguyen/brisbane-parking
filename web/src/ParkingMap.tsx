@@ -82,8 +82,12 @@ export function ParkingMap({
   const onSelectRef = useRef(onSelect)
   const readyRef = useRef(false)
 
+  // Pins can arrive before the map's load event; keep the latest so load can seed them.
+  const pinsRef = useRef({ meters, selectedId })
+
   onViewportChangeRef.current = onViewportChange
   onSelectRef.current = onSelect
+  pinsRef.current = { meters, selectedId }
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
@@ -106,7 +110,7 @@ export function ParkingMap({
     map.on('load', () => {
       map.addSource(SOURCE_ID, {
         type: 'geojson',
-        data: pinsToGeoJson([], null),
+        data: pinsToGeoJson(pinsRef.current.meters, pinsRef.current.selectedId),
       })
 
       // Soft white halo so pins lift off the street grid

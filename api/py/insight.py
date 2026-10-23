@@ -180,10 +180,15 @@ class InsightEngine:
         params.append(limit)
 
         meters = []
+        # Meters share zones (945 meters, 617 zones): resolve each zone once.
+        zone_occ: dict[str, tuple[float | None, str]] = {}
         for row in self.conn.execute(sql, params):
-            occ, method = resolve_occupancy(
-                self.conn, row["mobile_zone"], date_str, next_hour, day_cls, season_s
-            )
+            zone = row["mobile_zone"]
+            if zone not in zone_occ:
+                zone_occ[zone] = resolve_occupancy(
+                    self.conn, zone, date_str, next_hour, day_cls, season_s
+                )
+            occ, method = zone_occ[zone]
             pin = {
                 "meter_no": row["meter_no"],
                 "street": row["street"],

@@ -5,7 +5,7 @@ import {
   useAuth,
 } from '@clerk/react'
 import { CircleNotchIcon } from '@phosphor-icons/react'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
   fetchMeta,
   fetchMeterInsight,
@@ -38,8 +38,15 @@ import {
 import { shouldShowMapError } from './appStatus'
 import { useSupporter } from './useSupporter'
 
-/** Below this zoom the viewport covers too much city — skip loading pins. */
-const MIN_LOAD_ZOOM = 12.8
+/** Covers every BCC meter (945 pins), so one fetch serves all pans and zooms. */
+// ponytail: whole city in one request; switch back to viewport fetches if meters exceed the API limit (1000).
+const CITY_BBOX: BBox = { west: 152.98, south: -27.52, east: 153.07, north: -27.42 }
+/** Forecasts change hourly; refresh often enough to catch the hour rollover. */
+const REFRESH_MS = 5 * 60 * 1000
+
+function inBBox(m: MapPin, b: BBox): boolean {
+  return m.longitude >= b.west && m.longitude <= b.east && m.latitude >= b.south && m.latitude <= b.north
+}
 
 export default function App() {
   const [route, setRoute] = useState<AppRoute>(() => getRoute())
@@ -73,7 +80,7 @@ function MapApp() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [insight, setInsight] = useState<MeterInsight | null>(null)
   const [insightLoading, setInsightLoading] = useState(false)
-  const [zoomTooWide, setZoomTooWide] = useState(false)
+  const [viewBBox, setViewBBox] = useState<BBox | null>(null)
   const [focus, setFocus] = useState<{ lng: number; lat: number } | null>(null)
   const [seenMeters, setSeenMeters] = useState<Set<string>>(() => loadSeenMeters())
   const [signInGate, setSignInGate] = useState(false)
@@ -82,10 +89,6 @@ function MapApp() {
   const [attributionOpen, setAttributionOpen] = useState(false)
   const [sheetDragY, setSheetDragY] = useState(0)
   const { isSupporter, refresh: refreshSupporter } = useSupporter()
-
-  const fetchSeq = useRef(0)
-  const lastBBox = useRef<BBox | null>(null)
-  const lastZoom = useRef(14)
 
   useEffect(() => {
     let cancelled = false
@@ -108,31 +111,31 @@ function MapApp() {
     }
   }, [])
 
-  const loadViewport = useCallback(async (bbox: BBox, zoom: number) => {
-    lastZoom.current = zoom
-    if (zoom < MIN_LOAD_ZOOM) {
-      setZoomTooWide(true)
-      setMapData(null)
-      return
+  useEffect(() => {
+    let cancelled = false
+    const load = async () => {
+      setPinsLoading(true)
+      try {
+        const data = await fetchMetersInView(CITY_BBOX, 'ALL', 1000)
+        if (!cancelled) {
+          setMapData(data)
+          setError(null)
+        }
+      } catch (e) {
+        if (!cancelled) setError(e instanceof Error ? e.message : 'Failed to load meters')
+      } finally {
+        if (!cancelled) setPinsLoading(false)
+      }
     }
-    setZoomTooWide(false)
-    lastBBox.current = bbox
-    const seq = ++fetchSeq.current
-    setPinsLoading(true)
-    try {
-      const data = await fetchMetersInView(bbox, 'ALL', 1000)
-      if (seq === fetchSeq.current) {
-        setMapData(data)
-        setError(null)
-      }
-    } catch (e) {
-      if (seq === fetchSeq.current) {
-        setError(e instanceof Error ? e.message : 'Failed to load meters')
-      }
-    } finally {
-      if (seq === fetchSeq.current) setPinsLoading(false)
+    void load()
+    const timer = setInterval(load, REFRESH_MS)
+    return () => {
+      cancelled = true
+      clearInterval(timer)
     }
   }, [])
+
+  const onViewportChange = useCallback((bbox: BBox) => setViewBBox(bbox), [])
 
   const openMeterInsight = useCallback(async (meterNo: string) => {
     setSelectedId(meterNo)
@@ -187,7 +190,11 @@ function MapApp() {
     void openMeterInsight(meterNo)
   }, [isSignedIn, pendingMeter, openMeterInsight])
 
-  const meters: MapPin[] = mapData?.meters ?? []
+  const meters: MapPin[] = useMemo(() => mapData?.meters ?? [], [mapData])
+  const inViewCount = useMemo(
+    () => (viewBBox ? meters.filter((m) => inBBox(m, viewBBox)).length : meters.length),
+    [meters, viewBBox],
+  )
   const freeLeft = Math.max(0, FREE_DISTINCT_METERS - seenMeters.size)
   const detailOpen = Boolean(insight && selectedId)
   const sheetDragProgress = Math.min(sheetDragY / 280, 1)
@@ -214,8 +221,7 @@ function MapApp() {
               {mapData && (
                 <>
                   {' '}
-                  · {mapData.count}
-                  {mapData.count >= mapData.limit ? '+' : ''} in view
+                  · {inViewCount} in view
                 </>
               )}
             </p>
@@ -288,12 +294,9 @@ function MapApp() {
             meters={meters}
             selectedId={selectedId}
             onSelect={selectMeter}
-            onViewportChange={loadViewport}
+            onViewportChange={onViewportChange}
             focus={focus}
           />
-        )}
-        {zoomTooWide && (
-          <div className="zoom-hint">Zoom in to load parking meters for this area</div>
         )}
         {signInGate && (
           <div className="sign-in-gate" role="dialog" aria-labelledby="sign-in-gate-title">

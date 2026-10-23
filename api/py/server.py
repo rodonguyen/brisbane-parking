@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT_API))
 
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel, Field
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import JSONResponse, Response
@@ -117,6 +118,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.add_middleware(RateLimitMiddleware, max_requests=RATE_LIMIT_PER_MIN)
+# Map payloads are ~300 KB of repetitive JSON; gzip cuts them ~10x on mobile.
+app.add_middleware(GZipMiddleware, minimum_size=1024)
 
 
 @app.get("/api/health")
