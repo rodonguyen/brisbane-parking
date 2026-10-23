@@ -108,6 +108,9 @@ export function ParkingMap({
     }
 
     map.on('load', () => {
+      // 3D buildings hide pins and cost GPU on phones; keep the flat footprints.
+      if (map.getLayer('building-3d')) map.setLayoutProperty('building-3d', 'visibility', 'none')
+
       map.addSource(SOURCE_ID, {
         type: 'geojson',
         data: pinsToGeoJson(pinsRef.current.meters, pinsRef.current.selectedId),
