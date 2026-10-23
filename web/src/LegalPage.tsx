@@ -201,8 +201,8 @@ function PrivacyBody() {
           such as IP address, user agent, and time of request in ordinary web logs.
         </li>
         <li>
-          <strong>Basemap tiles.</strong> Street map imagery is loaded from CARTO
-          basemap servers. Those providers may process technical data (such as IP address
+          <strong>Basemap tiles.</strong> Street map data is loaded from OpenFreeMap
+          (OpenStreetMap data) servers. Those providers may process technical data (such as IP address
           and tile coordinates) under their own policies.
         </li>
         <li>

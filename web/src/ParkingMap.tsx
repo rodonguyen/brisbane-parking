@@ -21,12 +21,8 @@ const HALO_LAYER_ID = 'meters-halo'
 const LAYER_ID = 'meters-circles'
 const SELECTED_LAYER_ID = 'meters-selected'
 
-/** CARTO Voyager — full-color streets/parks/water (not Positron light_all greys). */
-const BASEMAP_TILES = [
-  'https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
-  'https://b.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
-  'https://c.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
-]
+/** OpenFreeMap Liberty: free full-colour vector basemap, no API key or usage limits. */
+const BASEMAP_STYLE = 'https://tiles.openfreemap.org/styles/liberty'
 
 function pinsToGeoJson(
   meters: MapPin[],
@@ -94,29 +90,7 @@ export function ParkingMap({
 
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: {
-        version: 8,
-        sources: {
-          basemap: {
-            type: 'raster',
-            tiles: BASEMAP_TILES,
-            tileSize: 256,
-            attribution: '© OpenStreetMap © CARTO',
-          },
-        },
-        layers: [
-          {
-            id: 'basemap',
-            type: 'raster',
-            source: 'basemap',
-            paint: {
-              'raster-saturation': 0,
-              'raster-contrast': 0,
-              'raster-opacity': 1,
-            },
-          },
-        ],
-      },
+      style: BASEMAP_STYLE,
       center: BRISBANE,
       zoom: 14,
       minZoom: 11,
