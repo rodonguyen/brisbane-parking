@@ -72,11 +72,6 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
     samples: c.sample_count,
   }))
 
-  const heroKicker = isFree
-    ? `Now (${hourLabel(insight.next_hour)})`
-    : isBlocked
-      ? `Now (${hourLabel(insight.next_hour)})`
-      : `Chance of a spot · now (${hourLabel(insight.next_hour)})`
   const heroValue = isFree ? 'Free' : isBlocked ? 'No' : formatPct(chance)
 
   return (
@@ -110,7 +105,6 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
       </div>
 
       <div className="chance-hero" style={{ ['--chance' as string]: color }}>
-        <p className="chance-kicker">{heroKicker}</p>
         <p className="chance-value">{heroValue}</p>
         {freeSpotChance != null ? (
           <p className="chance-label">
@@ -121,14 +115,8 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
         ) : (
           !isFree && <p className="chance-label">{insight.next_hour_label}</p>
         )}
-        {/* For free meters "Free" above already says it; the reason only explains other statuses. */}
-        {!isFree && (
-          <p className="chance-meta">
-            {insight.park_reason
-              ? insight.park_reason
-              : `${insight.day_class}${insight.is_holiday ? ' holiday' : ''} · ${insight.season} · ${insight.lookup_method}`}
-          </p>
-        )}
+        {/* Free and paid hours speak for themselves; the reason only explains "No" (clearway, tow-away…). */}
+        {isBlocked && insight.park_reason && <p className="chance-meta">{insight.park_reason}</p>}
       </div>
 
       <section className="directions" aria-label="Directions">
@@ -177,7 +165,6 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
       {chartData.length > 0 && (
         <section className="chart-block">
           <h3>Free chance by hour</h3>
-          <p className="chart-note">Today’s forecast vs typical {insight.day_class} in {insight.season}</p>
           <div className="chart-wrap">
             <ResponsiveContainer width="100%" height={200}>
               <LineChart data={chartData} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>

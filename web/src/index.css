@@ -453,14 +453,6 @@ select {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent);
 }
 
-.chance-kicker {
-  margin: 0;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted);
-}
-
 .chance-value {
   margin: 0.15rem 0 0;
   font-family: var(--font-display);
@@ -561,10 +553,9 @@ select {
   font-weight: 600;
 }
 
-.chart-note {
-  margin: 0.2rem 0 0.55rem;
-  font-size: 0.8rem;
-  color: var(--muted);
+/* Gap the removed chart subtitle used to provide. */
+.chart-block h3 {
+  margin-bottom: 0.55rem;
 }
 
 .chart-wrap {
