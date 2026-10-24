@@ -415,14 +415,6 @@ select {
   }
 }
 
-.detail-top .eyebrow {
-  margin: 0.4rem 0 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .detail-top h2 {
   margin: 0.25rem 0 0;
   font-family: var(--font-display);

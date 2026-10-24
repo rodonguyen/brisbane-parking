@@ -102,9 +102,6 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
         onPointerDown={onScrollPointerDown}
       >
       <div className="detail-top">
-        <p className="eyebrow">
-          Meter {m.meter_no} · Zone {m.mobile_zone}
-        </p>
         <h2>
           {m.street}
           <span>{m.suburb}</span>
@@ -123,13 +120,16 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
             · {chanceWord(freeSpotChance)}
           </p>
         ) : (
-          <p className="chance-label">{insight.next_hour_label}</p>
+          !isFree && <p className="chance-label">{insight.next_hour_label}</p>
         )}
-        <p className="chance-meta">
-          {insight.park_reason
-            ? insight.park_reason
-            : `${insight.day_class}${insight.is_holiday ? ' holiday' : ''} · ${insight.season} · ${insight.lookup_method}`}
-        </p>
+        {/* For free meters "Free" above already says it; the reason only explains other statuses. */}
+        {!isFree && (
+          <p className="chance-meta">
+            {insight.park_reason
+              ? insight.park_reason
+              : `${insight.day_class}${insight.is_holiday ? ' holiday' : ''} · ${insight.season} · ${insight.lookup_method}`}
+          </p>
+        )}
       </div>
 
       <section className="directions" aria-label="Directions">
@@ -235,7 +235,6 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
       {contextData.length > 0 && (
         <section className="chart-block">
           <h3>Same hour, different days</h3>
-          <p className="chart-note">How {hourLabel(insight.next_hour)} usually compares</p>
           <div className="chart-wrap">
             <ResponsiveContainer width="100%" height={180}>
               <BarChart data={contextData} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
