@@ -178,12 +178,19 @@ export function ParkingMap({
     })
 
     // MapLibre only shrinks the compact attribution to its (i) on drag; also do it on tap/pinch.
-    const onTouch = () => {
+    // That is visual only, so do it on press. Hiding the footer resizes the map, and a resize
+    // mid-gesture cancels the pan, so tell the app only once the gesture (and any fling) ends.
+    const onPress = () => {
       map.getContainer().querySelector('.maplibregl-compact-show')?.classList.remove('maplibregl-compact-show')
-      onInteractRef.current()
     }
-    map.on('touchstart', onTouch)
-    map.on('mousedown', onTouch)
+    const onRelease = () => {
+      if (map.isMoving()) map.once('moveend', () => onInteractRef.current())
+      else onInteractRef.current()
+    }
+    map.on('touchstart', onPress)
+    map.on('mousedown', onPress)
+    map.on('touchend', onRelease)
+    map.on('mouseup', onRelease)
 
     map.on('mouseenter', LAYER_ID, () => {
       map.getCanvas().style.cursor = 'pointer'
