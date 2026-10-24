@@ -1,5 +1,5 @@
 /** Free anonymous looks at distinct meters before Clerk sign-in is required. */
-export const FREE_DISTINCT_METERS = 5
+export const FREE_DISTINCT_METERS = 20
 
 export const SEEN_METERS_KEY = 'bpf_seen_meters'
 

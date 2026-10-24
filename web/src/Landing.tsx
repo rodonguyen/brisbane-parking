@@ -41,7 +41,7 @@ export function Landing({ onEnter }: Props) {
         <p className="landing-brand">Brisbane Parking</p>
         <h1 className="landing-headline">Find a free bay before you circle the block.</h1>
         <p className="landing-support">
-          Next-hour forecasts for paid street meters, checked against hours and clearways.
+          Current-hour forecasts for paid street meters, checked against hours and clearways.
         </p>
         <div className="landing-cta">
           <button type="button" className="landing-enter" onClick={onEnter}>

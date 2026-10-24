@@ -25,11 +25,9 @@ impl InsightEngine {
 
     pub fn brisbane_clock(&self) -> (String, String, i32, String, String, bool) {
         let now = chrono::Utc::now().with_timezone(&Brisbane);
-        let next_hour = ((now.hour() + 1) % 24) as i32;
-        let mut target = now.date_naive();
-        if now.hour() == 23 {
-            target = target.succ_opt().unwrap_or(target);
-        }
+        // Forecast the current hour (field keeps the `next_hour` name; see timectx.py).
+        let next_hour = now.hour() as i32;
+        let target = now.date_naive();
         let date_str = target.format("%Y-%m-%d").to_string();
         let dc = day_class(target).to_string();
         let s = season(target).to_string();

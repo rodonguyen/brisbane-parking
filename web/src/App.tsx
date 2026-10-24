@@ -45,10 +45,6 @@ const CITY_BBOX: BBox = { west: 152.98, south: -27.52, east: 153.07, north: -27.
 /** Forecasts change hourly; refresh often enough to catch the hour rollover. */
 const REFRESH_MS = 5 * 60 * 1000
 
-function inBBox(m: MapPin, b: BBox): boolean {
-  return m.longitude >= b.west && m.longitude <= b.east && m.latitude >= b.south && m.latitude <= b.north
-}
-
 export default function App() {
   const [route, setRoute] = useState<AppRoute>(() => getRoute())
   const [showLanding, setShowLanding] = useState(() => !hasVisitedBefore())
@@ -81,7 +77,6 @@ function MapApp() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [insight, setInsight] = useState<MeterInsight | null>(null)
   const [insightLoading, setInsightLoading] = useState(false)
-  const [viewBBox, setViewBBox] = useState<BBox | null>(null)
   const [userLoc, setUserLoc] = useState<LngLat | null>(null)
   const [focus, setFocus] = useState<{ lng: number; lat: number } | null>(null)
   const [seenMeters, setSeenMeters] = useState<Set<string>>(() => loadSeenMeters())
@@ -137,7 +132,6 @@ function MapApp() {
     }
   }, [])
 
-  const onViewportChange = useCallback((bbox: BBox) => setViewBBox(bbox), [])
 
   const openMeterInsight = useCallback(async (meterNo: string) => {
     setSelectedId(meterNo)
@@ -193,10 +187,6 @@ function MapApp() {
   }, [isSignedIn, pendingMeter, openMeterInsight])
 
   const meters: MapPin[] = useMemo(() => mapData?.meters ?? [], [mapData])
-  const inViewCount = useMemo(
-    () => (viewBBox ? meters.filter((m) => inBBox(m, viewBBox)).length : meters.length),
-    [meters, viewBBox],
-  )
   const freeLeft = Math.max(0, FREE_DISTINCT_METERS - seenMeters.size)
   const detailOpen = Boolean(insight && selectedId)
   const sheetDragProgress = Math.min(sheetDragY / 280, 1)
@@ -217,17 +207,6 @@ function MapApp() {
           <h1>Find a free bay before you circle the block.</h1>
         </div>
         <div className="status-block">
-          {meta && (
-            <p className="next-hour">
-              Next hour · {String(meta.next_hour).padStart(2, '0')}:00
-              {mapData && (
-                <>
-                  {' '}
-                  · {inViewCount} in view
-                </>
-              )}
-            </p>
-          )}
           <div className="auth-controls">
             <SupportIconButton
               onOpen={() => setSupportOpen(true)}
@@ -296,7 +275,6 @@ function MapApp() {
             meters={meters}
             selectedId={selectedId}
             onSelect={selectMeter}
-            onViewportChange={onViewportChange}
             onUserLocation={setUserLoc}
             focus={focus}
           />

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import * as maplibregl from 'maplibre-gl'
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
-import type { BBox, MapPin } from './api'
+import type { MapPin } from './api'
 import { chanceColor } from './api'
 import type { LngLat } from './directions'
 
@@ -12,7 +12,6 @@ type Props = {
   meters: MapPin[]
   selectedId: string | null
   onSelect: (meterNo: string) => void
-  onViewportChange: (bbox: BBox, zoom: number) => void
   onUserLocation: (loc: LngLat) => void
   focus?: { lng: number; lat: number } | null
 }
@@ -61,27 +60,15 @@ function pinsToGeoJson(
   }
 }
 
-function readBBox(map: maplibregl.Map): BBox {
-  const b = map.getBounds()
-  return {
-    west: b.getWest(),
-    south: b.getSouth(),
-    east: b.getEast(),
-    north: b.getNorth(),
-  }
-}
-
 export function ParkingMap({
   meters,
   selectedId,
   onSelect,
-  onViewportChange,
   onUserLocation,
   focus,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
-  const onViewportChangeRef = useRef(onViewportChange)
   const onSelectRef = useRef(onSelect)
   const onUserLocationRef = useRef(onUserLocation)
   const readyRef = useRef(false)
@@ -89,7 +76,6 @@ export function ParkingMap({
   // Pins can arrive before the map's load event; keep the latest so load can seed them.
   const pinsRef = useRef({ meters, selectedId })
 
-  onViewportChangeRef.current = onViewportChange
   onSelectRef.current = onSelect
   onUserLocationRef.current = onUserLocation
   pinsRef.current = { meters, selectedId }
@@ -117,10 +103,6 @@ export function ParkingMap({
     geolocate.on('geolocate', (pos) => {
       onUserLocationRef.current({ lat: pos.coords.latitude, lng: pos.coords.longitude })
     })
-
-    const emitViewport = () => {
-      onViewportChangeRef.current(readBBox(map), map.getZoom())
-    }
 
     map.on('load', () => {
       // 3D buildings hide pins and cost GPU on phones; keep the flat footprints.
@@ -181,7 +163,6 @@ export function ParkingMap({
       })
 
       readyRef.current = true
-      emitViewport()
 
       navigator.permissions
         ?.query({ name: 'geolocation' })
@@ -190,13 +171,6 @@ export function ParkingMap({
         })
         .catch(() => {})
     })
-
-    let moveTimer: ReturnType<typeof setTimeout> | null = null
-    const onMoveEnd = () => {
-      if (moveTimer) clearTimeout(moveTimer)
-      moveTimer = setTimeout(emitViewport, 220)
-    }
-    map.on('moveend', onMoveEnd)
 
     map.on('mouseenter', LAYER_ID, () => {
       map.getCanvas().style.cursor = 'pointer'
@@ -213,7 +187,6 @@ export function ParkingMap({
     mapRef.current = map
 
     return () => {
-      if (moveTimer) clearTimeout(moveTimer)
       readyRef.current = false
       map.remove()
       mapRef.current = null

@@ -8,26 +8,32 @@ import {
   withRecordedMeter,
 } from './trial.ts'
 
+/** Meter ids '1'..'n'. */
+const meterIds = (n: number) => new Set(Array.from({ length: n }, (_, i) => String(i + 1)))
+
 describe('meter trial gate', () => {
+  it('gives signed-out users 20 free meters', () => {
+    assert.equal(FREE_DISTINCT_METERS, 20)
+  })
+
   it('allows signed-in users regardless of seen count', () => {
-    const seen = new Set(['1', '2', '3', '4', '5'])
-    assert.equal(canOpenMeter('6', seen, true), true)
+    const seen = meterIds(FREE_DISTINCT_METERS)
+    assert.equal(canOpenMeter('new', seen, true), true)
   })
 
   it('allows a meter already seen without burning a new look', () => {
-    const seen = new Set(['1', '2', '3', '4', '5'])
+    const seen = meterIds(FREE_DISTINCT_METERS)
     assert.equal(canOpenMeter('3', seen, false), true)
   })
 
   it('allows new meters until the free distinct limit', () => {
-    const seen = new Set(['1', '2', '3', '4'])
-    assert.equal(seen.size, FREE_DISTINCT_METERS - 1)
-    assert.equal(canOpenMeter('5', seen, false), true)
+    const seen = meterIds(FREE_DISTINCT_METERS - 1)
+    assert.equal(canOpenMeter('new', seen, false), true)
   })
 
-  it('blocks a new meter once five distinct meters were opened', () => {
-    const seen = new Set(['1', '2', '3', '4', '5'])
-    assert.equal(canOpenMeter('6', seen, false), false)
+  it('blocks a new meter once the free limit of distinct meters is reached', () => {
+    const seen = meterIds(FREE_DISTINCT_METERS)
+    assert.equal(canOpenMeter('new', seen, false), false)
   })
 
   it('records only distinct meter ids', () => {

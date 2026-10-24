@@ -60,7 +60,7 @@ function TermsBody() {
       <h2>What the App provides</h2>
       <p>
         The App shows map pins and estimates for paid street parking meters in Brisbane,
-        including a next-hour “chance free” figure derived from historical occupancy
+        including a current-hour “chance free” figure derived from historical occupancy
         forecasts and related open data. It is a planning aid only. It is not live bay
         sensing, not enforcement advice, and not a guarantee that a bay will be free or
         that parking is lawful at a given time or place.

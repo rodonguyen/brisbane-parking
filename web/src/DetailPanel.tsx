@@ -70,10 +70,10 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
   }))
 
   const heroKicker = isFree
-    ? `Next hour (${hourLabel(insight.next_hour)})`
+    ? `Now (${hourLabel(insight.next_hour)})`
     : isBlocked
-      ? `Next hour (${hourLabel(insight.next_hour)})`
-      : `Chance of a spot · next hour (${hourLabel(insight.next_hour)})`
+      ? `Now (${hourLabel(insight.next_hour)})`
+      : `Chance of a spot · now (${hourLabel(insight.next_hour)})`
   const heroValue = isFree ? 'Free' : isBlocked ? 'No' : formatPct(chance)
 
   return (

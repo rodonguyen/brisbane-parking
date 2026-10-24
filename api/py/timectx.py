@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
 BRISBANE = ZoneInfo("Australia/Brisbane")
@@ -57,14 +57,13 @@ def season(d: date) -> str:
 
 def brisbane_clock() -> tuple[str, str, int, str, str, bool]:
     now = datetime.now(BRISBANE)
-    next_hour = (now.hour + 1) % 24
+    # Forecast the current hour. ponytail: still returned/serialised as `next_hour`
+    # to avoid an API field rename; rename across py/rs/web if the name confuses.
     target = now.date()
-    if now.hour == 23:
-        target = target + timedelta(days=1)
     return (
         now.strftime("%Y-%m-%d %H:%M AEST"),
         target.isoformat(),
-        next_hour,
+        now.hour,
         day_class(target),
         season(target),
         is_qld_holiday(target),

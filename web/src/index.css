@@ -101,12 +101,6 @@ select {
   justify-items: end;
 }
 
-.next-hour {
-  margin: 0;
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
 .auth-controls {
   display: flex;
   align-items: center;
@@ -991,12 +985,6 @@ select {
     white-space: nowrap;
   }
 
-  .next-hour {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    font-size: 0.8rem;
-    text-align: left;
-  }
 
   .legend {
     display: flex;

@@ -1,6 +1,6 @@
 # Brisbane Parking Finder
 
-Map of Brisbane City Council paid parking meters with next-hour free-bay chance and a few high-signal historical charts.
+Map of Brisbane City Council paid parking meters with current-hour free-bay chance and a few high-signal historical charts.
 
 ## Layout
 
@@ -84,7 +84,7 @@ cargo run
 
 The map only requests meters inside the visible bounds (debounced on pan/zoom). Zoom out past ~12.8 and pins unload until you zoom back in.
 
-Next-hour lookup order: exact forecast → same zone/hour/day-class/season average → zone-hour average.
+Current-hour lookup order: exact forecast → same zone/hour/day-class/season average → zone-hour average.
 
 ## Licence & attribution
 
