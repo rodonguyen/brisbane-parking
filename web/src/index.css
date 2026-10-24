@@ -663,10 +663,29 @@ select {
   cursor: pointer;
 }
 
+/* Invisible 44px touch target around the 24px dot (Apple's minimum tap size). */
+.footer-toggle::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+}
+
 /* With the footer gone the map reaches the screen edge; keep (i) clear of the home bar. */
 .app--footer-collapsed .maplibregl-ctrl-bottom-right {
   padding-bottom: env(safe-area-inset-bottom);
   padding-right: env(safe-area-inset-right);
+}
+
+/* Phones: Safari's bottom toolbar and the home-bar swipe zone swallow taps at the very
+   bottom edge, so lift both corner controls above it. */
+@media (pointer: coarse) {
+  .footer-toggle {
+    bottom: calc(28px + env(safe-area-inset-bottom));
+  }
+
+  .app--footer-collapsed .maplibregl-ctrl-bottom-right {
+    padding-bottom: calc(18px + env(safe-area-inset-bottom));
+  }
 }
 
 .footer-line {
