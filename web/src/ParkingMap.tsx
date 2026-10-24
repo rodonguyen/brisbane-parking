@@ -13,6 +13,8 @@ type Props = {
   selectedId: string | null
   onSelect: (meterNo: string) => void
   onUserLocation: (loc: LngLat) => void
+  /** Any touch or click on the map; the app tucks chrome away. */
+  onInteract: () => void
   focus?: { lng: number; lat: number } | null
 }
 
@@ -65,12 +67,14 @@ export function ParkingMap({
   selectedId,
   onSelect,
   onUserLocation,
+  onInteract,
   focus,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
   const onSelectRef = useRef(onSelect)
   const onUserLocationRef = useRef(onUserLocation)
+  const onInteractRef = useRef(onInteract)
   const readyRef = useRef(false)
 
   // Pins can arrive before the map's load event; keep the latest so load can seed them.
@@ -78,6 +82,7 @@ export function ParkingMap({
 
   onSelectRef.current = onSelect
   onUserLocationRef.current = onUserLocation
+  onInteractRef.current = onInteract
   pinsRef.current = { meters, selectedId }
 
   useEffect(() => {
@@ -171,6 +176,14 @@ export function ParkingMap({
         })
         .catch(() => {})
     })
+
+    // MapLibre only shrinks the compact attribution to its (i) on drag; also do it on tap/pinch.
+    const onTouch = () => {
+      map.getContainer().querySelector('.maplibregl-compact-show')?.classList.remove('maplibregl-compact-show')
+      onInteractRef.current()
+    }
+    map.on('touchstart', onTouch)
+    map.on('mousedown', onTouch)
 
     map.on('mouseenter', LAYER_ID, () => {
       map.getCanvas().style.cursor = 'pointer'

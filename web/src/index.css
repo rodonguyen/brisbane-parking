@@ -640,6 +640,35 @@ select {
   background: rgba(247, 242, 232, 0.85);
 }
 
+.footer[hidden] {
+  display: none;
+}
+
+/* Brings the footer back after a map touch hid it; mirrors the (i) control on the other corner. */
+.footer-toggle {
+  position: absolute;
+  left: max(10px, env(safe-area-inset-left));
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* With the footer gone the map reaches the screen edge; keep (i) clear of the home bar. */
+.app--footer-collapsed .maplibregl-ctrl-bottom-right {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-right: env(safe-area-inset-right);
+}
+
 .footer-line {
   margin: 0;
   line-height: 1.45;

@@ -4,7 +4,7 @@ import {
   SignUpButton,
   useAuth,
 } from '@clerk/react'
-import { CircleNotchIcon } from '@phosphor-icons/react'
+import { CaretUpIcon, CircleNotchIcon } from '@phosphor-icons/react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
   fetchMeta,
@@ -78,6 +78,7 @@ function MapApp() {
   const [insight, setInsight] = useState<MeterInsight | null>(null)
   const [insightLoading, setInsightLoading] = useState(false)
   const [userLoc, setUserLoc] = useState<LngLat | null>(null)
+  const [footerCollapsed, setFooterCollapsed] = useState(false)
   const [focus, setFocus] = useState<{ lng: number; lat: number } | null>(null)
   const [seenMeters, setSeenMeters] = useState<Set<string>>(() => loadSeenMeters())
   const [signInGate, setSignInGate] = useState(false)
@@ -147,6 +148,8 @@ function MapApp() {
     }
   }, [])
 
+  const collapseFooter = useCallback(() => setFooterCollapsed(true), [])
+
   const closeMeterDetail = useCallback(() => {
     setSelectedId(null)
     setInsight(null)
@@ -197,7 +200,7 @@ function MapApp() {
 
   return (
     <div
-      className={`app${detailOpen ? ' app--detail-open' : ''}${sheetDragY > 0 ? ' app--detail-dragging' : ''}`}
+      className={`app${detailOpen ? ' app--detail-open' : ''}${footerCollapsed ? ' app--footer-collapsed' : ''}${sheetDragY > 0 ? ' app--detail-dragging' : ''}`}
       style={{ '--sheet-drag-progress': sheetDragProgress } as React.CSSProperties}
     >
       <div className="app-shell">
@@ -276,6 +279,7 @@ function MapApp() {
             selectedId={selectedId}
             onSelect={selectMeter}
             onUserLocation={setUserLoc}
+            onInteract={collapseFooter}
             focus={focus}
           />
         )}
@@ -312,9 +316,23 @@ function MapApp() {
             </div>
           </div>
         )}
+        {footerCollapsed && !detailOpen && (
+          <button
+            type="button"
+            className="footer-toggle"
+            onClick={() => setFooterCollapsed(false)}
+            aria-label="Show footer links"
+            title="Terms, privacy, open data"
+          >
+            <CaretUpIcon size={14} weight="bold" aria-hidden="true" />
+          </button>
+        )}
       </main>
 
-      <footer className={`footer${detailOpen ? ' footer--detail-open' : ''}`}>
+      <footer
+        className={`footer${detailOpen ? ' footer--detail-open' : ''}`}
+        hidden={footerCollapsed}
+      >
         <p className="footer-line">
           {supportEnabled && (
             <>
