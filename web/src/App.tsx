@@ -25,7 +25,7 @@ import { getRoute, subscribe, type AppRoute } from './route'
 import { SpaLink } from './SpaLink'
 import { SUPPORT_FOOTER_SUFFIX, SUPPORT_LABEL } from './support'
 import { supportEnabled } from './supportConfig'
-import { SupportFooterButton, SupportIconButton } from './SupportButtons'
+import { SupportIconButton } from './SupportButtons'
 import { SupporterUserButton } from './SupporterUserButton'
 import { SupportDialog } from './SupportDialog'
 import {
@@ -315,7 +315,7 @@ function MapApp() {
       </main>
 
       <footer className={`footer${detailOpen ? ' footer--detail-open' : ''}`}>
-        <p className="footer-mobile">
+        <p className="footer-line">
           {supportEnabled && (
             <>
               <button
@@ -341,19 +341,6 @@ function MapApp() {
             Open data
           </button>
         </p>
-        <span className="footer-desktop">
-          Forecast occupancy from Brisbane City Council open data (CC BY 4.0). Not live
-          sensors.
-          {meta ? ` · ${meta.meter_count} meters total` : ''}
-        </span>
-        <span className="footer-desktop">
-          <SupportFooterButton onOpen={() => setSupportOpen(true)} />
-        </span>
-        <span className="footer-links footer-desktop">
-          <SpaLink to="terms">Terms</SpaLink>
-          <span aria-hidden="true"> · </span>
-          <SpaLink to="privacy">Privacy</SpaLink>
-        </span>
       </footer>
       </div>
 

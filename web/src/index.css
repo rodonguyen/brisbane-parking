@@ -15,6 +15,9 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  /* iOS Safari enlarges plain text in landscape but not buttons, so footer text and links mismatched. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 * {
@@ -637,8 +640,7 @@ select {
   background: rgba(247, 242, 232, 0.85);
 }
 
-.footer-mobile {
-  display: none;
+.footer-line {
   margin: 0;
   line-height: 1.45;
 }
@@ -670,32 +672,6 @@ select {
 .footer a:hover,
 .landing-note a:hover,
 .legal a:hover {
-  color: var(--ink);
-}
-
-.footer-links {
-  white-space: nowrap;
-}
-
-/* Wraps as one unit so the offer never splits across footer lines. */
-.footer-support {
-  white-space: nowrap;
-}
-
-/* A button because it opens the checkout dialog, styled as the link it reads as. */
-.footer-support__link {
-  appearance: none;
-  padding: 0;
-  border: none;
-  background: none;
-  font: inherit;
-  color: var(--river);
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
-  cursor: pointer;
-}
-
-.footer-support__link:hover {
   color: var(--ink);
 }
 
@@ -1027,14 +1003,6 @@ select {
   .footer {
     padding: 0.4rem max(1rem, env(safe-area-inset-right))
       max(0.4rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
-  }
-
-  .footer-mobile {
-    display: block;
-  }
-
-  .footer-desktop {
-    display: none;
   }
 
   .footer.footer--detail-open {

@@ -1,6 +1,5 @@
 import { CoffeeIcon } from '@phosphor-icons/react'
 import {
-  SUPPORT_FOOTER_SUFFIX,
   SUPPORT_LABEL,
   SUPPORT_PROMISE,
   SUPPORTER_LABEL,
@@ -30,18 +29,5 @@ export function SupportIconButton({ onOpen, isSupporter }: IconProps) {
     >
       <CoffeeIcon size={17} weight={isSupporter ? 'fill' : 'regular'} aria-hidden="true" />
     </button>
-  )
-}
-
-/** Footer entry point: carries the wording the topbar icon can only imply. */
-export function SupportFooterButton({ onOpen }: Props) {
-  if (!supportEnabled) return null
-  return (
-    <span className="footer-support">
-      <button type="button" className="footer-support__link" onClick={onOpen}>
-        {SUPPORT_LABEL}
-      </button>{' '}
-      {SUPPORT_FOOTER_SUFFIX}
-    </span>
   )
 }
