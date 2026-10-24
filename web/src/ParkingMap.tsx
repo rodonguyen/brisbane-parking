@@ -126,7 +126,8 @@ export function ParkingMap({
         paint: {
           'circle-radius': ['interpolate', ['linear'], ['zoom'], 12, 8, 15, 12, 18, 16],
           'circle-color': '#ffffff',
-          'circle-opacity': 0.72,
+          // The soft halo only helps pins stand off the street map up close; zoomed out it fattens the blob.
+          'circle-opacity': ['interpolate', ['linear'], ['zoom'], 13, 0, 14.5, 0.72],
           'circle-blur': 0.35,
         },
       })
@@ -135,21 +136,39 @@ export function ParkingMap({
         id: LAYER_ID,
         type: 'circle',
         source: SOURCE_ID,
+        layout: {
+          // Draw paid pins above free ones so the red/orange/teal signal isn't buried in green.
+          'circle-sort-key': ['case', ['==', ['get', 'free'], 1], 0, ['==', ['get', 'parkable'], 0], 1, 2],
+        },
         paint: {
+          // Zoomed out: small dots with a thin light rim so overlapping pins read as a texture,
+          // not a black-outlined blob. Zoomed in: today's bold pins.
           'circle-radius': [
             'interpolate',
             ['linear'],
             ['zoom'],
+            10,
+            2,
             12,
-            ['case', ['==', ['get', 'parkable'], 0], 5, 6],
+            ['case', ['==', ['get', 'parkable'], 0], 3, 3.5],
+            14,
+            ['case', ['==', ['get', 'parkable'], 0], 5.5, 7],
             15,
             ['case', ['==', ['get', 'parkable'], 0], 7, 9],
             18,
             ['case', ['==', ['get', 'parkable'], 0], 10, 13],
           ],
           'circle-color': ['get', 'color'],
-          'circle-stroke-width': 2,
-          'circle-stroke-color': '#1c1914',
+          'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 11, 0.6, 13, 1, 15, 2],
+          'circle-stroke-color': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            12.5,
+            'rgba(255, 255, 255, 0.85)',
+            14.5,
+            '#1c1914',
+          ],
           'circle-opacity': ['case', ['==', ['get', 'parkable'], 0], 0.45, 1],
         },
       })
