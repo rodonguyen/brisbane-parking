@@ -12,7 +12,7 @@ import {
 } from 'recharts'
 import type { MeterInsight } from './api'
 import { chanceColor, formatPct } from './api'
-import { chanceFromOccupancy, chanceWord } from './chance'
+import { chanceFromOccupancy } from './chance'
 import type { LngLat } from './directions'
 import { directionsUrls, distanceMeters, formatDistance } from './directions'
 import { useMobileViewport, useSheetDrag } from './useSheetDrag'
@@ -115,9 +115,8 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
         {freeSpotChance != null ? (
           <p className="chance-label">
             <span className="chance-spot" style={{ color: chanceColor(freeSpotChance) }}>
-              {formatPct(freeSpotChance)} chance of a spot
-            </span>{' '}
-            · {chanceWord(freeSpotChance)}
+              {formatPct(freeSpotChance)} available
+            </span>
           </p>
         ) : (
           !isFree && <p className="chance-label">{insight.next_hour_label}</p>

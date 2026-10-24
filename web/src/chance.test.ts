@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { chanceFromOccupancy, chanceWord } from './chance.ts'
+import { chanceFromOccupancy } from './chance.ts'
 
 describe('free-meter spot chance', () => {
   it('matches the server formula and clamps to 0..1', () => {
@@ -13,11 +13,5 @@ describe('free-meter spot chance', () => {
   it('is unknown without an occupancy forecast', () => {
     assert.equal(chanceFromOccupancy(null), null)
     assert.equal(chanceFromOccupancy(undefined), null)
-  })
-
-  it('uses the same thresholds as the server labels', () => {
-    assert.equal(chanceWord(0.6), 'Likely')
-    assert.equal(chanceWord(0.35), 'Mixed')
-    assert.equal(chanceWord(0.31), 'Unlikely')
   })
 })
