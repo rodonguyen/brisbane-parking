@@ -12,6 +12,7 @@ import {
 } from 'recharts'
 import type { MeterInsight } from './api'
 import { chanceColor, formatPct } from './api'
+import { chanceFromOccupancy, chanceWord } from './chance'
 import type { LngLat } from './directions'
 import { directionsUrls, distanceMeters, formatDistance } from './directions'
 import { useMobileViewport, useSheetDrag } from './useSheetDrag'
@@ -46,6 +47,8 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
   const isBlocked = parkStatus === 'restricted' || insight.parkable === false
   const chance = insight.next_hour_chance_free
   const color = chanceColor(chance, insight.parkable !== false, parkStatus)
+  // Free meters cost nothing but can still be full; the API omits their chance, so derive it.
+  const freeSpotChance = isFree ? chanceFromOccupancy(insight.next_hour_occupancy) : null
   const dest = { lat: m.latitude, lng: m.longitude }
   const directions = directionsUrls(dest, userLoc)
 
@@ -112,7 +115,16 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
       <div className="chance-hero" style={{ ['--chance' as string]: color }}>
         <p className="chance-kicker">{heroKicker}</p>
         <p className="chance-value">{heroValue}</p>
-        <p className="chance-label">{insight.next_hour_label}</p>
+        {freeSpotChance != null ? (
+          <p className="chance-label">
+            <span className="chance-spot" style={{ color: chanceColor(freeSpotChance) }}>
+              {formatPct(freeSpotChance)} chance of a spot
+            </span>{' '}
+            · {chanceWord(freeSpotChance)}
+          </p>
+        ) : (
+          <p className="chance-label">{insight.next_hour_label}</p>
+        )}
         <p className="chance-meta">
           {insight.park_reason
             ? insight.park_reason
