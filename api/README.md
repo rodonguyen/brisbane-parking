@@ -9,7 +9,7 @@ python -m py.ingest    # once, after CSVs are in ../data/
 python -m py.server    # http://127.0.0.1:8080
 ```
 
-Routes: `/api/health`, `/api/meta`, `/api/meters`, `/api/meters/{meter_no}`, plus the
+Routes: `/api/health`, `/api/meta`, `/api/meters`, `/api/meters/{meter_no}`, `/api/carparks`, plus the
 optional supporter routes `POST /api/support/session`, `GET /api/support/status`,
 `POST /api/support/webhook`.
 

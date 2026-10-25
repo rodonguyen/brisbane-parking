@@ -85,6 +85,7 @@ Root `npm run ingest` / `dev:api` / `dev:web` also work.
 - `GET /api/meta` — clock, suburbs, meter count
 - `GET /api/meters?west=&south=&east=&north=&suburb=&limit=` — map pins (bbox required; max span ~0.5°)
 - `GET /api/meters/{meter_no}` — chance, series, context, nearby
+- `GET /api/carparks[?west=&south=&east=&north=]` — off-street car parks (from `data/carparks/carparks.json`) with hours, height and grouped prices; no bbox returns all
 - `POST /api/support/session` — Stripe embedded Checkout secret ($5 coffee); 503 unless `STRIPE_SECRET_KEY` is set
 - `GET /api/support/status` — `{supporter}` for the verified Clerk caller
 - `POST /api/support/webhook` — Stripe signed events; rate-limit exempt
