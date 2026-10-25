@@ -113,6 +113,30 @@ export type MeterInsight = {
   nearby: NearbyMeter[]
 }
 
+export type CarparkRateRow = {
+  label: string | null
+  price: string | null
+  online_price: string | null
+  when: string | null
+}
+
+export type Carpark = {
+  id: string
+  name: string
+  address: string | null
+  operator: string | null
+  lat: number
+  lng: number
+  hours: string | null
+  height_m: number | null
+  url: string | null
+  priced: boolean
+  rates: Array<{ title: string; rows: CarparkRateRow[] }>
+}
+
+/** River blue: off-street car parks, kept apart from the meter chance colours. */
+export const CARPARK_PIN_COLOR = '#1f5c8a'
+
 /** Muted teal — high free-bay chance during paid hours. */
 export const LIKELY_PIN_COLOR = '#2f7d6d'
 /** Bright green — off-meter / free street parking (not a chance %). */
@@ -167,6 +191,13 @@ export async function fetchMetersInView(
   const res = await fetch(apiUrl(`/api/meters?${params}`))
   if (!res.ok) throw new Error(`Failed to load meters (${res.status})`)
   return res.json()
+}
+
+export async function fetchCarparks(): Promise<Carpark[]> {
+  const res = await fetch(apiUrl('/api/carparks'))
+  if (!res.ok) throw new Error(`Failed to load car parks (${res.status})`)
+  const data = (await res.json()) as { carparks: Carpark[] }
+  return data.carparks
 }
 
 export async function fetchMeterInsight(meterNo: string): Promise<MeterInsight> {

@@ -81,6 +81,7 @@ cargo run
 - `GET /api/meta` — clock, suburb list, meter count
 - `GET /api/meters?west=&south=&east=&north=&suburb=&limit=250` — pins for the visible map viewport (cached 24h per bbox)
 - `GET /api/meters/{meter_no}` — chance, today/typical series, day-class context, nearby better options
+- `GET /api/carparks[?west=&south=&east=&north=]` — off-street car parks (from `data/carparks/carparks.json`) with hours, height and grouped prices; no bbox returns all
 
 The map only requests meters inside the visible bounds (debounced on pan/zoom). Zoom out past ~12.8 and pins unload until you zoom back in.
 

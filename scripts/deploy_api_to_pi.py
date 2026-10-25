@@ -30,6 +30,7 @@ FILES = [
     "api/py/__init__.py",
     "api/py/bbox.py",
     "api/py/cache.py",
+    "api/py/carparks.py",
     "api/py/clerkauth.py",
     "api/py/db.py",
     "api/py/hours.py",
@@ -39,6 +40,7 @@ FILES = [
     "api/py/stripepay.py",
     "api/py/supportdb.py",
     "api/py/timectx.py",
+    "data/carparks/carparks.json",
 ]
 
 UNIT = f"""[Unit]

@@ -7,16 +7,20 @@ import {
 import { CaretUpIcon, CircleNotchIcon } from '@phosphor-icons/react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
+  CARPARK_PIN_COLOR,
+  fetchCarparks,
   fetchMeta,
   fetchMeterInsight,
   fetchMetersInView,
   type BBox,
+  type Carpark,
   type MapPin,
   type MapResponse,
   type MetaResponse,
   type MeterInsight,
 } from './api'
 import { AttributionDialog } from './AttributionDialog'
+import { CarparkPanel } from './CarparkPanel'
 import { DetailPanel } from './DetailPanel'
 import { hasVisitedBefore, Landing, markVisited } from './Landing'
 import { LegalPage } from './LegalPage'
@@ -86,6 +90,10 @@ function MapApp() {
   const [supportOpen, setSupportOpen] = useState(false)
   const [attributionOpen, setAttributionOpen] = useState(false)
   const [sheetDragY, setSheetDragY] = useState(0)
+  const [showCarparks, setShowCarparks] = useState(false)
+  const [carparks, setCarparks] = useState<Carpark[] | null>(null)
+  const [carparksLoading, setCarparksLoading] = useState(false)
+  const [selectedCarpark, setSelectedCarpark] = useState<Carpark | null>(null)
   const { isSupporter, refresh: refreshSupporter } = useSupporter()
 
   useEffect(() => {
@@ -134,7 +142,33 @@ function MapApp() {
   }, [])
 
 
+  // Car parks are opt-in: fetch the (small, static) list the first time they're switched on.
+  useEffect(() => {
+    if (!showCarparks || carparks) return
+    let cancelled = false
+    setCarparksLoading(true)
+    fetchCarparks()
+      .then((data) => {
+        if (!cancelled) setCarparks(data)
+      })
+      .catch((e) => {
+        if (!cancelled) {
+          setError(e instanceof Error ? e.message : 'Failed to load car parks')
+          setShowCarparks(false)
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setCarparksLoading(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [showCarparks, carparks])
+
+  const visibleCarparks = useMemo(() => (showCarparks && carparks ? carparks : []), [showCarparks, carparks])
+
   const openMeterInsight = useCallback(async (meterNo: string) => {
+    setSelectedCarpark(null)
     setSelectedId(meterNo)
     setInsightLoading(true)
     try {
@@ -155,6 +189,28 @@ function MapApp() {
     setInsight(null)
     setFocus(null)
   }, [])
+
+  const selectCarpark = useCallback(
+    (id: string) => {
+      const c = carparks?.find((x) => x.id === id)
+      if (!c) return
+      setSelectedId(null)
+      setInsight(null)
+      setSelectedCarpark(c)
+      setFocus({ lng: c.lng, lat: c.lat })
+    },
+    [carparks],
+  )
+
+  const closeCarpark = useCallback(() => {
+    setSelectedCarpark(null)
+    setFocus(null)
+  }, [])
+
+  const toggleCarparks = useCallback(() => {
+    if (showCarparks) setSelectedCarpark(null)
+    setShowCarparks(!showCarparks)
+  }, [showCarparks])
 
   const selectMeter = useCallback(
     async (meterNo: string) => {
@@ -191,7 +247,8 @@ function MapApp() {
 
   const meters: MapPin[] = useMemo(() => mapData?.meters ?? [], [mapData])
   const freeLeft = Math.max(0, FREE_DISTINCT_METERS - seenMeters.size)
-  const detailOpen = Boolean(insight && selectedId)
+  const meterDetailOpen = Boolean(insight && selectedId)
+  const detailOpen = meterDetailOpen || Boolean(selectedCarpark)
   const sheetDragProgress = Math.min(sheetDragY / 280, 1)
 
   useEffect(() => {
@@ -257,12 +314,20 @@ function MapApp() {
         <span>
           <i style={{ background: '#9a958c' }} /> No parking
         </span>
+        <button
+          type="button"
+          className="legend-toggle"
+          aria-pressed={showCarparks}
+          onClick={toggleCarparks}
+        >
+          <i style={{ background: CARPARK_PIN_COLOR }}>P</i> Car parks
+        </button>
         <span
           className="legend-status"
-          data-loading={pinsLoading}
+          data-loading={pinsLoading || carparksLoading}
           role="status"
-          aria-label={pinsLoading ? 'Updating map view' : undefined}
-          aria-hidden={!pinsLoading}
+          aria-label={pinsLoading || carparksLoading ? 'Updating map view' : undefined}
+          aria-hidden={!(pinsLoading || carparksLoading)}
         >
           <CircleNotchIcon className="legend-spinner" size={14} weight="bold" aria-hidden="true" />
         </span>
@@ -281,6 +346,9 @@ function MapApp() {
             onUserLocation={setUserLoc}
             onInteract={collapseFooter}
             focus={focus}
+            carparks={visibleCarparks}
+            selectedCarparkId={selectedCarpark?.id ?? null}
+            onSelectCarpark={selectCarpark}
           />
         )}
         {signInGate && (
@@ -362,7 +430,26 @@ function MapApp() {
       </footer>
       </div>
 
-      {detailOpen && insight && (
+      {selectedCarpark && !meterDetailOpen && (
+        <div className="detail-layer">
+          <button
+            type="button"
+            className="detail-scrim"
+            aria-label="Close car park details"
+            onClick={closeCarpark}
+            style={{ opacity: 1 - sheetDragProgress * 0.85 }}
+          />
+          <CarparkPanel
+            key={selectedCarpark.id}
+            carpark={selectedCarpark}
+            onClose={closeCarpark}
+            onDrag={setSheetDragY}
+            userLoc={userLoc}
+          />
+        </div>
+      )}
+
+      {meterDetailOpen && insight && (
         <div className="detail-layer">
           <button
             type="button"
