@@ -64,12 +64,12 @@ def _band(r: dict) -> str:
 def _hm(w: str) -> str:
     m = re.fullmatch(r"(\d\d:\d\d)-(\d\d:\d\d)", w)
     if m:
-        return f"{m.group(1)}–{m.group(2)}"
+        return format_times(f"{m.group(1)} – {m.group(2)}")
     if w.startswith("-"):
-        return "before " + w[1:]
+        return "before " + format_times(w[1:])
     if w.endswith("-"):
-        return w[:-1] + " or later"
-    return w
+        return format_times(w[:-1]) + " or later"
+    return format_times(w)
 
 
 def _when(r: dict) -> str | None:
@@ -101,6 +101,12 @@ def rate_groups(rates: list[dict]) -> list[dict]:
             lab = _band(r)
         else:
             lab = tidy
+        if r.get("entry_window") or r.get("exit_window"):
+            # the window line below says it better than "(entry between 6am - 9.30am, ...)"
+            lab = re.sub(r"\s*\((?:entry|enter|exit)[^)]*\)", "", lab, flags=re.I).strip()
+            lab = re.sub(rf"^{re.escape(title)}\s*", "", lab, flags=re.I).strip(" -")
+            if re.fullmatch(rf"{_DAY}(?:\s*(?:-|–|to)\s*{_DAY})?", lab):
+                lab = ""
         when = _when(r) if (r.get("entry_window") or r.get("exit_window") or group != "casual") else None
         low = re.sub(r"^flexible\s+", "", lab.lower())
         if low in (title.lower(), f"{title.lower()} rate", f"{title.lower()} flat rate"):

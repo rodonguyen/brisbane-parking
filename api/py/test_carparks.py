@@ -31,7 +31,7 @@ class RateGroupsTest(unittest.TestCase):
                                days="Mon-Fri", entry="06:30-09:00", exit="12:00-19:00")])
         row = g[0]["rows"][0]
         self.assertIsNone(row["label"])
-        self.assertEqual(row["when"], "Mon-Fri, enter 06:30–09:00, exit 12:00–19:00")
+        self.assertEqual(row["when"], "Mon-Fri, enter 6:30am – 9am, exit 12pm – 7pm")
         self.assertIsNone(row["price"])
         self.assertEqual(row["online_price"], "$20")
 
@@ -42,7 +42,7 @@ class RateGroupsTest(unittest.TestCase):
             _rate("night", "Night Parking - 0- 2 Hours", 0, f=0, t=2),
         ])}
         self.assertEqual(g["Flat rate"][0]["label"], "Overnight & Hotel Parking (24hr, pre-book)")
-        self.assertEqual(g["Casual"][0]["when"], "Mon-Fri, enter 04:00–16:00, exit before 04:00")
+        self.assertEqual(g["Casual"][0]["when"], "Mon-Fri, enter 4am – 4pm, exit before 4am")
         self.assertEqual(g["Night"][0]["label"], "Up to 2 hrs")
 
     def test_lost_ticket_and_unpriced_rows_hidden(self):
