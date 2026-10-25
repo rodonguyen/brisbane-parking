@@ -194,7 +194,7 @@ export function ParkingMap({
             12.5,
             'rgba(255, 255, 255, 0.85)',
             14.5,
-            '#1c1914',
+            '#0f1b2d',
           ],
           'circle-opacity': ['case', ['==', ['get', 'parkable'], 0], 0.45, 1],
         },
@@ -209,7 +209,7 @@ export function ParkingMap({
           'circle-radius': ['interpolate', ['linear'], ['zoom'], 12, 11, 15, 15, 18, 20],
           'circle-color': 'transparent',
           'circle-stroke-width': 3,
-          'circle-stroke-color': '#1c1914',
+          'circle-stroke-color': '#0f1b2d',
         },
       })
 
@@ -253,7 +253,7 @@ export function ParkingMap({
           'circle-radius': ['interpolate', ['linear'], ['zoom'], 12, 11, 15, 15, 18, 19],
           'circle-color': 'transparent',
           'circle-stroke-width': 3,
-          'circle-stroke-color': '#1c1914',
+          'circle-stroke-color': '#0f1b2d',
         },
       })
 
