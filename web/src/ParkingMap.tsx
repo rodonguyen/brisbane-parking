@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 import * as maplibregl from 'maplibre-gl'
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
-import type { MapPin } from './api'
-import { chanceColor } from './api'
+import type { Carpark, MapPin } from './api'
+import { CARPARK_PIN_COLOR, chanceColor } from './api'
 import type { LngLat } from './directions'
 
 // MapLibre v6: bundlers don't resolve the worker from import.meta.url.
@@ -16,6 +16,10 @@ type Props = {
   /** Any touch or click on the map; the app tucks chrome away. */
   onInteract: () => void
   focus?: { lng: number; lat: number } | null
+  /** Off-street car parks; empty hides the layer. */
+  carparks: Carpark[]
+  selectedCarparkId: string | null
+  onSelectCarpark: (id: string) => void
 }
 
 const BRISBANE: [number, number] = [153.0251, -27.4698]
@@ -23,6 +27,10 @@ const SOURCE_ID = 'meters'
 const HALO_LAYER_ID = 'meters-halo'
 const LAYER_ID = 'meters-circles'
 const SELECTED_LAYER_ID = 'meters-selected'
+const CARPARK_SOURCE_ID = 'carparks'
+const CARPARK_LAYER_ID = 'carparks-circles'
+const CARPARK_LABEL_LAYER_ID = 'carparks-label'
+const CARPARK_SELECTED_LAYER_ID = 'carparks-selected'
 
 /** OpenFreeMap Liberty: free full-colour vector basemap, no API key or usage limits. */
 const BASEMAP_STYLE = 'https://tiles.openfreemap.org/styles/liberty'
@@ -62,6 +70,18 @@ function pinsToGeoJson(
   }
 }
 
+function carparksToGeoJson(carparks: Carpark[], selectedId: string | null) {
+  return {
+    type: 'FeatureCollection' as const,
+    features: carparks.map((c) => ({
+      type: 'Feature' as const,
+      id: c.id,
+      properties: { id: c.id, priced: c.priced ? 1 : 0, selected: c.id === selectedId ? 1 : 0 },
+      geometry: { type: 'Point' as const, coordinates: [c.lng, c.lat] as [number, number] },
+    })),
+  }
+}
+
 export function ParkingMap({
   meters,
   selectedId,
@@ -69,12 +89,17 @@ export function ParkingMap({
   onUserLocation,
   onInteract,
   focus,
+  carparks,
+  selectedCarparkId,
+  onSelectCarpark,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
   const onSelectRef = useRef(onSelect)
   const onUserLocationRef = useRef(onUserLocation)
   const onInteractRef = useRef(onInteract)
+  const onSelectCarparkRef = useRef(onSelectCarpark)
+  const carparksRef = useRef({ carparks, selectedCarparkId })
   const readyRef = useRef(false)
 
   // Pins can arrive before the map's load event; keep the latest so load can seed them.
@@ -83,6 +108,8 @@ export function ParkingMap({
   onSelectRef.current = onSelect
   onUserLocationRef.current = onUserLocation
   onInteractRef.current = onInteract
+  onSelectCarparkRef.current = onSelectCarpark
+  carparksRef.current = { carparks, selectedCarparkId }
   pinsRef.current = { meters, selectedId }
 
   useEffect(() => {
@@ -186,6 +213,50 @@ export function ParkingMap({
         },
       })
 
+      // Car parks sit above meters: they're sparse, opt-in, and bigger targets.
+      map.addSource(CARPARK_SOURCE_ID, {
+        type: 'geojson',
+        data: carparksToGeoJson(carparksRef.current.carparks, carparksRef.current.selectedCarparkId),
+      })
+      map.addLayer({
+        id: CARPARK_LAYER_ID,
+        type: 'circle',
+        source: CARPARK_SOURCE_ID,
+        paint: {
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 4, 13, 7, 15, 10, 18, 13],
+          'circle-color': CARPARK_PIN_COLOR,
+          'circle-opacity': ['case', ['==', ['get', 'priced'], 1], 1, 0.55],
+          'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 11, 1, 15, 2],
+          'circle-stroke-color': '#ffffff',
+        },
+      })
+      map.addLayer({
+        id: CARPARK_LABEL_LAYER_ID,
+        type: 'symbol',
+        source: CARPARK_SOURCE_ID,
+        minzoom: 12.5,
+        layout: {
+          'text-field': 'P',
+          'text-font': ['Noto Sans Bold'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 12.5, 9, 15, 12, 18, 15],
+          'text-allow-overlap': true,
+          'text-ignore-placement': true,
+        },
+        paint: { 'text-color': '#ffffff' },
+      })
+      map.addLayer({
+        id: CARPARK_SELECTED_LAYER_ID,
+        type: 'circle',
+        source: CARPARK_SOURCE_ID,
+        filter: ['==', ['get', 'selected'], 1],
+        paint: {
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 12, 11, 15, 15, 18, 19],
+          'circle-color': 'transparent',
+          'circle-stroke-width': 3,
+          'circle-stroke-color': '#1c1914',
+        },
+      })
+
       readyRef.current = true
 
       navigator.permissions
@@ -217,7 +288,21 @@ export function ParkingMap({
     map.on('mouseleave', LAYER_ID, () => {
       map.getCanvas().style.cursor = ''
     })
+    for (const layer of [CARPARK_LAYER_ID, CARPARK_LABEL_LAYER_ID]) {
+      map.on('mouseenter', layer, () => {
+        map.getCanvas().style.cursor = 'pointer'
+      })
+      map.on('mouseleave', layer, () => {
+        map.getCanvas().style.cursor = ''
+      })
+    }
+    map.on('click', CARPARK_LAYER_ID, (e) => {
+      const id = e.features?.[0]?.properties?.id
+      if (typeof id === 'string') onSelectCarparkRef.current(id)
+    })
     map.on('click', LAYER_ID, (e) => {
+      // A car park drawn on top wins the tap; don't also open the meter underneath.
+      if (map.queryRenderedFeatures(e.point, { layers: [CARPARK_LAYER_ID] }).length) return
       const feature = e.features?.[0]
       const id = feature?.properties?.meter_no
       if (typeof id === 'string') onSelectRef.current(id)
@@ -238,6 +323,13 @@ export function ParkingMap({
     const source = map.getSource(SOURCE_ID) as maplibregl.GeoJSONSource | undefined
     source?.setData(pinsToGeoJson(meters, selectedId))
   }, [meters, selectedId])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !readyRef.current) return
+    const source = map.getSource(CARPARK_SOURCE_ID) as maplibregl.GeoJSONSource | undefined
+    source?.setData(carparksToGeoJson(carparks, selectedCarparkId))
+  }, [carparks, selectedCarparkId])
 
   useEffect(() => {
     const map = mapRef.current

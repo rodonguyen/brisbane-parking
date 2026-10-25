@@ -19,6 +19,7 @@ from starlette.responses import JSONResponse, Response
 from py import stripepay, supportdb
 from py.bbox import validate_bbox
 from py.cache import InsightCache
+from py.carparks import Carparks
 from py.clerkauth import ClerkVerifier
 from py.db import connect
 from py.insight import InsightEngine
@@ -94,6 +95,7 @@ if not DB_PATH.exists():
 conn = connect(DB_PATH)
 cache = InsightCache(CACHE_DIR)
 engine = InsightEngine(conn, cache)
+carparks = Carparks()
 
 support_conn = supportdb.connect(SUPPORTERS_DB_PATH)
 supportdb.init_schema(support_conn)
@@ -154,6 +156,22 @@ def list_meters(
         suburb=suburb,
         limit=limit,
     )
+
+
+@app.get("/api/carparks")
+def list_carparks(
+    west: float | None = Query(None),
+    south: float | None = Query(None),
+    east: float | None = Query(None),
+    north: float | None = Query(None),
+):
+    """Off-street car parks. No bbox returns them all (a few hundred, ~100 KB gzipped)."""
+    if all(v is None for v in (west, south, east, north)):
+        items = carparks.items
+    else:
+        w, s, e, n = validate_bbox(west, south, east, north, max_span_deg=1.0)
+        items = carparks.in_bbox(w, s, e, n)
+    return {"count": len(items), "carparks": items}
 
 
 @app.get("/api/meters/{meter_no}")
