@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import unittest
 
-from py.carparks import rate_groups, shape, simplify_hours
+from py.carparks import hours_lines, rate_groups, shape, simplify_hours
 
 
 def _rate(kind, label, price=None, online=None, **kw):
@@ -59,8 +59,25 @@ class HoursTest(unittest.TestCase):
         self.assertEqual(simplify_hours("24/7"), "Open 24/7")
         self.assertEqual(simplify_hours("Mon-Sun: 24 Hours; Public Holidays: 24 Hours"), "Open 24/7")
         self.assertEqual(simplify_hours("Mon-Sun: 07:00 AM - 08:30 PM; Public Holidays: 07:00 AM - 08:30 PM"),
-                         "Daily 07:00 AM - 08:30 PM")
+                         "Daily 7am – 8:30pm")
         self.assertIsNone(simplify_hours(None))
+
+    def test_per_day_hours_grouped_and_short(self):
+        h = ("Mon: 05:00 AM - 12:00 AM; Tue: 05:00 AM - 12:00 AM; Wed: 05:00 AM - 12:00 AM; "
+             "Thu: 05:00 AM - 12:00 AM; Fri: 05:00 AM - 12:00 AM; Sat: 07:00 AM - 12:00 AM; "
+             "Sun: 07:00 AM - 12:00 AM; Public Holidays: Closed")
+        self.assertEqual(hours_lines(h), [
+            {"days": "Mon–Fri", "time": "5am – 12am"},
+            {"days": "Sat–Sun", "time": "7am – 12am"},
+            {"days": "Public holidays", "time": "Closed"},
+        ])
+
+    def test_24h_clock_and_free_text(self):
+        self.assertEqual(hours_lines("Mon-Fri 06:00-22:30; Sat-Sun 09:00-22:00; Monthly subscribers 24 hours"),
+                         [{"days": "Mon–Fri", "time": "6am – 10:30pm"}, {"days": "Sat–Sun", "time": "9am – 10pm"}])
+        self.assertEqual(hours_lines("6:00am – 6:00pm, Monday – Sunday"), [{"days": "Daily", "time": "6am – 6pm"}])
+        self.assertEqual(hours_lines("Monthly Parking Only 24/7 Access"),
+                         [{"days": None, "time": "Monthly Parking Only 24/7 Access"}])
 
 
 class ShapeTest(unittest.TestCase):

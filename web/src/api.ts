@@ -128,6 +128,8 @@ export type Carpark = {
   lat: number
   lng: number
   hours: string | null
+  /** Opening hours split for scanning: bold `days`, plain `time`. `days` null = free text / "Open 24/7". */
+  hours_lines: Array<{ days: string | null; time: string }>
   height_m: number | null
   url: string | null
   priced: boolean

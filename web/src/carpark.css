@@ -1,0 +1,50 @@
+/* Car park sheet extras (loaded with CarparkPanel). */
+.carpark-hours dd {
+  display: grid;
+  gap: 0.15rem;
+  font-weight: 400;
+}
+
+.carpark-hours-line b {
+  font-weight: 700;
+}
+
+.carpark-page-btn {
+  display: block;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--accent-contrast, #ffffff);
+  background: var(--accent, #1f5c8a);
+  border-radius: var(--radius, 10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.carpark-page-btn:hover {
+  filter: brightness(1.08);
+}
+
+.carpark-page-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}
+
+.carpark-page-btn:focus-visible {
+  outline: 3px solid var(--accent, #1f5c8a);
+  outline-offset: 2px;
+}
+
+.carpark-scroll-pad {
+  height: max(40vh, 12rem);
+  flex-shrink: 0;
+}
+
+@media (min-width: 821px) {
+  .carpark-scroll-pad {
+    height: 6rem;
+  }
+}

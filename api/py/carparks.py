@@ -118,16 +118,118 @@ def rate_groups(rates: list[dict]) -> list[dict]:
     return [{"title": t, "rows": by[g]} for g, t in GROUPS if g in by]
 
 
-def simplify_hours(h: str | None) -> str | None:
+DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+_WEEKDAY = r"(?:Mon(?:day)?|Tue(?:s|sday)?|Wed(?:nesday)?|Thu(?:rs|rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?)\b\.?"
+_DAY = rf"(?:{_WEEKDAY}|P\.?H(?:ols|olidays)?\b\.?|Public [Hh]olidays)"
+_DAYS_RE = re.compile(
+    rf"^\s*((?:{_DAY}(?:\s*(?:-|–|to|&|and|,)\s*{_DAY})*)|Daily|Weekdays|Weekends)\s*[:\-–,]?\s+(.+)$"
+)
+
+
+def _clock(hh: int, mm: int, ap: str | None) -> str:
+    if ap:
+        ap = ap.lower()
+        if ap == "pm" and hh != 12:
+            hh += 12
+        if ap == "am" and hh == 12:
+            hh = 0
+    hh %= 24
+    suffix = "am" if hh < 12 else "pm"
+    h12 = hh % 12 or 12
+    return f"{h12}{suffix}" if mm == 0 else f"{h12}:{mm:02d}{suffix}"
+
+
+def format_times(text: str) -> str:
+    """'05:00 AM - 12:00 AM' -> '5am – 12am'; '06:00-22:30' -> '6am – 10:30pm'. Minutes only when not :00."""
+    def rep(m: re.Match) -> str:
+        return _clock(int(m.group(1)), int(m.group(2)), m.group(3))
+    out = re.sub(r"\b(\d{1,2})[:.](\d{2})(?:\s*([AaPp][Mm]))?\b", rep, text)
+    out = re.sub(r"\bMidnight\b", "12am", out, flags=re.I)
+    out = re.sub(r"\bMidday\b", "12pm", out, flags=re.I)
+    out = re.sub(r"(\d(?:am|pm))\s*(?:[-–]|to)\s*(\d)", r"\1 – \2", out)
+    return re.sub(r"\b24 hours\b", "24 hours", out, flags=re.I)
+
+
+def _day_label(d: str) -> str:
+    d = re.sub(r"\s*(?:-|–|to)\s*", "–", d.strip())
+    d = re.sub(r"\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*\.?", r"\1", d)
+    d = re.sub(r"\s*(?:&|and)\s*", " & ", d)
+    d = re.sub(r"\bP\.?H(?:ols|olidays)?\.?|\bPublic [Hh]olidays", "public holidays", d)
+    d = d[0].upper() + d[1:]
+    return d
+
+
+def _group_days(lines: list[dict]) -> list[dict]:
+    """Collapse single-day lines with the same time into ranges (Mon, Tue.. -> Mon–Fri; all 7 -> Daily)."""
+    out: list[dict] = []
+    run: list[tuple[int, str]] = []
+
+    def flush() -> None:
+        if not run:
+            return
+        a, b = run[0][0], run[-1][0]
+        days = "Daily" if (a, b) == (0, 6) else DAY_NAMES[a] if a == b else f"{DAY_NAMES[a]}–{DAY_NAMES[b]}"
+        out.append({"days": days, "time": run[0][1]})
+        run.clear()
+
+    for ln in lines:
+        idx = DAY_NAMES.index(ln["days"]) if ln["days"] in DAY_NAMES else None
+        if idx is not None and run and run[-1][0] == idx - 1 and run[-1][1] == ln["time"]:
+            run.append((idx, ln["time"]))
+            continue
+        flush()
+        if idx is not None:
+            run.append((idx, ln["time"]))
+        else:
+            out.append(ln)
+    flush()
+    return out
+
+
+def hours_lines(h: str | None) -> list[dict]:
+    """Opening hours as [{days, time}] lines: days stay scannable, times are short ('5am – 12am')."""
     if not h:
+        return []
+    h = re.sub(r";\s*Monthly subscribers 24 hours", "", h, flags=re.I).strip()
+    if h.startswith("24/7") or (re.search(r"24 hours", h, re.I) and not re.search(r"\d{1,2}[:.]\d{2}", h)):
+        return [{"days": None, "time": "Open 24/7"}]
+    # free text: start a new line where a new day list follows a time, and before closure notes
+    # "6am - 6pm, Monday to Friday ..." -> days first
+    h = re.sub(rf"^([\d:.\sAaPpMm–-]+?),\s*({_DAY}(?:\s*(?:-|–|to)\s*{_DAY})?)", r"\2 \1", h)
+    h = re.sub(rf"(\d\s*(?:[AaPp][Mm])|\d{{2}}|Midnight|Midday)\s+(?={_DAY})", r"\1; ", h)
+    h = re.sub(r"\s+(?=Car Park Closed)|(?<!Park)\s+(?=Closed (?:on )?(?:Good Friday|Christmas))", "; ", h)
+    lines = []
+    for seg in re.split(r";|\n", h):
+        seg = seg.strip()
+        if not seg:
+            continue
+        m = _DAYS_RE.match(seg)
+        if m:
+            days, time = _day_label(m.group(1)), m.group(2).strip()
+            if days in ("Mon–Sun",):
+                days = "Daily"
+        else:
+            days, time = None, seg
+        # keep the times; drop the access/how-to notes some operators append
+        time = re.split(r"\s*(?:\(NB|\bNB\b|Please |Outside of|However|To retrieve|This (?:undercover )?car park|"
+                        r"CAR PARK LOCKED|when car park will be closed)", time)[0].strip(" .,-")
+        if time:
+            lines.append({"days": days, "time": format_times(time)})
+    lines = _group_days(lines)
+    daily = [ln for ln in lines if ln["days"] == "Daily"]
+    ph = [ln for ln in lines if ln["days"] == "Public holidays"]
+    if daily and ph and daily[0]["time"] == ph[0]["time"]:
+        lines.remove(ph[0])
+    if all(re.fullmatch(r"(open )?24 hours|24/7", ln["time"], re.I) for ln in lines):
+        return [{"days": None, "time": "Open 24/7"}]
+    return lines
+
+
+def simplify_hours(h: str | None) -> str | None:
+    lines = hours_lines(h)
+    if not lines:
         return None
-    if h.startswith("24/7") or (re.search(r"24 hours", h, re.I) and not re.search(r"\d{1,2}:\d{2}", h)):
-        return "Open 24/7"
-    h = re.sub(r";\s*Monthly subscribers 24 hours", "", h, flags=re.I)
-    m = re.fullmatch(r"Mon-Sun: (.+?); Public Holidays: (.+)", h)
-    if m and m.group(1) == m.group(2):
-        return "Daily " + m.group(1)
-    return re.sub(r"^Mon-Sun: ", "Daily ", h)
+    return "; ".join(f"{ln['days']} {ln['time']}" if ln["days"] else ln["time"] for ln in lines)
 
 
 def _specific_url(url: str | None, counts: Counter) -> str | None:
@@ -155,6 +257,7 @@ def shape(records: list[dict]) -> list[dict]:
             "lat": r["lat"],
             "lng": r["lng"],
             "hours": simplify_hours(r.get("hours")),
+            "hours_lines": hours_lines(r.get("hours")),
             "height_m": r.get("height_m"),
             "url": _specific_url(r.get("url"), counts),
             "priced": bool(groups),
