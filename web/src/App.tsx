@@ -8,12 +8,15 @@ import { CaretUpIcon, CircleNotchIcon } from '@phosphor-icons/react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
   CARPARK_PIN_COLOR,
+  PIN_CATEGORIES,
+  pinCategory,
   fetchCarparks,
   fetchMeta,
   fetchMeterInsight,
   fetchMetersInView,
   type BBox,
   type Carpark,
+  type PinCategory,
   type MapPin,
   type MapResponse,
   type MetaResponse,
@@ -21,6 +24,7 @@ import {
 } from './api'
 import { AttributionDialog } from './AttributionDialog'
 import { CarparkPanel } from './CarparkPanel'
+import './legend.css'
 import { DetailPanel } from './DetailPanel'
 import { hasVisitedBefore, Landing, markVisited } from './Landing'
 import { LegalPage } from './LegalPage'
@@ -91,6 +95,16 @@ function MapApp() {
   const [attributionOpen, setAttributionOpen] = useState(false)
   const [sheetDragY, setSheetDragY] = useState(0)
   const [showCarparks, setShowCarparks] = useState(false)
+  // Empty = show every meter; otherwise only the tapped legend categories.
+  const [pinFilter, setPinFilter] = useState<Set<PinCategory>>(() => new Set())
+  const togglePinFilter = useCallback((key: PinCategory) => {
+    setPinFilter((prev) => {
+      const next = new Set(prev)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
+      return next
+    })
+  }, [])
   const [carparks, setCarparks] = useState<Carpark[] | null>(null)
   const [carparksLoading, setCarparksLoading] = useState(false)
   const [selectedCarpark, setSelectedCarpark] = useState<Carpark | null>(null)
@@ -246,6 +260,14 @@ function MapApp() {
   }, [isSignedIn, pendingMeter, openMeterInsight])
 
   const meters: MapPin[] = useMemo(() => mapData?.meters ?? [], [mapData])
+  const visibleMeters = useMemo(
+    () =>
+      pinFilter.size === 0
+        ? meters
+        : meters.filter((m) => pinFilter.has(pinCategory(m.chance_free, m.parkable !== false, m.park_status))),
+    [meters, pinFilter],
+  )
+
   const freeLeft = Math.max(0, FREE_DISTINCT_METERS - seenMeters.size)
   const meterDetailOpen = Boolean(insight && selectedId)
   const detailOpen = meterDetailOpen || Boolean(selectedCarpark)
@@ -298,22 +320,22 @@ function MapApp() {
         </div>
       </header>
 
-      <div className="legend">
-        <span>
-          <i style={{ background: '#2f7d6d' }} /> Likely
-        </span>
-        <span>
-          <i style={{ background: '#d97706' }} /> Mixed
-        </span>
-        <span>
-          <i style={{ background: '#c23030' }} /> Unlikely
-        </span>
-        <span>
-          <i style={{ background: '#16c45a' }} /> Free
-        </span>
-        <span>
-          <i style={{ background: '#9a958c' }} /> No parking
-        </span>
+      <div className="legend" role="toolbar" aria-label="Filter map">
+        {PIN_CATEGORIES.map((c) => {
+          const on = pinFilter.has(c.key)
+          return (
+            <button
+              key={c.key}
+              type="button"
+              className="legend-chip"
+              aria-pressed={on}
+              data-dim={pinFilter.size > 0 && !on}
+              onClick={() => togglePinFilter(c.key)}
+            >
+              <i style={{ background: c.color }} /> {c.label}
+            </button>
+          )
+        })}
         <button
           type="button"
           className="legend-toggle"
@@ -340,7 +362,7 @@ function MapApp() {
         )}
         {!metaLoading && (
           <ParkingMap
-            meters={meters}
+            meters={visibleMeters}
             selectedId={selectedId}
             onSelect={selectMeter}
             onUserLocation={setUserLoc}
