@@ -1,0 +1,4300 @@
+[
+  {
+    "id": "albany-creek-village",
+    "source": "mall",
+    "operator": "Albany Creek Village",
+    "name": "Albany Creek Village",
+    "address": "700 Albany Creek Rd, Albany Creek QLD 4035",
+    "lat": null,
+    "lng": null,
+    "url": "https://albanycreekvillage.com.au/about",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 403,
+    "features": [
+      "undercover",
+      "accessible_bays",
+      "click_and_collect_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Over 403 spaces, 9 disabled; ample undercover parking. Fees not stated."
+  },
+  {
+    "id": "arndale-springwood",
+    "source": "mall",
+    "operator": "Consolidated Properties",
+    "name": "Arndale Springwood",
+    "address": "17-27 Cinderella Dr, Springwood QLD 4127",
+    "lat": null,
+    "lng": null,
+    "url": "https://arndale.com.au/location/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 600,
+    "features": [
+      "free_parking",
+      "undercover_partial",
+      "ev_charging",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "600 free onsite spaces (350 undercover). Four EV power connectors in car park."
+  },
+  {
+    "id": "aspley-hypermarket",
+    "source": "mall",
+    "operator": "Aspley Hypermarket",
+    "name": "Aspley Hypermarket",
+    "address": null,
+    "lat": null,
+    "lng": null,
+    "url": "https://www.aspleyhypermarket.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 1600,
+    "features": [
+      "free_parking",
+      "undercover_partial",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "Over 1,600 free spaces incl. 700+ undercover."
+  },
+  {
+    "id": "beenleigh-marketplace",
+    "source": "mall",
+    "operator": "Beenleigh Marketplace",
+    "name": "Beenleigh Marketplace",
+    "address": null,
+    "lat": null,
+    "lng": null,
+    "url": "https://www.beenleighmarketplace.com.au/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 900,
+    "features": [
+      "undercover_partial"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Homepage only: \"over 900 car parking spaces, half of which are under cover\". No fees/time limits stated."
+  },
+  {
+    "id": "booval-fair",
+    "source": "mall",
+    "operator": "Booval Fair",
+    "name": "Booval Fair",
+    "address": "Cnr Brisbane & South Station Road, Booval QLD 4304",
+    "lat": null,
+    "lng": null,
+    "url": "https://boovalfair.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "shade_sails",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "\"Plenty of parking\", many under shade sails/cover. Fees/limits not stated."
+  },
+  {
+    "id": "bracken-ridge-plaza",
+    "source": "mall",
+    "operator": "Bracken Ridge Plaza",
+    "name": "Bracken Ridge Plaza",
+    "address": "250 Telegraph Road (Cnr Norris Road), Bracken Ridge QLD 4017",
+    "lat": null,
+    "lng": null,
+    "url": "https://brackenridgeplaza.com.au/centre-information",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 326,
+    "features": [
+      "free_parking",
+      "shade_sails",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "326 free car parks incl. shade-protected."
+  },
+  {
+    "id": "brassall",
+    "source": "mall",
+    "operator": "Brassall Shopping Centre",
+    "name": "Brassall Shopping Centre",
+    "address": "68 Hunter St, Brassall QLD 4305",
+    "lat": null,
+    "lng": null,
+    "url": "https://brassallsc.com.au/parking/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "free_parking",
+      "shade_sails",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "Free single-level parking surrounding centre, majority under shade sails."
+  },
+  {
+    "id": "bribie-island-central",
+    "source": "mall",
+    "operator": "Bribie Island Central",
+    "name": "Bribie Island Central",
+    "address": "239-255 Goodwin Dr, Bongaree QLD 4507",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.bribieislandcentral.com.au/find-us",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Find-us page has only a store-based \"best parking\" finder (JS); no fees/limits in static HTML. Operator \"Charter Hall\" per third-party listing (search snippet) – unverified on page."
+  },
+  {
+    "id": "brisbane-arcade",
+    "source": "mall",
+    "operator": "Brisbane Arcade",
+    "name": "Brisbane Arcade",
+    "address": "160 Queen Street Mall, Brisbane QLD 4000",
+    "lat": null,
+    "lng": null,
+    "url": "https://brisbanearcade.com.au/visit-brisbane-arcade/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "No own car park. Recommends King George Square (Brisbane City Council) car park; also QueensPlaza, Wintergarden, Myer Centre (Uptown) car parks."
+  },
+  {
+    "id": "brookside",
+    "source": "mall",
+    "operator": "Brookside",
+    "name": "Brookside Shopping Centre",
+    "address": null,
+    "lat": null,
+    "lng": null,
+    "url": "https://www.brookside.com.au/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Homepage only; no parking info found in static HTML."
+  },
+  {
+    "id": "caboolture-square",
+    "source": "mall",
+    "operator": "Caboolture Square",
+    "name": "Caboolture Square",
+    "address": null,
+    "lat": null,
+    "lng": null,
+    "url": "https://caboolturesquare.com.au/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": 1.95,
+    "capacity": 750,
+    "features": [
+      "free_parking",
+      "undercover",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated"
+      }
+    ],
+    "discounts": [],
+    "notes": "750 undercover spaces via King St and Elliott St; max height 1.95m. Page heading \"Free Parking\"; no time limit stated. Street address not stated on fetched page."
+  },
+  {
+    "id": "calamvale-central",
+    "source": "mall",
+    "operator": "Calamvale Central",
+    "name": "Calamvale Central",
+    "address": "662 Compton Road, Calamvale QLD",
+    "lat": null,
+    "lng": null,
+    "url": "https://calamvalecentral.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 900,
+    "features": [
+      "undercover_partial"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Over 900 spaces (open air + undercover). Fees/time limits not stated."
+  },
+  {
+    "id": "cannon-hill-kmart-plaza",
+    "source": "mall",
+    "operator": "Cannon Hill Kmart Plaza",
+    "name": "Cannon Hill Kmart Plaza",
+    "address": "Corner Creek & Wynnum Rds, Cannon Hill QLD 4170",
+    "lat": null,
+    "lng": null,
+    "url": "https://cannonhillkmartplaza.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 1000,
+    "features": [
+      "shade_sails",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Almost 1,000 car parks, majority under shade sails; entries off Wynnum Rd and Creek Rd. Fees not stated."
+  },
+  {
+    "id": "capalaba-central",
+    "source": "mall",
+    "operator": "Capalaba Central",
+    "name": "Capalaba Central",
+    "address": "38-62 Moreton Bay Rd, Capalaba QLD 4157",
+    "lat": null,
+    "lng": null,
+    "url": "https://capalabacentral.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "ev_charging"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Getting-here page has no car-parking details/rates. EV: ENGIE 1 x 120kW Zerova DC rapid charger (2 charge points), 24/7, ground level car park opposite The Cheesecake Shop, via Chargefox app. Also sourced from: https://www.capalabacentral.com.au/centre-info/ev-chargers"
+  },
+  {
+    "id": "capalaba-park",
+    "source": "mall",
+    "operator": "Capalaba Park (managed by Retail First)",
+    "name": "Capalaba Park Shopping Centre",
+    "address": "45 Redland Bay Rd, Capalaba QLD 4157",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.capalabapark.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": "Undercover car parks locked: Mon-Wed & Fri 9:15pm, Thu 9:45pm, Sat 9:15pm, Sun 6:15pm",
+    "height_m": 1.85,
+    "capacity": null,
+    "features": [
+      "undercover_partial"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "No parking fees stated on page. Max undercover height 1.85m; high vehicles use \"red\" car park under Target (northern entries off Mt Cotton & Redland Bay Rds)."
+  },
+  {
+    "id": "carseldine-central",
+    "source": "mall",
+    "operator": "Carseldine Central",
+    "name": "Carseldine Central",
+    "address": "735 Beams Road, Carseldine QLD 4034",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.carseldinecentral.com.au/our-centre",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": 2.15,
+    "capacity": 300,
+    "features": [
+      "undercover_partial",
+      "ev_charging",
+      "accessible_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Over 300 above-ground and undercover spaces; undercover clearance 2.15m. EV: three RACQ chargers in undercover car park. Fees not stated (conditions of entry linked, not fetched)."
+  },
+  {
+    "id": "cleveland-central",
+    "source": "mall",
+    "operator": "Cleveland Central (Haben)",
+    "name": "Cleveland Central",
+    "address": "90-91 Middle Street, Cleveland QLD 4163",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.clevelandcentral.com.au/location-parking",
+    "checked_at": "2026-10-25",
+    "hours": "Undercover car park 07:45-21:00",
+    "height_m": null,
+    "capacity": 750,
+    "features": [
+      "time_limited",
+      "ev_charging",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": 4,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Undercover car park (under Coles), 4-hour limit",
+        "price_aud": null,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 4,
+        "conditions": "Four-hour limit; fees not stated (assumed free – not stated explicitly)"
+      }
+    ],
+    "discounts": [],
+    "notes": "750+ spaces. Undercover parking under Coles on two levels via Wynyard St or Shore St with a four-hour limit; page does not state a price – price left null. EVIE EV chargers in outdoor car park via Wynyard St. Former Stockland Cleveland site (Stockland URL 404)."
+  },
+  {
+    "id": "coorparoo-square",
+    "source": "mall",
+    "operator": "Coorparoo Square",
+    "name": "Coorparoo Square",
+    "address": "300 Old Cleveland Road, Coorparoo QLD 4151",
+    "lat": null,
+    "lng": null,
+    "url": "https://coorparoosquare.com.au/centre-information",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "undercover",
+      "multideck",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": 3,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-3h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-3.5h",
+        "price_aud": 3,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3.5-4h",
+        "price_aud": 6,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": 4,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-4.5h",
+        "price_aud": 9,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4.5-5h",
+        "price_aud": 11,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5-5.5h",
+        "price_aud": 13,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5.5-6h",
+        "price_aud": 15,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": null
+      },
+      {
+        "kind": "daily_max",
+        "label": "6+ hours",
+        "price_aud": 17,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "flat",
+        "label": "Cinema validation: 6 hours for $6",
+        "price_aud": 6,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 6,
+        "conditions": "Cinema ticket validated at Box Office before returning to car park"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Cinema validation",
+        "details": "4 hours FREE, or 6 hours for $6, with cinema ticket validated at Box Office."
+      }
+    ],
+    "notes": "Up to 3 hours free undercover; entry via Holdsworth St. Point Parking location page (search result) returned 404."
+  },
+  {
+    "id": "dfo-brisbane",
+    "source": "mall",
+    "operator": "Vicinity Centres (car parks managed by Brisbane Airport Corporation)",
+    "name": "DFO Brisbane (Skygate)",
+    "address": "18th Avenue, Skygate, Brisbane Airport QLD 4008",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.brisbane.dfo.com.au/directions/parking",
+    "checked_at": "2026-10-25",
+    "hours": "Open-air car park gating: Blue 6:30am-7:30pm, Yellow 9:00am-7:30pm, Green 5:30am-7:30pm",
+    "height_m": 2.25,
+    "capacity": null,
+    "features": [
+      "free_open_air_parking",
+      "paid_multideck",
+      "ev_charging",
+      "accessible_bays",
+      "parents_with_prams_bays",
+      "coach_setdown"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free open-air car parks",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Five free open-air car parks in Skygate precinct (Skygate Centre car park max 3 hours per skygate.com.au)"
+      },
+      {
+        "kind": "hourly",
+        "label": "Multi-deck 0-1h",
+        "price_aud": 2,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 1,
+        "conditions": "Paid multi-deck car park (BAC)"
+      },
+      {
+        "kind": "hourly",
+        "label": "Multi-deck 1-2h",
+        "price_aud": 5,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 1,
+        "duration_hours_to": 2,
+        "conditions": "Paid multi-deck car park (BAC)"
+      },
+      {
+        "kind": "hourly",
+        "label": "Multi-deck 2-3h",
+        "price_aud": 7,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 2,
+        "duration_hours_to": 3,
+        "conditions": "Paid multi-deck car park (BAC)"
+      },
+      {
+        "kind": "hourly",
+        "label": "Multi-deck 3-4h",
+        "price_aud": 9,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 4,
+        "conditions": "Paid multi-deck car park (BAC)"
+      },
+      {
+        "kind": "hourly",
+        "label": "Multi-deck 4-5h",
+        "price_aud": 11,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 5,
+        "conditions": "Paid multi-deck car park (BAC)"
+      },
+      {
+        "kind": "hourly",
+        "label": "Multi-deck 5-6h",
+        "price_aud": 16,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 6,
+        "conditions": "Paid multi-deck car park (BAC)"
+      },
+      {
+        "kind": "hourly",
+        "label": "Multi-deck 6-7h",
+        "price_aud": 26,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 7,
+        "conditions": "Paid multi-deck car park (BAC)"
+      },
+      {
+        "kind": "daily_max",
+        "label": "Multi-deck 7-24h",
+        "price_aud": 41,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": 24,
+        "conditions": null
+      }
+    ],
+    "discounts": [
+      {
+        "label": "EV charging",
+        "details": "EV charging in multi-deck ground level near lifts; charging included in hourly parking rate."
+      }
+    ],
+    "notes": "Page shows two multi-deck tables: main table ($2/$5/$7/$9/$11/$16/$26/$41) recorded here; FAQ table ($2/$4/$6/$8/$10/$15/$25/$40) is marked \"Rates correct as of May 2021\" (older). Credit card at pay machine or exit; no cashier. 22 accessible + 6 parent bays near 18th Ave entrance. Additional Go Evie chargers behind Nick Scali at Skygate Home & Life."
+  },
+  {
+    "id": "dfo-jindalee",
+    "source": "mall",
+    "operator": "DFO Jindalee",
+    "name": "DFO Jindalee",
+    "address": "16 Amazons Pl, Jindalee QLD 4074",
+    "lat": null,
+    "lng": null,
+    "url": "https://dfojindalee.com.au/contact",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "free_parking",
+      "undercover_partial"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Free for shoppers 7 days a week"
+      }
+    ],
+    "discounts": [],
+    "notes": "Four levels incl. two undercover, free for shoppers 7 days."
+  },
+  {
+    "id": "emporium",
+    "source": "mall",
+    "operator": "Emporium precinct (car park by Secure Parking)",
+    "name": "Emporium Fortitude Valley – 1024 Ann Street car park",
+    "address": "1024 Ann Street, Fortitude Valley QLD 4006",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.secureparking.com.au/en-au/car-parks/australia/qld/1024-ann-street-fortitude-valley-car-park",
+    "checked_at": "2026-10-25",
+    "hours": "Mon-Fri 17:00-24:00; Sat-Sun & public holidays 06:00-24:00",
+    "height_m": 2.3,
+    "capacity": null,
+    "features": [
+      "scan_to_pay",
+      "night_weekend_only"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "night",
+        "label": "Night",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "after 17:00",
+        "exit_window": "before 24:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Weekend & public holidays",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Sat-Sun & PH",
+        "entry_window": "after 06:00",
+        "exit_window": "before 24:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      }
+    ],
+    "discounts": [],
+    "notes": "Car park open ONLY at night and on weekends for casual parking. Pay via QR code (payforyourparking.com). Not a centre-owned page (Secure Parking)."
+  },
+  {
+    "id": "gasworks-plaza",
+    "source": "mall",
+    "operator": "Gasworks Plaza (car park by Point Parking)",
+    "name": "Gasworks Plaza",
+    "address": "76 Skyring Terrace, Newstead QLD 4006",
+    "lat": null,
+    "lng": null,
+    "url": "https://pointparking.com.au/locations/gasworks-plaza/",
+    "checked_at": "2026-10-25",
+    "hours": "24/7",
+    "height_m": null,
+    "capacity": 300,
+    "features": [
+      "24h",
+      "monthly_parking",
+      "bicycle_parking"
+    ],
+    "free_period_hours": 2,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-2h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 2,
+        "conditions": "First 2h free; max 2h free per day; multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 2-2.5h",
+        "price_aud": 16,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 2,
+        "duration_hours_to": 2.5,
+        "conditions": "First 2h free; max 2h free per day; multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 2.5-3h",
+        "price_aud": 20,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 2.5,
+        "duration_hours_to": 3,
+        "conditions": "First 2h free; max 2h free per day; multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-3.5h",
+        "price_aud": 25,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": "First 2h free; max 2h free per day; multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3.5-4h",
+        "price_aud": 28,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": 4,
+        "conditions": "First 2h free; max 2h free per day; multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-4.5h",
+        "price_aud": 32,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": "First 2h free; max 2h free per day; multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4.5-5h",
+        "price_aud": 38,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": "First 2h free; max 2h free per day; multiple visits accumulate"
+      },
+      {
+        "kind": "daily_max",
+        "label": "5+ hours",
+        "price_aud": 65,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": null,
+        "conditions": null
+      }
+    ],
+    "discounts": [],
+    "notes": "Centre page: over 300 public retail car parks via Skyring Tce and Longland St. Rates from operator (Point Parking) page linked via search. Also sourced from: https://www.gasworksplaza.com.au/visit.html"
+  },
+  {
+    "id": "grand-plaza",
+    "source": "mall",
+    "operator": "Vicinity Centres (car park monitored by Secure Parking / TMS)",
+    "name": "Grand Plaza Browns Plains",
+    "address": "27-49 Browns Plains Rd, Browns Plains QLD 4118",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.grandplaza.com.au/directions/parking",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 2500,
+    "features": [
+      "time_limited",
+      "no_boom_gates",
+      "ev_charging",
+      "accessible_bays",
+      "parents_with_prams_bays",
+      "undercover_partial"
+    ],
+    "free_period_hours": 4,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking up to 4 hours",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 4,
+        "conditions": "Customers of the centre; no on-site charges under 4h"
+      },
+      {
+        "kind": "other",
+        "label": "Breach notice for exceeding 4-hour free period",
+        "price_aud": 77,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": null,
+        "conditions": "Issued by TMS; appeal at Customer Service Desk with proof of shopping >4h"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Proof of purchase",
+        "details": "Customers with proof of purchase who were in centre longer than 4h can appeal breach notices."
+      }
+    ],
+    "notes": "Page says 2,667 spaces on directions page and \"over 2,500\" on parking page (capacity uses 2,500 conservative). EV chargers (DC fast + AC) in Red car park above Kmart, pay-per-kWh via Exploren / Chargefox apps. Limited undercover parking in Orange car park ground level. Also sourced from: https://www.grandplaza.com.au/directions"
+  },
+  {
+    "id": "homeco-lutwyche",
+    "source": "mall",
+    "operator": "HomeCo (HMC Capital)",
+    "name": "HomeCo. Lutwyche (formerly Lutwyche City)",
+    "address": "543 Lutwyche Road, Lutwyche QLD 4030",
+    "lat": null,
+    "lng": null,
+    "url": "https://home-co.com.au/lutwyche/centre-info/directions-parking",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "ticketless_lpr",
+      "disability_permit_free"
+    ],
+    "free_period_hours": 3,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-3h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-3.5h",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3.5-4h",
+        "price_aud": 6,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": 4,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-4.5h",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4.5-5h",
+        "price_aud": 15,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5-5.5h",
+        "price_aud": 20,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5.5-6h",
+        "price_aud": 25,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6-6.5h",
+        "price_aud": 30,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 6.5,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6.5-7h",
+        "price_aud": 35,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6.5,
+        "duration_hours_to": 7,
+        "conditions": "3h free once per day unless 30+ min between exit and re-entry"
+      },
+      {
+        "kind": "daily_max",
+        "label": "7+ hours",
+        "price_aud": 40,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": null,
+        "conditions": null
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Disability permit",
+        "details": "Register with Centre Management for free parking."
+      }
+    ],
+    "notes": "Charges apply 7 days. 2% credit card surcharge. Pay stations in travelator lobbies P1 and Cafe Court Level G, or card at exit."
+  },
+  {
+    "id": "homeco-victoria-point",
+    "source": "mall",
+    "operator": "HomeCo (HMC Capital)",
+    "name": "HomeCo. Victoria Point",
+    "address": "349-369 Colburn Avenue, Victoria Point QLD 4165",
+    "lat": null,
+    "lng": null,
+    "url": "https://home-co.com.au/victoria-point/centre-info/directions-parking",
+    "checked_at": "2026-10-25",
+    "hours": "24/7",
+    "height_m": null,
+    "capacity": 800,
+    "features": [
+      "free_parking",
+      "24h",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "800 spaces, free parking, car park open 24/7."
+  },
+  {
+    "id": "hyperdome",
+    "source": "mall",
+    "operator": "QIC",
+    "name": "Hyperdome (Loganholme)",
+    "address": "Corner Pacific Highway and Bryants Road, Loganholme QLD 4129",
+    "lat": null,
+    "lng": null,
+    "url": "https://hyperdomeshopping.com.au/getting-here/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 4000,
+    "features": [
+      "free_parking",
+      "undercover_partial",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "Over 4,000 free spaces (~1,500 undercover, 480 under sail), 37 parents-with-prams, 58 disabled bays. Hyperdome Home Centre also free (10 disabled). qicre.com subdomain from search results did not resolve."
+  },
+  {
+    "id": "inala-plaza",
+    "source": "mall",
+    "operator": "Inala Plaza",
+    "name": "Inala Plaza",
+    "address": "156 Inala Avenue, Inala QLD 4077",
+    "lat": null,
+    "lng": null,
+    "url": "https://inalaplaza.com.au/about/find-us/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "No parking details in static HTML."
+  },
+  {
+    "id": "indooroopilly",
+    "source": "mall",
+    "operator": "Dexus (car park operated by Point Parking)",
+    "name": "Indooroopilly Shopping Centre",
+    "address": "322 Moggill Rd, Indooroopilly QLD 4068",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.indooroopillyshopping.com.au/visit/parking.html",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "ticketless_lpr",
+      "valet",
+      "staff_parking",
+      "monthly_parking",
+      "motorcycle_free",
+      "ev_charging"
+    ],
+    "free_period_hours": 3,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-3h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-3.5h",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3.5-4h",
+        "price_aud": 5,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": 4,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-4.5h",
+        "price_aud": 7,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4.5-5h",
+        "price_aud": 9,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5-5.5h",
+        "price_aud": 12,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5.5-6h",
+        "price_aud": 15,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6-6.5h",
+        "price_aud": 20,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 6.5,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6.5-7h",
+        "price_aud": 25,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6.5,
+        "duration_hours_to": 7,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 7-8h",
+        "price_aud": 30,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": 8,
+        "conditions": "Free 3h once per parking day (4am-3:59am); multiple visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Parking Account 0-4h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 4,
+        "conditions": "Registered online Parking Account with linked payment card; 4h free per parking day, visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Parking Account 4-4.5h",
+        "price_aud": 7,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": "Registered online Parking Account with linked payment card; 4h free per parking day, visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Parking Account 4.5-5h",
+        "price_aud": 9,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": "Registered online Parking Account with linked payment card; 4h free per parking day, visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Parking Account 5-5.5h",
+        "price_aud": 12,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": "Registered online Parking Account with linked payment card; 4h free per parking day, visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Parking Account 5.5-6h",
+        "price_aud": 15,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": "Registered online Parking Account with linked payment card; 4h free per parking day, visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Parking Account 6-6.5h",
+        "price_aud": 20,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 6.5,
+        "conditions": "Registered online Parking Account with linked payment card; 4h free per parking day, visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Parking Account 6.5-7h",
+        "price_aud": 25,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6.5,
+        "duration_hours_to": 7,
+        "conditions": "Registered online Parking Account with linked payment card; 4h free per parking day, visits accumulate"
+      },
+      {
+        "kind": "hourly",
+        "label": "Parking Account 7-8h",
+        "price_aud": 30,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": 8,
+        "conditions": "Registered online Parking Account with linked payment card; 4h free per parking day, visits accumulate"
+      },
+      {
+        "kind": "daily_max",
+        "label": "Maximum daily rate",
+        "price_aud": 30,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "other",
+        "label": "Overnight (parking past 4:00am)",
+        "price_aud": 30,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Charged at maximum daily rate"
+      },
+      {
+        "kind": "night",
+        "label": "Evening free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": "after 17:00 (first entry of parking day)",
+        "exit_window": "before 04:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "flat",
+        "label": "Staff daily flat rate",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Eligible centre staff in designated areas, online account"
+      },
+      {
+        "kind": "other",
+        "label": "Monthly permanent parker",
+        "price_aud": 200,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Per licence plate per month; unreserved, Levels 4/5 only"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Spend $200",
+        "details": "Free parking when spending $200+ same day; present receipts + rego at Concierge (Level 2 Information Desk) during opening hours."
+      },
+      {
+        "label": "Cinema / restaurant validation",
+        "details": "4 hours free with validation voucher from Event Cinemas, Cutler's Arms, Betty's Burgers, Bobby Q, Grill'd, Yum Cha Cuisine; scan at pay machine. Standard rates from 5th hour starting $7."
+      },
+      {
+        "label": "Parking Account (online registration)",
+        "details": "4 hours free per day plus automatic payment."
+      },
+      {
+        "label": "Disability permit",
+        "details": "Free parking account after permit verification."
+      },
+      {
+        "label": "Motorcycle",
+        "details": "Free in designated motorcycle bays."
+      },
+      {
+        "label": "Staff",
+        "details": "$4 daily flat rate in designated staff areas."
+      },
+      {
+        "label": "Valet",
+        "details": "$5 Thu & Fri; $10 weekends and public holidays (in addition to parking fees)."
+      }
+    ],
+    "notes": "Rates updated from 1 July 2026 (T&C PDF, offer period to 30/06/2027). Parking Day 4:00am-3:59am. Pay at pay machines (cash/card, card surcharge) or exit barrier (card). EV: 9 Tesla Superchargers (P1 Yellow, via Gate 10 off Stamford Rd) and 4 Evie chargers. Also sourced from: https://www.indooroopillyshopping.com.au/content/dam/microsites-retail/indooroopilly/documents/parking/INDRO!_Car%20Parking_Terms%20and_Conditions_Customers_Updated_Rates_May_2026.pdf, https://www.indooroopillyshopping.com.au/visit/parking/electric-vehicle-charging.html"
+  },
+  {
+    "id": "kallangur-fair",
+    "source": "mall",
+    "operator": "Ganellen",
+    "name": "Ganellen Kallangur Fair",
+    "address": "1477 Anzac Avenue, Kallangur QLD",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.kallangurfair.com.au/parking",
+    "checked_at": "2026-10-25",
+    "hours": "Mon-Sat 07:00-21:00; Sun 07:00-19:00",
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "free_parking",
+      "motorcycle_parking",
+      "accessible_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Free parking 7 days a week; short-term spaces nearest store"
+      }
+    ],
+    "discounts": [],
+    "notes": "Capacity \"260\" appears on page next to parking info (likely number of spaces – unlabelled). Parking T&Cs page linked, not fetched."
+  },
+  {
+    "id": "kenmore-village",
+    "source": "mall",
+    "operator": "Kenmore Village",
+    "name": "Kenmore Village",
+    "address": null,
+    "lat": null,
+    "lng": null,
+    "url": "https://kenmorevillage.com.au/facilities/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "undercover_partial",
+      "multideck",
+      "ev_charging"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Shaded side parking plus 2 levels of undercover deck parking with lift. Fees not stated. EV: two dedicated bays (opened Aug 2025) at multi-level deck car park rear; rates at charger. Also sourced from: https://kenmorevillage.com.au/ev-ch/"
+  },
+  {
+    "id": "logan-central-plaza",
+    "source": "mall",
+    "operator": "Logan Central Plaza",
+    "name": "Logan Central Plaza",
+    "address": "38-74 Wembley Road, Logan Central QLD 4114",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.logancentralplaza.com.au/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Homepage has no parking info."
+  },
+  {
+    "id": "macarthur-central",
+    "source": "mall",
+    "operator": "MacArthur Central (car park by Secure Parking)",
+    "name": "MacArthur Central",
+    "address": "255 Queen Street, Brisbane City QLD 4000 (car park entry 246 Elizabeth Street)",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.macarthurcentral.com.au/visit/parking",
+    "checked_at": "2026-10-25",
+    "hours": "Mon-Sat 06:30-21:30; Sun & public holidays 09:00-18:00 (Secure Parking page; centre page says PH closed, Sun 09:00-18:30)",
+    "height_m": 2.0,
+    "capacity": null,
+    "features": [
+      "tap_in_tap_out",
+      "online_booking",
+      "monthly_parking"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Drive-up 0-3h",
+        "price_aud": 19,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "after 06:30",
+        "exit_window": "before 21:30",
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "daily_max",
+        "label": "Drive-up 3h+ (daily max)",
+        "price_aud": 29,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "early_bird",
+        "label": "Flexible Early Bird",
+        "price_aud": null,
+        "online_price_aud": 29.9,
+        "days": "Mon-Fri",
+        "entry_window": "06:30-09:30",
+        "exit_window": "09:31-19:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "A second listing shows online $31.00"
+      },
+      {
+        "kind": "night",
+        "label": "Night",
+        "price_aud": 9,
+        "online_price_aud": 9.9,
+        "days": "Mon-Fri",
+        "entry_window": "after 14:00",
+        "exit_window": "before 21:30",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Saturday",
+        "price_aud": 9,
+        "online_price_aud": 7,
+        "days": "Sat",
+        "entry_window": "after 06:30",
+        "exit_window": "before 21:30",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Sunday & public holiday",
+        "price_aud": 9,
+        "online_price_aud": 7,
+        "days": "Sun & PH",
+        "entry_window": "after 09:00",
+        "exit_window": "before 18:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "other",
+        "label": "Monthly (new customers, min 3 months)",
+        "price_aud": 649,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "\"from $649*\""
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Online pre-booking",
+        "details": "Weekend $7 online vs $9 drive-up."
+      }
+    ],
+    "notes": "Rates from Secure Parking car-park page linked from centre page (\"current for today but may vary\"). Restricted lift/ramp disability access. Also sourced from: https://www.secureparking.com.au/en-au/car-parks/australia/qld/macarthur-central-brisbane-car-park/"
+  },
+  {
+    "id": "market-square-sunnybank",
+    "source": "mall",
+    "operator": "Market Square (car park by Secure Parking)",
+    "name": "Market Square Sunnybank",
+    "address": null,
+    "lat": null,
+    "lng": null,
+    "url": "https://www.secureparking.com.au/en-au/car-parks/australia/qld/market-square-shopping-centre-sunnybank-car-park",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Secure Parking car-park page returned no car-park content in static HTML (JS-rendered); no centre parking page found. Rates unknown."
+  },
+  {
+    "id": "mcwhirters",
+    "source": "mall",
+    "operator": "McWhirters Marketplace (car park by Secure Parking)",
+    "name": "McWhirters (Fortitude Valley) – Secure Parking McWhirters",
+    "address": "13 Warner Street, Fortitude Valley QLD 4006",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.secureparking.com.au/en-au/car-parks/australia/qld/mcwhirters-fortitude-valley-car-park",
+    "checked_at": "2026-10-25",
+    "hours": "24/7",
+    "height_m": 2.05,
+    "capacity": null,
+    "features": [
+      "24h",
+      "tap_in_tap_out",
+      "online_booking",
+      "monthly_parking"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Drive-up 0-3h",
+        "price_aud": 9,
+        "online_price_aud": null,
+        "days": "Mon-Sun & PH",
+        "entry_window": "after 04:00",
+        "exit_window": "before 04:00 next day",
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "daily_max",
+        "label": "Drive-up 3h+ (daily max)",
+        "price_aud": 13,
+        "online_price_aud": null,
+        "days": "Mon-Sun & PH",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "early_bird",
+        "label": "Flexible Early Bird",
+        "price_aud": null,
+        "online_price_aud": 13.5,
+        "days": "Mon-Fri",
+        "entry_window": "04:00-09:30",
+        "exit_window": "09:31-19:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Second listing online $15.00"
+      },
+      {
+        "kind": "night",
+        "label": "Night",
+        "price_aud": null,
+        "online_price_aud": 13.5,
+        "days": "Mon-Sun & PH",
+        "entry_window": "after 17:00",
+        "exit_window": "before 04:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Weekend & public holidays",
+        "price_aud": null,
+        "online_price_aud": 13.5,
+        "days": "Sat-Sun & PH",
+        "entry_window": "after 04:00",
+        "exit_window": "before 04:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "other",
+        "label": "Monthly (new customers, min 3 months)",
+        "price_aud": 239,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "\"from $239*\""
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Promo \"Value in the Valley\"",
+        "details": "Daily max $13, 8 Oct - 30 Nov 2026, drive in (Secure Parking Fortitude Valley offers page)."
+      }
+    ],
+    "notes": "Keys may need to be left with attendant. Event nights at Fortitude Music Hall may slow exits. Not a centre-owned page. Also sourced from: https://www.secureparking.com.au/en-au/offers-and-events/fortitude-valley-parking/"
+  },
+  {
+    "id": "morayfield",
+    "source": "mall",
+    "operator": "Morayfield Shopping Centre",
+    "name": "Morayfield Shopping Centre",
+    "address": "171 Morayfield Road, Morayfield QLD 4506",
+    "lat": null,
+    "lng": null,
+    "url": "http://morayfieldshoppingcentre.com.au/visit/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 3000,
+    "features": [
+      "free_parking",
+      "undercover_majority",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "Over 3,000 free car parks, majority undercover. Car park map PDF on \"Where to Park\" page. Also sourced from: https://www.morayfieldshoppingcentre.com.au/visit/where-to-park/"
+  },
+  {
+    "id": "mt-ommaney",
+    "source": "mall",
+    "operator": "Mt Ommaney Centre",
+    "name": "Mt Ommaney Centre",
+    "address": "171 Dandenong Road, Mt Ommaney QLD 4074",
+    "lat": null,
+    "lng": null,
+    "url": "https://mtommaneycentre.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Getting-here page has no car parking information (fees/limits not stated)."
+  },
+  {
+    "id": "myer-centre",
+    "source": "mall",
+    "operator": "Uptown Brisbane (formerly The Myer Centre)",
+    "name": "Uptown Brisbane (formerly The Myer Centre) – Uptown Parking",
+    "address": "Car park entry 66 Elizabeth Street, Brisbane QLD 4000",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.uptownbrisbane.com.au/parking",
+    "checked_at": "2026-10-25",
+    "hours": "24/7",
+    "height_m": 2.0,
+    "capacity": null,
+    "features": [
+      "ticketless_lpr",
+      "online_booking",
+      "monthly_parking",
+      "parking_guidance",
+      "accessible_bays",
+      "parents_with_prams_bays",
+      "24h"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Drive-up 0-30 min",
+        "price_aud": 9,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 0.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 0.5-1h",
+        "price_aud": 16,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 0.5,
+        "duration_hours_to": 1,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 1-1.5h",
+        "price_aud": 21,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 1,
+        "duration_hours_to": 1.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 1.5-2h",
+        "price_aud": 30,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 1.5,
+        "duration_hours_to": 2,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 2-2.5h",
+        "price_aud": 40,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 2,
+        "duration_hours_to": 2.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 2.5-3h",
+        "price_aud": 50,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 2.5,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 3-3.5h",
+        "price_aud": 60,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": null
+      },
+      {
+        "kind": "daily_max",
+        "label": "Drive-up 3.5h+ (max daily)",
+        "price_aud": 70,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "early_bird",
+        "label": "Early Bird",
+        "price_aud": 29,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "03:00-09:30",
+        "exit_window": "any time same day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Must park and pay on P3 Orange or P4 Red; subject to availability"
+      },
+      {
+        "kind": "night",
+        "label": "Night rate",
+        "price_aud": 13,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "16:00-03:00",
+        "exit_window": "before 07:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Weekend",
+        "price_aud": 13,
+        "online_price_aud": null,
+        "days": "Sat-Sun",
+        "entry_window": "after 03:00",
+        "exit_window": "before 07:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Public holiday",
+        "price_aud": 13,
+        "online_price_aud": null,
+        "days": "Public holidays",
+        "entry_window": "after 03:00",
+        "exit_window": "before 07:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Online booking",
+        "details": "Pre-book online (≥15 min ahead) to save on drive-up rates; online rates on separate page (not captured)."
+      },
+      {
+        "label": "Grace period",
+        "details": "No fee if exiting within 10 minutes of entry."
+      }
+    ],
+    "notes": "themyercentre.com.au now redirects to uptownbrisbane.com.au (centre rebranded \"Uptown\"). Rates reset at 7am. Temporary car park entry closure 8pm Fri 30 Oct - 8pm Sun 1 Nov (2026) noted on page. Disabled & parents bays on P1. Staffed 24h. Monthly reserved/unreserved available."
+  },
+  {
+    "id": "orion-springfield",
+    "source": "mall",
+    "operator": "Mirvac",
+    "name": "Orion Springfield Central",
+    "address": "1 Main Street, Springfield Central QLD 4300",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.orionspringfieldcentral.com.au/visit/parking",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 3000,
+    "features": [
+      "free_parking",
+      "undercover_majority"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "\"All car parking is free of charge\""
+      }
+    ],
+    "discounts": [],
+    "notes": "Over 3,000 car parks, majority undercover, all free."
+  },
+  {
+    "id": "peninsula-fair",
+    "source": "mall",
+    "operator": "Peninsula Fair (managed by Retail First)",
+    "name": "Peninsula Fair",
+    "address": "272 Anzac Avenue, Kippa-Ring QLD 4021",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.penfair.com.au/centre-info/getting-here/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 1400,
+    "features": [
+      "free_parking",
+      "undercover_partial",
+      "multideck",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "Over 1,400 free spaces incl. undercover (near Coles) and multi-deck (Anzac Ave entry, near Hoyts)."
+  },
+  {
+    "id": "queensplaza",
+    "source": "mall",
+    "operator": "Vicinity Centres",
+    "name": "QueensPlaza",
+    "address": "226 Queen St, Brisbane QLD 4000 (car park 250 Edward Street; entry via Edward St)",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.queensplaza.com.au/car-park-rates",
+    "checked_at": "2026-10-25",
+    "hours": "24/7",
+    "height_m": 2.2,
+    "capacity": 600,
+    "features": [
+      "24h",
+      "online_booking",
+      "monthly_parking",
+      "motorcycle_parking"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Drive-up 0-1h",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 1,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 1-1.5h",
+        "price_aud": 20,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 1,
+        "duration_hours_to": 1.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 1.5-2h",
+        "price_aud": 30,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 1.5,
+        "duration_hours_to": 2,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 2-2.5h",
+        "price_aud": 40,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 2,
+        "duration_hours_to": 2.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 2.5-3h",
+        "price_aud": 50,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 2.5,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 3-4h",
+        "price_aud": 60,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 4,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Drive-up 4-5h",
+        "price_aud": 70,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 5,
+        "conditions": null
+      },
+      {
+        "kind": "daily_max",
+        "label": "Drive-up 5h+ / lost ticket (max daily)",
+        "price_aud": 80,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "early_bird",
+        "label": "Early Bird",
+        "price_aud": 34,
+        "online_price_aud": 29,
+        "days": "Mon-Fri",
+        "entry_window": "06:00-09:00",
+        "exit_window": "11:00-24:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Subject to availability"
+      },
+      {
+        "kind": "night",
+        "label": "Evening",
+        "price_aud": 14,
+        "online_price_aud": 12,
+        "days": "Mon-Fri",
+        "entry_window": "after 16:00",
+        "exit_window": "before 05:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Weekend",
+        "price_aud": 14,
+        "online_price_aud": 12,
+        "days": "Sat-Sun",
+        "entry_window": "after 05:00",
+        "exit_window": "before 05:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Public holiday",
+        "price_aud": 14,
+        "online_price_aud": 12,
+        "days": "Public holidays",
+        "entry_window": "after 05:00",
+        "exit_window": "before 05:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Online booking",
+        "details": "Early bird $29 (vs $34), evening/weekend/PH $12 (vs $14)."
+      }
+    ],
+    "notes": "600 bays over five basement levels. Rates reset at 5am. Motorcycle parking on P1. Cards: Mastercard/Visa/AMEX (no Diners); only P2 pay station takes cash. Also sourced from: https://www.queensplaza.com.au/car-park-information"
+  },
+  {
+    "id": "redbank-plaza",
+    "source": "mall",
+    "operator": "Redbank Plaza",
+    "name": "Redbank Plaza",
+    "address": "1 Collingwood Drive, Redbank QLD 4301",
+    "lat": null,
+    "lng": null,
+    "url": "https://redbankplaza.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 1650,
+    "features": [
+      "free_parking",
+      "undercover"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "1,650 free undercover car parks."
+  },
+  {
+    "id": "riverlink",
+    "source": "mall",
+    "operator": "Riverlink",
+    "name": "Ipswich Riverlink Shopping Centre",
+    "address": "Cnr Downs Street and The Terrace, North Ipswich QLD 4305",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.riverlink.net.au/visit/getting-here/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 2500,
+    "features": [
+      "free_parking",
+      "undercover_majority",
+      "accessible_bays",
+      "parents_with_prams_bays",
+      "bike_racks"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "\"Free Parking\" – over 2,500 bays, majority undercover."
+  },
+  {
+    "id": "sbh-shoppingtown",
+    "source": "mall",
+    "operator": "Sunnybank Hills Shoppingtown",
+    "name": "Sunnybank Hills Shoppingtown",
+    "address": "Cnr Calam & Compton Rd, Sunnybank Hills QLD 4109",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.sbhshoppingtown.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": 2.05,
+    "capacity": 1900,
+    "features": [
+      "free_parking",
+      "undercover"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "Over 1,900 undercover spaces, all free. Height L1-3 2.05m, L4 2.4m; taller vehicles park on Honeywood St / Butternut St."
+  },
+  {
+    "id": "skygate",
+    "source": "mall",
+    "operator": "Brisbane Airport Corporation",
+    "name": "Skygate (Skygate Centre / precinct)",
+    "address": "The Circuit, Brisbane Airport QLD 4008",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.skygate.com.au/parking",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "free_open_air_parking",
+      "paid_multideck",
+      "time_limited"
+    ],
+    "free_period_hours": 3,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Skygate Centre car park (free, max 3 hours)",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": "Maximum 3 hours"
+      },
+      {
+        "kind": "hourly",
+        "label": "Multi-deck from $2/hour for first 5 hours",
+        "price_aud": 2,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 5,
+        "conditions": "\"starts from $2 per hour for the first 5 hours\" – see DFO Brisbane record for full table"
+      }
+    ],
+    "discounts": [],
+    "notes": "Five free open-air car parks plus one paid multi-deck (via 18th Avenue). Skygate Centre car park max stay 3 hours."
+  },
+  {
+    "id": "southpoint-south-bank",
+    "source": "mall",
+    "operator": "Southpoint (car park by Secure Parking)",
+    "name": "Southpoint South Bank",
+    "address": "271-275 Grey Street, South Brisbane QLD 4101 (car park entries 40 Tribune St and 192 Vulture St)",
+    "lat": null,
+    "lng": null,
+    "url": "https://southpointsouthbank.com.au/parking/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "paid_parking",
+      "online_booking"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [
+      {
+        "label": "Supermarket validation",
+        "details": "1 hour free parking for Woolworths Metro and Sunlit Asian Supermarket customers (Tribune St entrance); validate ticket at store customer service desk."
+      }
+    ],
+    "notes": "Paid parking by Secure Parking; prices not shown on centre page."
+  },
+  {
+    "id": "stafford-city",
+    "source": "mall",
+    "operator": "Stafford City",
+    "name": "Stafford City",
+    "address": "400 Stafford Road, Stafford QLD 4053",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.staffordcity.com.au/centre-info/getting-here/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 1300,
+    "features": [
+      "shade_sails",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Over 1,300 car parks, 600+ under shade sails. Fees not stated."
+  },
+  {
+    "id": "strathpine-centre",
+    "source": "mall",
+    "operator": "Strathpine Centre (formerly Westfield Strathpine)",
+    "name": "Strathpine Centre",
+    "address": "295 Gympie Road, Strathpine QLD 4500",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.strathpinecentre.com.au/centre-information/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 2700,
+    "features": [
+      "free_parking",
+      "undercover_partial",
+      "accessible_bays",
+      "parents_with_prams_bays"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Page states FREE parking; no time limit stated"
+      }
+    ],
+    "discounts": [],
+    "notes": "Page: \"FREE parking\"; over 2,700 spaces incl. 385 undercover, 30 accessible, 30 parents-with-prams. Access via Learmonth St and Dixon St. No time limit stated on page (free_period_hours left null because no limit stated). No longer branded Westfield."
+  },
+  {
+    "id": "sunnybank-plaza",
+    "source": "mall",
+    "operator": "Sunnybank Plaza",
+    "name": "Sunnybank Plaza",
+    "address": "Cnr Mains Rd & McCullough St, Sunnybank QLD 4109",
+    "lat": null,
+    "lng": null,
+    "url": "https://sunnybankplaza.com.au/centre-info/getting-here",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 2600,
+    "features": [
+      "free_parking",
+      "undercover_partial",
+      "staff_parking"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Shoppers who do not leave the centre may park any location for any period"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Staff",
+        "details": "Retail staff park free in allocated staff spaces only."
+      }
+    ],
+    "notes": "Over 2,600 free spaces. Surrounding business/CBD workers not permitted to park while working."
+  },
+  {
+    "id": "toowong-village",
+    "source": "mall",
+    "operator": "Toowong Village (car park by Nationwide Parking)",
+    "name": "Toowong Village",
+    "address": "9 Sherwood Road, Toowong QLD 4066",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.toowongvillage.com.au/centre-information/parking",
+    "checked_at": "2026-10-25",
+    "hours": "24/7 incl. public holidays",
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "24h",
+      "ticketless_lpr",
+      "cashless",
+      "motorcycle_free",
+      "disability_permit_free",
+      "staff_parking"
+    ],
+    "free_period_hours": 3,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-3h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-3.5h",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3.5-4h",
+        "price_aud": 6,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": 4,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-4.5h",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4.5-5h",
+        "price_aud": 15,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5-5.5h",
+        "price_aud": 20,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5.5-6h",
+        "price_aud": 25,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6-6.5h",
+        "price_aud": 35,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 6.5,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6.5-7h",
+        "price_aud": 40,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6.5,
+        "duration_hours_to": 7,
+        "conditions": "First 3h free per day; leave and return after 30 min = another 3h free"
+      },
+      {
+        "kind": "daily_max",
+        "label": "7+ hours",
+        "price_aud": 49,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "flat",
+        "label": "Staff daily rate",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Registered Toowong Village/Tower staff, Level 8 & Rooftop only"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Disability permit",
+        "details": "Free; validate at Nationwide Carpark Management Office (Gallery level)."
+      },
+      {
+        "label": "Motorcycle",
+        "details": "Free in designated bays."
+      },
+      {
+        "label": "Staff",
+        "details": "$4/day for registered staff."
+      },
+      {
+        "label": "Spend validation",
+        "details": "None (\"No validation for spend\")."
+      }
+    ],
+    "notes": "Cashless, card only. Two car parks (Multi-deck, Basement) via Sherwood Rd/High St and Lissner St. Conditions of entry PDF disallowed by robots.txt (CDN) – not fetched. Also sourced from: https://www.toowongvillage.com.au/events/3-hours-free-parking"
+  },
+  {
+    "id": "valley-metro",
+    "source": "mall",
+    "operator": "Valley Metro (car park by First Parking)",
+    "name": "Valley Metro Fortitude Valley",
+    "address": "230 Brunswick St, Fortitude Valley QLD 4006 (car park 52 Alfred Street)",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.firstparking.com.au/locations/valley-metro",
+    "checked_at": "2026-10-25",
+    "hours": "24/7",
+    "height_m": 1.9,
+    "capacity": null,
+    "features": [
+      "24h",
+      "ticketless_lpr_members",
+      "monthly_parking"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Casual 0-15 min",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "10:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 0.25,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Casual 15-60 min",
+        "price_aud": 21,
+        "online_price_aud": 16.8,
+        "days": "Mon-Fri",
+        "entry_window": "10:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 0.25,
+        "duration_hours_to": 1,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Casual 1-2h",
+        "price_aud": 41,
+        "online_price_aud": 32.8,
+        "days": "Mon-Fri",
+        "entry_window": "10:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 1,
+        "duration_hours_to": 2,
+        "conditions": null
+      },
+      {
+        "kind": "daily_max",
+        "label": "Casual 2h+",
+        "price_aud": 61,
+        "online_price_aud": 48.8,
+        "days": "Mon-Fri",
+        "entry_window": "10:00-16:00",
+        "exit_window": null,
+        "duration_hours_from": 2,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "early_bird",
+        "label": "Early Bird",
+        "price_aud": 22,
+        "online_price_aud": 13.6,
+        "days": "Mon-Fri",
+        "entry_window": "04:00-10:00",
+        "exit_window": "before 23:59",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "night",
+        "label": "Evening",
+        "price_aud": 22,
+        "online_price_aud": 17.6,
+        "days": "Mon-Fri",
+        "entry_window": "after 16:00",
+        "exit_window": "before 04:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Weekend & public holiday",
+        "price_aud": 22,
+        "online_price_aud": 17.6,
+        "days": "Sat-Sun & PH",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      }
+    ],
+    "discounts": [
+      {
+        "label": "First Parking Express membership",
+        "details": "Free membership; ~20% off drive-up rates (online_price_aud = Express rate); ticketless LPR entry with auto card payment."
+      }
+    ],
+    "notes": "Centre page (valleymetro.com.au) mentions \"on-site Secure Parking\" but links to First Parking; rates taken from First Parking location page. Charges recommence 4:00am daily. Entry via Alfred St and Alden St. Also sourced from: https://www.valleymetro.com.au/location"
+  },
+  {
+    "id": "victoria-point-lakeside",
+    "source": "mall",
+    "operator": "Victoria Point Lakeside (managed by All Commercial Properties Qld)",
+    "name": "Victoria Point Lakeside",
+    "address": "7-27 Bunker Rd, Victoria Point QLD 4165",
+    "lat": null,
+    "lng": null,
+    "url": "https://victoriapointlakeside.com.au/about",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 950,
+    "features": [
+      "free_parking"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No time limit stated on page"
+      }
+    ],
+    "discounts": [],
+    "notes": "\"About\" page: 950 free car parks. No dedicated parking page."
+  },
+  {
+    "id": "westfield-carindale",
+    "source": "mall",
+    "operator": "Scentre Group",
+    "name": "Westfield Carindale",
+    "address": "1151 Creek Road, Carindale QLD 4152",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.westfield.com.au/carindale/parking",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": 2.0,
+    "capacity": null,
+    "features": [
+      "ticketless_lpr",
+      "no_entry_boom_gate",
+      "valet",
+      "motorcycle_parking",
+      "pay_in_app"
+    ],
+    "free_period_hours": 3,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-3h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-3.5h",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3.5-4h",
+        "price_aud": 6,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": 4,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-4.5h",
+        "price_aud": 8,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4.5-5h",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5-5.5h",
+        "price_aud": 12,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5.5-6h",
+        "price_aud": 14,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6-6.5h",
+        "price_aud": 16,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 6.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6.5-7h",
+        "price_aud": 18,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6.5,
+        "duration_hours_to": 7,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 7-7.5h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": 7.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 7.5-+h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7.5,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 0-4h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 4,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 4-4.5h",
+        "price_aud": 5,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 4.5-5h",
+        "price_aud": 7,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 5-5.5h",
+        "price_aud": 9,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 5.5-6h",
+        "price_aud": 11,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 6-6.5h",
+        "price_aud": 13,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 6.5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 6.5-7h",
+        "price_aud": 15,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6.5,
+        "duration_hours_to": 7,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 7-7.5h",
+        "price_aud": 25,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": 7.5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 7.5-+h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7.5,
+        "duration_hours_to": null,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "daily_max",
+        "label": "Maximum daily rate",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "other",
+        "label": "Overnight fee",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "night",
+        "label": "Westfield member evening free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": "after 17:30",
+        "exit_window": "before 06:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Westfield members only"
+      },
+      {
+        "kind": "flat",
+        "label": "Game Day parking",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": "before 17:30",
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Valid event tickets validated at Concierge"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Westfield membership (app)",
+        "details": "4 hours free instead of 3; free entry after 5:30pm exiting before 6am."
+      },
+      {
+        "label": "Game day",
+        "details": "$10 all-day with valid event tickets, entry before 5:30pm."
+      },
+      {
+        "label": "Valet",
+        "details": "Mon-Fri $12, Sat-Sun $15; Thu after 6pm Westfield members $6; Mon-Fri parents with prams/seniors/disability permit holders $6; every 6th visit free."
+      }
+    ],
+    "notes": "Ticketless LPR. Most car parks max height 2.0m or 2.1m; vehicles over 2.0m use Creek Rd northbound ramp to Black Level 3 rooftop. EV: ChargePoint removed Feb 2024. Dedicated motorcycle bays in multi-level car park."
+  },
+  {
+    "id": "westfield-chermside",
+    "source": "mall",
+    "operator": "Scentre Group",
+    "name": "Westfield Chermside",
+    "address": "Cnr Gympie & Hamilton Rds, Chermside QLD 4032",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.westfield.com.au/chermside/parking",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": 2.0,
+    "capacity": null,
+    "features": [
+      "ticketless_lpr",
+      "no_entry_boom_gate",
+      "valet",
+      "staff_parking",
+      "pram_parking",
+      "mobility_permit_free",
+      "pay_in_app"
+    ],
+    "free_period_hours": 2,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-2h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 2,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 2-2.5h",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 2,
+        "duration_hours_to": 2.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 2.5-3h",
+        "price_aud": 6,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 2.5,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-3.5h",
+        "price_aud": 8,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3.5-4h",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": 4,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-4.5h",
+        "price_aud": 12,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4.5-5h",
+        "price_aud": 14,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5-5.5h",
+        "price_aud": 16,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5.5-6h",
+        "price_aud": 18,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6-+h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 0-4h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 4,
+        "conditions": "Westfield member with number plate added in Westfield app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 4-4.5h",
+        "price_aud": 8,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": "Westfield member with number plate added in Westfield app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 4.5-5h",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": "Westfield member with number plate added in Westfield app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 5-5.5h",
+        "price_aud": 12,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": "Westfield member with number plate added in Westfield app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 5.5-6h",
+        "price_aud": 14,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": "Westfield member with number plate added in Westfield app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 6-+h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": null,
+        "conditions": "Westfield member with number plate added in Westfield app"
+      },
+      {
+        "kind": "daily_max",
+        "label": "Maximum daily rate",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "other",
+        "label": "Overnight fee",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "night",
+        "label": "Westfield member evening free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": "after 17:30",
+        "exit_window": "before 01:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Westfield members only; standard rates for non-members"
+      },
+      {
+        "kind": "flat",
+        "label": "Game Day / event parking",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": "before 17:30",
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Show valid event/game tickets at Concierge (or help button at exit until 11pm); flat rate full day"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Westfield membership (app)",
+        "details": "4 hours free instead of 2; free entry after 5:30pm exiting before 1am. Add number plate in Westfield app."
+      },
+      {
+        "label": "Cinema/spend validation",
+        "details": "Not available at Westfield Chermside (stated on page)."
+      },
+      {
+        "label": "Mobility permit",
+        "details": "Free parking on presentation of valid permit at Concierge (Level 1 near Target)."
+      },
+      {
+        "label": "Game day",
+        "details": "$10 all-day flat rate with valid event tickets, entry before 5:30pm."
+      },
+      {
+        "label": "Valet",
+        "details": "Full valet Mon-Fri $12, Sat-Sun $15; every 6th visit free (loyalty)."
+      },
+      {
+        "label": "Staff",
+        "details": "Dedicated staff parking areas for retailers; contact Concierge."
+      }
+    ],
+    "notes": "Ticketless number-plate recognition, no entry boom gate. Re-entry more than 45 min after previous exit on same day earns another free period. Vehicles left >24h may be towed. Height limits per car park: White/Lime/Pink/Blue 2.2m, Grey/Red 2.3m, Orange 2.0m, Gold 3.6m (height_m = lowest). EV: ChargePoint chargers removed Feb 2024; replacement pending. Payment at pay stations (cash/card), exit (card) or app."
+  },
+  {
+    "id": "westfield-mt-gravatt",
+    "source": "mall",
+    "operator": "Scentre Group",
+    "name": "Westfield Mt Gravatt (Garden City)",
+    "address": "Cnr Logan & Kessels Rd, Upper Mt Gravatt QLD 4122",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.westfield.com.au/mtgravatt/parking",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": 2.1,
+    "capacity": null,
+    "features": [
+      "ticketless_lpr",
+      "no_entry_boom_gate",
+      "valet",
+      "staff_parking",
+      "pram_parking",
+      "mobility_permit_free",
+      "pay_in_app"
+    ],
+    "free_period_hours": 3,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-3h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-3.5h",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 3.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3.5-4h",
+        "price_aud": 6,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3.5,
+        "duration_hours_to": 4,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-4.5h",
+        "price_aud": 8,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4.5-5h",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5-5.5h",
+        "price_aud": 12,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5.5-6h",
+        "price_aud": 14,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6-6.5h",
+        "price_aud": 16,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 6.5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6.5-7h",
+        "price_aud": 18,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6.5,
+        "duration_hours_to": 7,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 7-+h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 0-4h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 4,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 4-4.5h",
+        "price_aud": 5,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 4.5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 4.5-5h",
+        "price_aud": 7,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4.5,
+        "duration_hours_to": 5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 5-5.5h",
+        "price_aud": 9,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 5.5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 5.5-6h",
+        "price_aud": 11,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5.5,
+        "duration_hours_to": 6,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 6-6.5h",
+        "price_aud": 13,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 6.5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 6.5-7h",
+        "price_aud": 15,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6.5,
+        "duration_hours_to": 7,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 7-7.5h",
+        "price_aud": 25,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": 7.5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 7.5-+h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7.5,
+        "duration_hours_to": null,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "daily_max",
+        "label": "Maximum daily rate",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "other",
+        "label": "Overnight fee",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "night",
+        "label": "Westfield member evening free parking",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": "after 17:30",
+        "exit_window": "before 06:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Westfield members only"
+      },
+      {
+        "kind": "flat",
+        "label": "Game Day parking",
+        "price_aud": 10,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": "before 17:30",
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "Valid event tickets validated at Concierge"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Westfield membership (app)",
+        "details": "4 hours free instead of 3 (45 min re-entry conditions apply); free entry after 5:30pm exiting before 6am."
+      },
+      {
+        "label": "Mobility / disability permit",
+        "details": "Free parking; validate once if registered in Westfield app, otherwise at desk each visit."
+      },
+      {
+        "label": "Game day",
+        "details": "$10 all-day with valid event tickets, entry before 5:30pm."
+      },
+      {
+        "label": "Valet",
+        "details": "Full valet Mon-Sun $15; every 6th visit free."
+      },
+      {
+        "label": "Staff",
+        "details": "Staff parking on rooftops of Violet and Aqua car parks; contact centre team."
+      }
+    ],
+    "notes": "Ticketless LPR. Height limits by car park 2.1m-3.1m (Orange 3.1m, Green 2.7m, Red 2.5m); height_m = lowest (2.1m). EV not mentioned on page."
+  },
+  {
+    "id": "westfield-north-lakes",
+    "source": "mall",
+    "operator": "Scentre Group",
+    "name": "Westfield North Lakes",
+    "address": "Cnr Anzac Ave & North Lakes Dr, North Lakes QLD 4509",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.westfield.com.au/northlakes/parking",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": 2.2,
+    "capacity": null,
+    "features": [
+      "ticketless_lpr",
+      "ev_charging",
+      "motorcycle_parking",
+      "staff_parking",
+      "mobility_permit_free"
+    ],
+    "free_period_hours": 3,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Standard 0-3h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 3-4h",
+        "price_aud": 4,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": 4,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 4-5h",
+        "price_aud": 8,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 5,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 5-6h",
+        "price_aud": 12,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 6,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 6-7h",
+        "price_aud": 16,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 7,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Standard 7-+h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 0-4h",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 4,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 4-5h",
+        "price_aud": 8,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 4,
+        "duration_hours_to": 5,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 5-6h",
+        "price_aud": 12,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 5,
+        "duration_hours_to": 6,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 6-7h",
+        "price_aud": 16,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 6,
+        "duration_hours_to": 7,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "hourly",
+        "label": "Westfield member 7-+h",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 7,
+        "duration_hours_to": null,
+        "conditions": "Westfield member with number plate in app"
+      },
+      {
+        "kind": "daily_max",
+        "label": "Maximum daily rate",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "other",
+        "label": "Overnight fee",
+        "price_aud": 36,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "night",
+        "label": "Evening free parking (all customers)",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": "Mon-Sun",
+        "entry_window": "after 17:30",
+        "exit_window": "before 01:00",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "No validation needed"
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Westfield membership (app)",
+        "details": "4 hours free instead of 3. PARK+ moved into Westfield membership."
+      },
+      {
+        "label": "Mobility permit",
+        "details": "Free parking on presentation of valid permit at Concierge (near Food Court)."
+      }
+    ],
+    "notes": "Undercover car parks max 2.2m; external car parks from 2.4m; IKEA car park 2.5m. EV: Chargefox stations in IKEA yellow basement car park (maintained by IKEA). Evening free parking applies to all customers here (not member-only)."
+  },
+  {
+    "id": "westpoint-browns-plains",
+    "source": "mall",
+    "operator": "Westpoint",
+    "name": "Westpoint Browns Plains",
+    "address": "8-24 Browns Plains Rd, Browns Plains QLD 4118",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.westpointbrownsplains.com.au/centre-info/",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": 280,
+    "features": [
+      "time_limited",
+      "shade_sails"
+    ],
+    "free_period_hours": 2,
+    "rates": [
+      {
+        "kind": "flat",
+        "label": "Free first 2 hours",
+        "price_aud": 0,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 0,
+        "duration_hours_to": 2,
+        "conditions": null
+      }
+    ],
+    "discounts": [],
+    "notes": "Over 280 spaces, many under shade sails, FREE for first 2 hours. Charges/penalties after 2h not stated."
+  },
+  {
+    "id": "wintergarden",
+    "source": "mall",
+    "operator": "Wintergarden (car park operated by Secure Parking)",
+    "name": "Wintergarden – Secure Parking Wintergarden Brisbane City",
+    "address": "162 Elizabeth Street, Brisbane QLD 4000 (centre: 171-209 Queen Street Mall)",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.secureparking.com.au/en-au/car-parks/australia/qld/wintergarden-brisbane-city-car-park/",
+    "checked_at": "2026-10-25",
+    "hours": "24/7",
+    "height_m": 1.95,
+    "capacity": null,
+    "features": [
+      "24h",
+      "ev_charging_listed",
+      "tap_in_tap_out",
+      "online_booking",
+      "monthly_parking"
+    ],
+    "free_period_hours": null,
+    "rates": [
+      {
+        "kind": "hourly",
+        "label": "Drive-up 0-3h",
+        "price_aud": 15,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": "after 05:00",
+        "exit_window": "before 05:00 next day",
+        "duration_hours_from": 0,
+        "duration_hours_to": 3,
+        "conditions": null
+      },
+      {
+        "kind": "daily_max",
+        "label": "Drive-up 3h+ (daily max)",
+        "price_aud": 26,
+        "online_price_aud": null,
+        "days": "Mon-Fri",
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": 3,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "early_bird",
+        "label": "Flexible Early Bird",
+        "price_aud": null,
+        "online_price_aud": 27,
+        "days": "Mon-Fri",
+        "entry_window": "05:00-09:30",
+        "exit_window": "09:31-23:59",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "night",
+        "label": "Night",
+        "price_aud": 7,
+        "online_price_aud": 8,
+        "days": "Mon-Fri",
+        "entry_window": "after 15:00",
+        "exit_window": "before 05:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "weekend",
+        "label": "Weekend & public holidays",
+        "price_aud": 7,
+        "online_price_aud": 8,
+        "days": "Sat-Sun & public holidays",
+        "entry_window": "after 05:00",
+        "exit_window": "before 05:00 next day",
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": null
+      },
+      {
+        "kind": "other",
+        "label": "Monthly (new customers, min 3 months)",
+        "price_aud": 429,
+        "online_price_aud": null,
+        "days": null,
+        "entry_window": null,
+        "exit_window": null,
+        "duration_hours_from": null,
+        "duration_hours_to": null,
+        "conditions": "\"from $429*\""
+      }
+    ],
+    "discounts": [
+      {
+        "label": "Online pre-purchase",
+        "details": "Early bird $27 online; night/weekend online $8 (drive-up $7 is cheaper)."
+      }
+    ],
+    "notes": "Rates from Secure Parking car park page (rates \"current for today but may vary\"). Wintergarden centre page links to this Secure Parking car park. EV charging appears only as a generic search filter on the Secure Parking page – not confirmed for this site. A \"$14 weekend parking\" promo page exists on wgarden.com.au but its offer content was not present in the fetched HTML. Also sourced from: https://wgarden.com.au/centre-information/"
+  },
+  {
+    "id": "wynnum-plaza",
+    "source": "mall",
+    "operator": "Wynnum Plaza",
+    "name": "Wynnum Plaza",
+    "address": "2021 Wynnum Rd, Wynnum QLD 4178",
+    "lat": null,
+    "lng": null,
+    "url": "https://www.wynnumplaza.com/centre-info",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "ev_charging"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "No parking rates/time limits on centre pages. EV: 4 ENGIE chargers near Super Butcher, via Chargefox app. Also sourced from: https://www.wynnumplaza.com/centre-info/ev-charging-stations"
+  },
+  {
+    "id": "yamanto-central",
+    "source": "mall",
+    "operator": "Yamanto Central",
+    "name": "Yamanto Central",
+    "address": "488 Warwick Road, Yamanto QLD 4305",
+    "lat": null,
+    "lng": null,
+    "url": "https://yamantocentral.com.au/centre-information",
+    "checked_at": "2026-10-25",
+    "hours": null,
+    "height_m": null,
+    "capacity": null,
+    "features": [
+      "basement",
+      "accessible_bays",
+      "parents_with_prams_bays",
+      "drop_off_zone"
+    ],
+    "free_period_hours": null,
+    "rates": [],
+    "discounts": [],
+    "notes": "Basement car park off Warwick Rd, ground level off Main St; 2-minute drop-off zone in basement. Fees not stated. Operator from search snippet (JMK Retail page)."
+  }
+]
