@@ -1,0 +1,460 @@
+[
+ {
+  "id": "westfield-chermside",
+  "operator": "Scentre Group",
+  "name": "Westfield Chermside",
+  "urls": [
+   "https://www.westfield.com.au/chermside/parking"
+  ]
+ },
+ {
+  "id": "westfield-carindale",
+  "operator": "Scentre Group",
+  "name": "Westfield Carindale",
+  "urls": [
+   "https://www.westfield.com.au/carindale/parking"
+  ]
+ },
+ {
+  "id": "westfield-mt-gravatt",
+  "operator": "Scentre Group",
+  "name": "Westfield Mt Gravatt (Garden City)",
+  "urls": [
+   "https://www.westfield.com.au/mtgravatt/parking"
+  ]
+ },
+ {
+  "id": "westfield-north-lakes",
+  "operator": "Scentre Group",
+  "name": "Westfield North Lakes",
+  "urls": [
+   "https://www.westfield.com.au/northlakes/parking"
+  ]
+ },
+ {
+  "id": "strathpine-centre",
+  "operator": "Strathpine Centre (formerly Westfield Strathpine)",
+  "name": "Strathpine Centre",
+  "urls": [
+   "https://www.strathpinecentre.com.au/centre-information/getting-here"
+  ]
+ },
+ {
+  "id": "westfield-member-offer",
+  "operator": "Scentre Group",
+  "name": "(Westfield member offer article)",
+  "urls": [
+   "https://www.westfield.com.au/chermside/news/3GgTzRBqhxOcQVzu8d7iG/enjoy-4-hours-of-free-parking-as-a-westfield-member"
+  ]
+ },
+ {
+  "id": "indooroopilly",
+  "operator": "Indooroopilly Shopping Centre",
+  "name": "Indooroopilly Shopping Centre",
+  "urls": [
+   "https://www.indooroopillyshopping.com.au/visit/parking.html",
+   "https://www.indooroopillyshopping.com.au/content/dam/microsites-retail/indooroopilly/documents/parking/INDRO!_Car%20Parking_Terms%20and_Conditions_Customers_Updated_Rates_May_2026.pdf"
+  ]
+ },
+ {
+  "id": "toombul",
+  "operator": "Mirvac",
+  "name": "Toombul Shopping Centre",
+  "urls": [
+   "https://en.wikipedia.org/wiki/Toombul_Shopping_Centre"
+  ]
+ },
+ {
+  "id": "myer-centre",
+  "operator": "Myer Centre Brisbane",
+  "name": "The Myer Centre Brisbane",
+  "urls": [
+   "http://themyercentre.com.au/centre-info/the-myer-centre-car-park",
+   "https://www.uptownbrisbane.com.au/parking"
+  ]
+ },
+ {
+  "id": "wintergarden",
+  "operator": "Wintergarden",
+  "name": "Wintergarden",
+  "urls": [
+   "https://wgarden.com.au/centre-information/",
+   "https://wgarden.com.au/whats-on/14-weekend-parking/",
+   "https://www.secureparking.com.au/en-au/car-parks/australia/qld/wintergarden-brisbane-city-car-park/"
+  ]
+ },
+ {
+  "id": "queensplaza",
+  "operator": "QueensPlaza",
+  "name": "QueensPlaza",
+  "urls": [
+   "https://www.queensplaza.com.au/car-park-rates",
+   "https://www.queensplaza.com.au/car-park-information"
+  ]
+ },
+ {
+  "id": "macarthur-central",
+  "operator": "MacArthur Central",
+  "name": "MacArthur Central",
+  "urls": [
+   "https://www.macarthurcentral.com.au/visit/parking"
+  ]
+ },
+ {
+  "id": "brisbane-arcade",
+  "operator": "Brisbane Arcade",
+  "name": "Brisbane Arcade",
+  "urls": [
+   "https://brisbanearcade.com.au/visit-brisbane-arcade/"
+  ]
+ },
+ {
+  "id": "dfo-brisbane",
+  "operator": "Vicinity Centres",
+  "name": "DFO Brisbane",
+  "urls": [
+   "https://www.brisbane.dfo.com.au/directions/parking"
+  ]
+ },
+ {
+  "id": "skygate",
+  "operator": "Brisbane Airport Corporation",
+  "name": "Skygate",
+  "urls": [
+   "https://www.skygate.com.au/parking"
+  ]
+ },
+ {
+  "id": "sunnybank-plaza",
+  "operator": "Sunnybank Plaza",
+  "name": "Sunnybank Plaza",
+  "urls": [
+   "https://sunnybankplaza.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "market-square-sunnybank",
+  "operator": "Market Square",
+  "name": "Market Square Sunnybank",
+  "urls": [
+   "https://www.secureparking.com.au/en-au/offers-and-events/sunnybank-parking/"
+  ]
+ },
+ {
+  "id": "hyperdome",
+  "operator": "QIC",
+  "name": "Hyperdome (Loganholme)",
+  "urls": [
+   "https://hyperdomeshopping.com.au/getting-here/",
+   "https://hyperdomeshopping.qicre.com/centre-information/parking"
+  ]
+ },
+ {
+  "id": "grand-plaza",
+  "operator": "Vicinity Centres",
+  "name": "Grand Plaza Browns Plains",
+  "urls": [
+   "https://www.grandplaza.com.au/directions",
+   "https://www.grandplaza.com.au/parking"
+  ]
+ },
+ {
+  "id": "capalaba-park",
+  "operator": "Capalaba Park",
+  "name": "Capalaba Park Shopping Centre",
+  "urls": [
+   "https://www.capalabapark.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "capalaba-central",
+  "operator": "Capalaba Central",
+  "name": "Capalaba Central",
+  "urls": [
+   "https://capalabacentral.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "toowong-village",
+  "operator": "Toowong Village",
+  "name": "Toowong Village",
+  "urls": [
+   "https://www.toowongvillage.com.au/centre-information/parking",
+   "https://www.toowongvillage.com.au/events/3-hours-free-parking"
+  ]
+ },
+ {
+  "id": "valley-metro",
+  "operator": "Valley Metro",
+  "name": "Valley Metro",
+  "urls": [
+   "https://www.valleymetro.com.au/location"
+  ]
+ },
+ {
+  "id": "emporium",
+  "operator": "Emporium",
+  "name": "Emporium Fortitude Valley",
+  "urls": [
+   "https://www.secureparking.com.au/en-au/car-parks/australia/qld/1024-ann-street-fortitude-valley-car-park"
+  ]
+ },
+ {
+  "id": "mcwhirters",
+  "operator": "McWhirters",
+  "name": "McWhirters Marketplace",
+  "urls": [
+   "https://www.secureparking.com.au/en-au/offers-and-events/fortitude-valley-parking/"
+  ]
+ },
+ {
+  "id": "riverlink",
+  "operator": "Riverlink",
+  "name": "Riverlink Shopping Centre",
+  "urls": [
+   "https://www.riverlink.net.au/visit/getting-here/"
+  ]
+ },
+ {
+  "id": "redbank-plaza",
+  "operator": "Redbank Plaza",
+  "name": "Redbank Plaza",
+  "urls": [
+   "https://redbankplaza.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "orion-springfield",
+  "operator": "Mirvac",
+  "name": "Orion Springfield Central",
+  "urls": [
+   "https://www.orionspringfieldcentral.com.au/visit/parking"
+  ]
+ },
+ {
+  "id": "mt-ommaney",
+  "operator": "Mt Ommaney Centre",
+  "name": "Mt Ommaney Centre",
+  "urls": [
+   "https://mtommaneycentre.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "stockland-cleveland",
+  "operator": "Stockland",
+  "name": "Stockland Cleveland",
+  "urls": [
+   "https://www.stockland.com.au/shopping-centres/centres/stockland-cleveland/visit/parking"
+  ]
+ },
+ {
+  "id": "cleveland-central",
+  "operator": "Cleveland Central",
+  "name": "Cleveland Central",
+  "urls": [
+   "https://www.clevelandcentral.com.au/location-parking"
+  ]
+ },
+ {
+  "id": "morayfield",
+  "operator": "Morayfield Shopping Centre",
+  "name": "Morayfield Shopping Centre",
+  "urls": [
+   "http://morayfieldshoppingcentre.com.au/visit/getting-here"
+  ]
+ },
+ {
+  "id": "peninsula-fair",
+  "operator": "Peninsula Fair",
+  "name": "Peninsula Fair",
+  "urls": [
+   "https://www.penfair.com.au/centre-info/getting-here/"
+  ]
+ },
+ {
+  "id": "brookside",
+  "operator": "Brookside",
+  "name": "Brookside Shopping Centre",
+  "urls": [
+   "https://www.brookside.com.au/"
+  ]
+ },
+ {
+  "id": "victoria-point",
+  "operator": "Victoria Point Shopping Centre",
+  "name": "Victoria Point Shopping Centre",
+  "urls": [
+   "https://victoriapointshoppingcentre.com.au/visit/getting-here"
+  ]
+ },
+ {
+  "id": "victoria-point-lakeside",
+  "operator": "Victoria Point Lakeside",
+  "name": "Victoria Point Lakeside",
+  "urls": [
+   "https://victoriapointlakeside.com.au/about"
+  ]
+ },
+ {
+  "id": "arndale-springwood",
+  "operator": "Consolidated Properties",
+  "name": "Arndale Springwood",
+  "urls": [
+   "https://arndale.com.au/location/"
+  ]
+ },
+ {
+  "id": "calamvale-central",
+  "operator": "Calamvale Central",
+  "name": "Calamvale Central",
+  "urls": [
+   "https://calamvalecentral.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "kenmore-village",
+  "operator": "Kenmore Village",
+  "name": "Kenmore Village",
+  "urls": [
+   "https://kenmorevillage.com.au/facilities/",
+   "https://kenmorevillage.com.au/ev-ch/"
+  ]
+ },
+ {
+  "id": "aspley-hypermarket",
+  "operator": "Aspley Hypermarket",
+  "name": "Aspley Hypermarket",
+  "urls": [
+   "https://www.aspleyhypermarket.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "stafford-city",
+  "operator": "Stafford City",
+  "name": "Stafford City",
+  "urls": [
+   "https://www.staffordcity.com.au/centre-info/getting-here/"
+  ]
+ },
+ {
+  "id": "homeco-lutwyche",
+  "operator": "HomeCo",
+  "name": "HomeCo. Lutwyche",
+  "urls": [
+   "https://home-co.com.au/lutwyche/centre-info/directions-parking"
+  ]
+ },
+ {
+  "id": "homeco-victoria-point",
+  "operator": "HomeCo",
+  "name": "HomeCo. Victoria Point",
+  "urls": [
+   "https://home-co.com.au/victoria-point/centre-info/directions-parking"
+  ]
+ },
+ {
+  "id": "booval-fair",
+  "operator": "Booval Fair",
+  "name": "Booval Fair",
+  "urls": [
+   "https://boovalfair.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "sbh-shoppingtown",
+  "operator": "Sunnybank Hills Shoppingtown",
+  "name": "Sunnybank Hills Shoppingtown",
+  "urls": [
+   "https://www.sbhshoppingtown.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "albany-creek-village",
+  "operator": "Albany Creek Village",
+  "name": "Albany Creek Village",
+  "urls": [
+   "https://albanycreekvillage.com.au/about"
+  ]
+ },
+ {
+  "id": "carseldine-central",
+  "operator": "Carseldine Central",
+  "name": "Carseldine Central",
+  "urls": [
+   "https://www.carseldinecentral.com.au/our-centre"
+  ]
+ },
+ {
+  "id": "westpoint-browns-plains",
+  "operator": "Westpoint",
+  "name": "Westpoint Browns Plains",
+  "urls": [
+   "https://www.westpointbrownsplains.com.au/centre-info/"
+  ]
+ },
+ {
+  "id": "cannon-hill-kmart-plaza",
+  "operator": "Cannon Hill Kmart Plaza",
+  "name": "Cannon Hill Kmart Plaza",
+  "urls": [
+   "https://cannonhillkmartplaza.com.au/centre-info/getting-here"
+  ]
+ },
+ {
+  "id": "newmarket-village",
+  "operator": "Newmarket Village",
+  "name": "Newmarket Village",
+  "urls": [
+   "https://www.newmarket-village.com.au/parking"
+  ]
+ },
+ {
+  "id": "bracken-ridge-plaza",
+  "operator": "Bracken Ridge Plaza",
+  "name": "Bracken Ridge Plaza",
+  "urls": [
+   "https://brackenridgeplaza.com.au/centre-information"
+  ]
+ },
+ {
+  "id": "kallangur-fair",
+  "operator": "Ganellen",
+  "name": "Kallangur Fair",
+  "urls": [
+   "https://www.kallangurfair.com.au/parking"
+  ]
+ },
+ {
+  "id": "wynnum-plaza",
+  "operator": "Wynnum Plaza",
+  "name": "Wynnum Plaza",
+  "urls": [
+   "https://www.wynnumplaza.com/centre-info"
+  ]
+ },
+ {
+  "id": "coorparoo-square",
+  "operator": "Coorparoo Square",
+  "name": "Coorparoo Square",
+  "urls": [
+   "https://coorparoosquare.com.au/centre-information",
+   "https://pointparking.com.au/locations/coorparoo-square-shopping"
+  ]
+ },
+ {
+  "id": "southpoint-south-bank",
+  "operator": "Southpoint",
+  "name": "Southpoint South Bank",
+  "urls": [
+   "https://southpointsouthbank.com.au/getting-here/"
+  ]
+ },
+ {
+  "id": "logan-central-plaza",
+  "operator": "Logan Central Plaza",
+  "name": "Logan Central Plaza",
+  "urls": [
+   "https://www.logancentralplaza.com.au/"
+  ]
+ }
+]

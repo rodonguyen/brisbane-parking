@@ -1,0 +1,810 @@
+{
+ "1 Main Street, Springfield Central QLD 4300": {
+  "addresstype": "amenity",
+  "category": "amenity",
+  "display_name": "Event Cinemas, 1, Main Street, Orion Springfield Central, Springfield Central, Brisbane, Queensland, 4300, Australia",
+  "lat": -27.6780392,
+  "lng": 152.9012979,
+  "type": "cinema"
+ },
+ "1 Park Road, Milton QLD 4064": {
+  "addresstype": "amenity",
+  "category": "amenity",
+  "display_name": "Arrivederci's Pizzeria, 1, Park Road, Milton, Brisbane, Queensland, 4064, Australia",
+  "lat": -27.4702903,
+  "lng": 153.0041887,
+  "type": "restaurant"
+ },
+ "100 Edward Street, Brisbane QLD 4000": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "100, Edward Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4706014,
+  "lng": 153.0287709,
+  "type": "commercial"
+ },
+ "1024 Ann Street, Fortitude Valley QLD 4006": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "1024, Ann Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4529478,
+  "lng": 153.0400102,
+  "type": "house"
+ },
+ "105 Vulture Street, West End, QLD 4101": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "105, Vulture Street, West End, Brisbane, Queensland, 4101, Australia",
+  "lat": -27.4811722,
+  "lng": 153.0124316,
+  "type": "retail"
+ },
+ "1058 Ann Street, Fortitude Valley, QLD 4006": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "1058, Ann Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4518735,
+  "lng": 153.0402134,
+  "type": "house"
+ },
+ "13 Warner Street, Fortitude Valley QLD 4006": {
+  "addresstype": "tertiary",
+  "category": "highway",
+  "display_name": "Warner Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4576036,
+  "lng": 153.0354071,
+  "type": "tertiary"
+ },
+ "14 Walden Lane, Bowen Hills QLD 4006": {
+  "addresstype": "road",
+  "category": "highway",
+  "display_name": "Walden Lane, Bowen Hills, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4473123,
+  "lng": 153.0300424,
+  "type": "service"
+ },
+ "140 Creek St, Brisbane QLD 4000": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "Terrica Place, 140, Creek Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4661755,
+  "lng": 153.0273685,
+  "type": "office"
+ },
+ "1477 Anzac Avenue, Kallangur QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Kallangur Fair, 1477, Anzac Avenue, Kallangur, Queensland, 4503, Australia",
+  "lat": -27.2513807,
+  "lng": 152.9992194,
+  "type": "mall"
+ },
+ "156 Inala Avenue, Inala QLD 4077": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "156, Inala Avenue, Inala, Brisbane, Queensland, 4077, Australia",
+  "lat": -27.5980258,
+  "lng": 152.9742642,
+  "type": "house"
+ },
+ "16 Amazons Pl, Jindalee QLD 4074": {
+  "addresstype": "unclassified",
+  "category": "highway",
+  "display_name": "Amazons Place, Jindalee, Brisbane, Queensland, 4074, Australia",
+  "lat": -27.5324414,
+  "lng": 152.9487118,
+  "type": "unclassified"
+ },
+ "160 Queen Street Mall, Brisbane QLD 4000": {
+  "addresstype": "pedestrian",
+  "category": "highway",
+  "display_name": "Queen Street Mall, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4696588,
+  "lng": 153.0252343,
+  "type": "pedestrian"
+ },
+ "162 Elizabeth Street, Brisbane QLD 4000": {
+  "addresstype": "secondary",
+  "category": "highway",
+  "display_name": "Elizabeth Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4715468,
+  "lng": 153.0245287,
+  "type": "secondary"
+ },
+ "18th Avenue, Skygate, Brisbane Airport QLD 4008": null,
+ "20 Warner Street, Fortitude Valley QLD 4006": {
+  "addresstype": "tertiary",
+  "category": "highway",
+  "display_name": "Warner Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4576036,
+  "lng": 153.0354071,
+  "type": "tertiary"
+ },
+ "20 Wyandra Street, Newstead QLD 4006": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "Le Bain, 20, Wyandra Street, Teneriffe, Newstead, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4528284,
+  "lng": 153.0449728,
+  "type": "apartments"
+ },
+ "2021 Wynnum Rd, Wynnum QLD 4178": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "2021, Wynnum Road, Wynnum West, Brisbane, Redland City, Queensland, 4178, Australia",
+  "lat": -27.45722,
+  "lng": 153.1552649,
+  "type": "house"
+ },
+ "225 Wickham Terrace, Spring Hill QLD 4000": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "Watkins Medical Centre, 225, Wickham Terrace, Spring Hill, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4653366,
+  "lng": 153.023302,
+  "type": "office"
+ },
+ "230 Brunswick St, Fortitude Valley QLD 4006": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "230, Brunswick Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4565826,
+  "lng": 153.033228,
+  "type": "house"
+ },
+ "240 Saint Pauls Terrace, Fortitude Valley QLD": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "240, Saint Pauls Terrace, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.457324,
+  "lng": 153.0299609,
+  "type": "house"
+ },
+ "240 St Paul's Terrace, Fortitude Valley QLD 4006": null,
+ "240 St Paul’s Terrace, 240 St Paul's Terrace, Fortitude Valley QLD 4006": null,
+ "249 Turbot Street, Brisbane QLD 4000": {
+  "addresstype": "railway",
+  "category": "railway",
+  "display_name": "Brisbane Central, 249, Turbot Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4658449,
+  "lng": 153.0258422,
+  "type": "station"
+ },
+ "250 Telegraph Road , Bracken Ridge QLD 4017": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "250, Telegraph Road, Fitzgibbon, Bracken Ridge, Brisbane, Queensland, 4017, Australia",
+  "lat": -27.330186,
+  "lng": 153.0264727,
+  "type": "house"
+ },
+ "255 Queen Street, Brisbane City QLD 4000": {
+  "addresstype": "amenity",
+  "category": "amenity",
+  "display_name": "NAB, 255, Queen Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4680575,
+  "lng": 153.0275687,
+  "type": "bank"
+ },
+ "271-275 Grey Street, South Brisbane QLD 4101": {
+  "addresstype": "primary",
+  "category": "highway",
+  "display_name": "Grey Street, South Brisbane, Brisbane, Queensland, 4101, Australia",
+  "lat": -27.4709223,
+  "lng": 153.0162634,
+  "type": "primary"
+ },
+ "28 Astor Terrace, Spring Hill QLD 4000": {
+  "addresstype": "amenity",
+  "category": "amenity",
+  "display_name": "Astor Terrace Car Park, 28, Astor Terrace, Spring Hill, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4634333,
+  "lng": 153.0251695,
+  "type": "parking"
+ },
+ "295 Gympie Road, Strathpine QLD 4500": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Aldi, 295, Gympie Road, Brisbane, Queensland, 4500, Australia",
+  "lat": -27.3062646,
+  "lng": 152.9911403,
+  "type": "supermarket"
+ },
+ "300 Ann Street, Brisbane QLD 4000": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "300, Ann Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4650727,
+  "lng": 153.0273213,
+  "type": "house"
+ },
+ "300 Old Cleveland Road Coorparoo QLD 4151": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "Coorparoo Square, 300, Old Cleveland Road, Coorparoo, Brisbane, Queensland, 4151, Australia",
+  "lat": -27.4944341,
+  "lng": 153.0584453,
+  "type": "apartments"
+ },
+ "310 Ann Street, Brisbane QLD 4000": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "310, Ann Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4648574,
+  "lng": 153.0277021,
+  "type": "house"
+ },
+ "313 Adelaide Street, Brisbane QLD 4000": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "313, Adelaide Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4657313,
+  "lng": 153.0290561,
+  "type": "office"
+ },
+ "333 Ann Street, Brisbane QLD 4000": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "333, Ann Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4649591,
+  "lng": 153.0283923,
+  "type": "tower"
+ },
+ "349-369 Colburn Avenue, Victoria Point QLD 4165": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Supercheap Auto, 349-369, Colburn Avenue, Victoria Point, Brisbane, Redland City, Queensland, 4165, Australia",
+  "lat": -27.5869618,
+  "lng": 153.2839988,
+  "type": "car_parts"
+ },
+ "375 Turbot Street, Spring Hill QLD 4000": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "375, Turbot Street, Spring Hill, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4621831,
+  "lng": 153.0302356,
+  "type": "house"
+ },
+ "38-74 Wembley Road, Logan Central QLD 4114": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Coles, 38-74, Wembley Road, Logan Central, Logan City, Brisbane, Queensland, 4114, Australia",
+  "lat": -27.6432063,
+  "lng": 153.1123265,
+  "type": "supermarket"
+ },
+ "39 Hercules Street, Hamilton QLD 4007": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "Portside Wharf, 39, Hercules Street, Northshore Brisbane, Hamilton, Brisbane, Queensland, 4007, Australia",
+  "lat": -27.4404723,
+  "lng": 153.0699529,
+  "type": "retail"
+ },
+ "4 Walden Lane, 4 Walden Lane, Herston, QLD 4006": null,
+ "4 Walden Lane, Herston, QLD 4006": null,
+ "405 Montague Road, West End QLD 4101": {
+  "addresstype": "tertiary",
+  "category": "highway",
+  "display_name": "Montague Road, West End, Brisbane, Queensland, 4101, Australia",
+  "lat": -27.4787559,
+  "lng": 153.0061657,
+  "type": "tertiary"
+ },
+ "43 Butterfield Street, Herston QLD 4006": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "43, Butterfield Street, Herston, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4447787,
+  "lng": 153.0269592,
+  "type": "house"
+ },
+ "45 Redland Bay Rd, Capalaba QLD 4157": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Coles, 7-45, Redland Bay Road, Capalaba, Logan City, Brisbane, Redland City, Queensland, 4157, Australia",
+  "lat": -27.525263,
+  "lng": 153.1918374,
+  "type": "supermarket"
+ },
+ "46 Helen Street, Teneriffe, QLD 4005": {
+  "addresstype": "residential",
+  "category": "highway",
+  "display_name": "Helen Street, Teneriffe, Brisbane, Queensland, 4005, Australia",
+  "lat": -27.4529003,
+  "lng": 153.0466824,
+  "type": "residential"
+ },
+ "525 Boundary Street, Spring Hill QLD 4000": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "525, Boundary Street, Spring Hill, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4601558,
+  "lng": 153.0217127,
+  "type": "apartments"
+ },
+ "543 Lutwyche Road, Lutwyche QLD 4030": {
+  "addresstype": "trunk",
+  "category": "highway",
+  "display_name": "Lutwyche Road, Lutwyche, Brisbane, Queensland, 4030, Australia",
+  "lat": -27.4253669,
+  "lng": 153.0329075,
+  "type": "trunk"
+ },
+ "57 Coronation Drive, Milton QLD 4064": {
+  "addresstype": "trunk",
+  "category": "highway",
+  "display_name": "Coronation Drive, Milton, Brisbane, Queensland, 4064, Australia",
+  "lat": -27.4718485,
+  "lng": 153.0069558,
+  "type": "trunk"
+ },
+ "58 Morgan Street, Fortitude Valley 4006 QLD": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "58, Morgan Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4578138,
+  "lng": 153.0381216,
+  "type": "house"
+ },
+ "6 James Street, Fortitude Valley QLD 4006": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "6, James Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.45529,
+  "lng": 153.0389162,
+  "type": "house"
+ },
+ "650 Wickham Street, Fortitude Valley, QLD": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "650, Wickham Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4500549,
+  "lng": 153.0403748,
+  "type": "house"
+ },
+ "662 Compton Road, Calamvale QLD": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "662, Compton Road, Calamvale, Logan City, Brisbane, Queensland, 4116, Australia",
+  "lat": -27.6131237,
+  "lng": 153.0539249,
+  "type": "house"
+ },
+ "68 Hunter St, Brassall QLD 4305": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Aldi, 68, Hunter Street, Brassall, Ipswich, Brisbane, Queensland, 4305, Australia",
+  "lat": -27.5969261,
+  "lng": 152.7470419,
+  "type": "supermarket"
+ },
+ "7-27 Bunker Rd, Victoria Point QLD 4165": {
+  "addresstype": "secondary",
+  "category": "highway",
+  "display_name": "Bunker Road, Victoria Point, Brisbane, Redland City, Queensland, 4165, Australia",
+  "lat": -27.5904703,
+  "lng": 153.2780004,
+  "type": "secondary"
+ },
+ "70 James Street, Fortitude Valley QLD 4006": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "70, James Street, Fortitude Valley, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4578199,
+  "lng": 153.0417453,
+  "type": "house"
+ },
+ "735 Beams Road, Carseldine QLD 4034": {
+  "addresstype": "secondary",
+  "category": "highway",
+  "display_name": "Beams Road, Carseldine, Brisbane, Queensland, 4034, Australia",
+  "lat": -27.3482003,
+  "lng": 153.0264574,
+  "type": "secondary"
+ },
+ "79 Boundary Street, West End QLD 4101": {
+  "addresstype": "tertiary",
+  "category": "highway",
+  "display_name": "Boundary Street, Hill End, West End, Brisbane, Queensland, 4101, Australia",
+  "lat": -27.4839634,
+  "lng": 153.0114921,
+  "type": "tertiary"
+ },
+ "8 Festival Place, Newstead QLD 4006": {
+  "addresstype": "unclassified",
+  "category": "highway",
+  "display_name": "Festival Place, Newstead, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4504041,
+  "lng": 153.0458372,
+  "type": "unclassified"
+ },
+ "9 Browning Street, 9 Browning Street, West End QLD 4101": null,
+ "9 Browning Street, South Brisbane QLD": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "9, Browning Street, South Brisbane, Brisbane, Queensland, 4101, Australia",
+  "lat": -27.4781438,
+  "lng": 153.0131488,
+  "type": "house"
+ },
+ "9 Browning Street, West End QLD 4101": null,
+ "94 Boundary Street, West End, QLD 4101": {
+  "addresstype": "place",
+  "category": "place",
+  "display_name": "94, Boundary Street, West End, Brisbane, Queensland, 4101, Australia",
+  "lat": -27.4783744,
+  "lng": 153.0127199,
+  "type": "house"
+ },
+ "Albany Creek Village, 700 Albany Creek Rd, Albany Creek QLD 4035": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "Albany Creek Village, 700, Albany Creek Road, Albany Creek, Brisbane, Queensland, 4035, Australia",
+  "lat": -27.3466697,
+  "lng": 152.969318,
+  "type": "retail"
+ },
+ "Arndale Springwood, 17-27 Cinderella Dr, Springwood QLD 4127": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Arndale Shopping Centre, 17-27, Cinderella Drive, Springwood, Logan City, Brisbane, Queensland, 4127, Australia",
+  "lat": -27.6122996,
+  "lng": 153.124242,
+  "type": "mall"
+ },
+ "Aspley Hypermarket, QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Aspley Hypermarket, 59, Albany Creek Road, Aspley, Brisbane, Queensland, 4034, Australia",
+  "lat": -27.3621049,
+  "lng": 153.0139646,
+  "type": "mall"
+ },
+ "Beenleigh Marketplace, QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Beenleigh Marketplace, 114, George Street, Beenleigh, Brisbane, Queensland, 4207, Australia",
+  "lat": -27.7180037,
+  "lng": 153.2073515,
+  "type": "mall"
+ },
+ "Booval Fair, Cnr Brisbane & South Station Road, Booval QLD 4304": null,
+ "Booval Fair, QLD": {
+  "addresstype": "highway",
+  "category": "highway",
+  "display_name": "Booval Fair, Brisbane Road, Booval, Brisbane, Queensland, 4304, Australia",
+  "lat": -27.614239,
+  "lng": 152.789958,
+  "type": "bus_stop"
+ },
+ "Bracken Ridge Plaza, 250 Telegraph Road , Bracken Ridge QLD 4017": null,
+ "Brassall Shopping Centre, 68 Hunter St, Brassall QLD 4305": null,
+ "Bribie Island Central, 239-255 Goodwin Dr, Bongaree QLD 4507": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Bribie Island Central, 239-255, Goodwin Drive, Bongaree, Queensland, 4507, Australia",
+  "lat": -27.0639813,
+  "lng": 153.1575847,
+  "type": "mall"
+ },
+ "Brisbane Arcade, 160 Queen Street Mall, Brisbane QLD 4000": null,
+ "Brookside Shopping Centre, QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Brookside Shopping Centre, Burwood Road, Mitchelton, Brisbane, Queensland, 4053, Australia",
+  "lat": -27.4090243,
+  "lng": 152.9797468,
+  "type": "mall"
+ },
+ "Browning Street, West End QLD 4101": null,
+ "Caboolture Square, QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Caboolture Square, King Street, Brisbane, Queensland, 4510, Australia",
+  "lat": -27.0853412,
+  "lng": 152.9492649,
+  "type": "mall"
+ },
+ "Calamvale Central, 662 Compton Road, Calamvale QLD": null,
+ "Cannon Hill Kmart Plaza, Corner Creek & Wynnum Rds, Cannon Hill QLD 4170": null,
+ "Cannon Hill Kmart Plaza, QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Cannon Hill Kmart Plaza, Pickwick Road, Cannon Hill, Brisbane, Queensland, 4170, Australia",
+  "lat": -27.471305,
+  "lng": 153.098018,
+  "type": "mall"
+ },
+ "Capalaba Central, 38-62 Moreton Bay Rd, Capalaba QLD 4157": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Capalaba Central Shopping Centre, 38-62, Moreton Bay Road, Capalaba, Logan City, Brisbane, Redland City, Queensland, 4157, Australia",
+  "lat": -27.5233883,
+  "lng": 153.1950863,
+  "type": "mall"
+ },
+ "Capalaba Park Shopping Centre, 45 Redland Bay Rd, Capalaba QLD 4157": null,
+ "Car park entry 66 Elizabeth Street, Brisbane QLD 4000": null,
+ "Carseldine Central, 735 Beams Road, Carseldine QLD 4034": null,
+ "Chelmsford Avenue, Ipswich, 4305, QLD": {
+  "addresstype": "tertiary",
+  "category": "highway",
+  "display_name": "Chelmsford Avenue, Ipswich, Brisbane, Queensland, 4305, Australia",
+  "lat": -27.6193402,
+  "lng": 152.7571683,
+  "type": "tertiary"
+ },
+ "Cleveland Central, 90-91 Middle Street, Cleveland QLD 4163": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Cleveland Central, 90-91, Middle Street, Cleveland, Redland City, Queensland, 4163, Australia",
+  "lat": -27.5265501,
+  "lng": 153.2681653,
+  "type": "mall"
+ },
+ "Cnr Anzac Ave & North Lakes Dr, North Lakes QLD 4509": null,
+ "Cnr Brisbane & South Station Road, Booval QLD 4304": null,
+ "Cnr Calam & Compton Rd, Sunnybank Hills QLD 4109": null,
+ "Cnr Downs Street and The Terrace, North Ipswich QLD 4305": null,
+ "Cnr Gympie & Hamilton Rds, Chermside QLD 4032": null,
+ "Cnr Logan & Kessels Rd, Upper Mt Gravatt QLD 4122": {
+  "addresstype": "highway",
+  "category": "highway",
+  "display_name": "Logan Rd at Kessels Corner, stop 43, Logan Road, Upper Mount Gravatt, Brisbane, Queensland, 4122, Australia",
+  "lat": -27.5568937,
+  "lng": 153.080267,
+  "type": "bus_stop"
+ },
+ "Cnr Mains Rd & McCullough St, Sunnybank QLD 4109": null,
+ "Coorparoo Square, 300 Old Cleveland Road, Coorparoo QLD 4151": {
+  "addresstype": "building",
+  "category": "building",
+  "display_name": "Coorparoo Square, 300, Old Cleveland Road, Coorparoo, Brisbane, Queensland, 4151, Australia",
+  "lat": -27.4944341,
+  "lng": 153.0584453,
+  "type": "apartments"
+ },
+ "Corner Creek & Wynnum Rds, Cannon Hill QLD 4170": null,
+ "Corner Pacific Highway and Bryants Road, Loganholme QLD 4129": null,
+ "DFO Brisbane": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "DFO Brisbane, Eighteenth Avenue, Brisbane Airport, Brisbane, Queensland, 4008, Australia",
+  "lat": -27.4149887,
+  "lng": 153.0795848,
+  "type": "mall"
+ },
+ "DFO Brisbane (Skygate), 18th Avenue, Skygate, Brisbane Airport QLD 4008": null,
+ "DFO Brisbane (Skygate), QLD": null,
+ "DFO Jindalee, 16 Amazons Pl, Jindalee QLD 4074": null,
+ "Emporium Fortitude Valley – 1024 Ann Street car park, 1024 Ann Street, Fortitude Valley QLD 4006": null,
+ "Ganellen Kallangur Fair, 1477 Anzac Avenue, Kallangur QLD": null,
+ "Gasworks Plaza, 76 Skyring Terrace, Newstead QLD 4006": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Gasworks, 76, Skyring Terrace, Newstead, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4508212,
+  "lng": 153.0443461,
+  "type": "mall"
+ },
+ "Grand Plaza Browns Plains, 27-49 Browns Plains Rd, Browns Plains QLD 4118": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Grand Plaza, 27-49, Browns Plains Road, Browns Plains, Brisbane, Queensland, 4118, Australia",
+  "lat": -27.6626832,
+  "lng": 153.040771,
+  "type": "mall"
+ },
+ "HomeCo. Lutwyche (formerly Lutwyche City), 543 Lutwyche Road, Lutwyche QLD 4030": null,
+ "HomeCo. Victoria Point, 349-369 Colburn Avenue, Victoria Point QLD 4165": null,
+ "Hyperdome (Loganholme), Corner Pacific Highway and Bryants Road, Loganholme QLD 4129": null,
+ "Hyperdome (Loganholme), QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Mr Toys Toyworld, Shop 307, Bryants Road, Loganholme, Logan City, Brisbane, Redland City, Queensland, 4129, Australia",
+  "lat": -27.658668,
+  "lng": 153.1709939,
+  "type": "toys"
+ },
+ "Inala Plaza, 156 Inala Avenue, Inala QLD 4077": null,
+ "Indooroopilly Shopping Centre, 322 Moggill Rd, Indooroopilly QLD 4068": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Indooroopilly Shopping Centre, 322, Moggill Road, Indooroopilly, Brisbane, Queensland, 4068, Australia",
+  "lat": -27.4995967,
+  "lng": 152.972799,
+  "type": "mall"
+ },
+ "Ipswich Riverlink Shopping Centre, Cnr Downs Street and The Terrace, North Ipswich QLD 4305": null,
+ "Ipswich Riverlink Shopping Centre, QLD": null,
+ "Kenmore Village, QLD": {
+  "addresstype": "mall",
+  "category": "shop",
+  "display_name": "Kenmore Village Shopping Centre, Kenmore, Brisbane, Queensland, Australia",
+  "lat": -27.5058694,
+  "lng": 152.9388216,
+  "type": "mall"
+ },
+ "Logan Central Plaza, 38-74 Wembley Road, Logan Central QLD 4114": null,
+ "MacArthur Central, 255 Queen Street, Brisbane City QLD 4000": null,
+ "Market Square Sunnybank, QLD": {
+  "addresstype": "retail",
+  "category": "landuse",
+  "display_name": "Market Square, 341, Sunnybank, Logan City, Brisbane, Queensland, Australia",
+  "lat": -27.5728907,
+  "lng": 153.0652038,
+  "type": "retail"
+ },
+ "McWhirters (Fortitude Valley) – Secure Parking McWhirters, 13 Warner Street, Fortitude Valley QLD 4006": null,
+ "Morayfield Shopping Centre, 171 Morayfield Road, Morayfield QLD 4506": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Morayfield Shopping Centre, 171, Morayfield Road, Morayfield, Queensland, 4506, Australia",
+  "lat": -27.1026579,
+  "lng": 152.9507915,
+  "type": "mall"
+ },
+ "Mt Ommaney Centre, 171 Dandenong Road, Mt Ommaney QLD 4074": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Mt Ommaney Centre, 171, Dandenong Road, Central Parklands, Mount Ommaney, Brisbane, Queensland, 4074, Australia",
+  "lat": -27.5493127,
+  "lng": 152.9379646,
+  "type": "mall"
+ },
+ "Orion Springfield Central, 1 Main Street, Springfield Central QLD 4300": null,
+ "Parkland Crescent, Brisbane, QLD": {
+  "addresstype": "residential",
+  "category": "highway",
+  "display_name": "Parkland Crescent, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4644898,
+  "lng": 153.0190537,
+  "type": "residential"
+ },
+ "Peninsula Fair, 272 Anzac Avenue, Kippa-Ring QLD 4021": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Peninsula Fair Shopping Centre, 272, Anzac Avenue, Kippa-Ring, Brisbane, Queensland, 4021, Australia",
+  "lat": -27.2256928,
+  "lng": 153.0884126,
+  "type": "mall"
+ },
+ "QueensPlaza, 226 Queen St, Brisbane QLD 4000": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "QueensPlaza, 226, Queen Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4682844,
+  "lng": 153.0260854,
+  "type": "mall"
+ },
+ "Redbank Plaza, 1 Collingwood Drive, Redbank QLD 4301": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Redbank Plaza, 1, Collingwood Drive, Redbank, Brisbane, Queensland, 4301, Australia",
+  "lat": -27.6055061,
+  "lng": 152.867983,
+  "type": "mall"
+ },
+ "Riverlink Shopping Centre, North Ipswich": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Riverlink Shopping Centre, Riverlink Bus Interchange, North Ipswich, Ipswich, Brisbane, Queensland, 4305, Australia",
+  "lat": -27.6076832,
+  "lng": 152.757868,
+  "type": "mall"
+ },
+ "Skygate (Skygate Centre / precinct), The Circuit, Brisbane Airport QLD 4008": null,
+ "Southpoint South Bank, 271-275 Grey Street, South Brisbane QLD 4101": null,
+ "St Paul's Terrace, Fortitude Valley QLD 4006": null,
+ "Stafford City, 400 Stafford Road, Stafford QLD 4053": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Stafford City Shopping Centre, 400, Stafford Road, Stafford, Brisbane, Queensland, 4053, Australia",
+  "lat": -27.411643,
+  "lng": 153.0122648,
+  "type": "mall"
+ },
+ "Strathpine Centre, 295 Gympie Road, Strathpine QLD 4500": null,
+ "Sunnybank Hills Shoppingtown, Cnr Calam & Compton Rd, Sunnybank Hills QLD 4109": null,
+ "Sunnybank Hills Shoppingtown, QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Sunnybank Hills Shoppingtown, Nutwood Street, Sunnybank Hills, Logan City, Brisbane, Queensland, 4109, Australia",
+  "lat": -27.6105845,
+  "lng": 153.0562109,
+  "type": "mall"
+ },
+ "Sunnybank Plaza, Cnr Mains Rd & McCullough St, Sunnybank QLD 4109": null,
+ "Sunnybank Plaza, QLD": {
+  "addresstype": "retail",
+  "category": "landuse",
+  "display_name": "Sunnybank Plaza, Sunnybank, Logan City, Brisbane, Queensland, Australia",
+  "lat": -27.5701831,
+  "lng": 153.0624566,
+  "type": "retail"
+ },
+ "The Circuit, Brisbane Airport QLD 4008": {
+  "addresstype": "unclassified",
+  "category": "highway",
+  "display_name": "The Circuit, Brisbane Airport, Brisbane, Queensland, 4008, Australia",
+  "lat": -27.4141047,
+  "lng": 153.0816212,
+  "type": "unclassified"
+ },
+ "Toowong Village, 9 Sherwood Road, Toowong QLD 4066": {
+  "addresstype": "amenity",
+  "category": "amenity",
+  "display_name": "Toowong Library, 9, Sherwood Road, Toowong, Brisbane, Queensland, 4066, Australia",
+  "lat": -27.4857085,
+  "lng": 152.9930506,
+  "type": "library"
+ },
+ "Uptown Brisbane (formerly The Myer Centre) – Uptown Parking, Car park entry 66 Elizabeth Street, Brisbane QLD 4000": null,
+ "Uptown Brisbane (formerly The Myer Centre) – Uptown Parking, QLD": null,
+ "Uptown, Queen Street, Brisbane City QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Uptown Brisbane, 91, Queen Street, Golden Triangle, Brisbane City, Brisbane, Queensland, 4000, Australia",
+  "lat": -27.4705953,
+  "lng": 153.0249136,
+  "type": "mall"
+ },
+ "Valley Metro Fortitude Valley, 230 Brunswick St, Fortitude Valley QLD 4006": null,
+ "Victoria Point Lakeside, 7-27 Bunker Rd, Victoria Point QLD 4165": null,
+ "Walden Lane, Bowen Hills QLD": {
+  "addresstype": "road",
+  "category": "highway",
+  "display_name": "Walden Lane, Bowen Hills, Brisbane, Queensland, 4006, Australia",
+  "lat": -27.4473123,
+  "lng": 153.0300424,
+  "type": "service"
+ },
+ "Walden Lane, Herston, QLD 4006": null,
+ "Westfield Carindale, 1151 Creek Road, Carindale QLD 4152": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Westfield Carindale, 1151, Creek Road, Carindale, Brisbane, Queensland, 4152, Australia",
+  "lat": -27.5028499,
+  "lng": 153.1019787,
+  "type": "mall"
+ },
+ "Westfield Chermside, Cnr Gympie & Hamilton Rds, Chermside QLD 4032": null,
+ "Westfield Chermside, QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Westfield Chermside, Hamilton Road, Chermside, Brisbane, Queensland, 4032, Australia",
+  "lat": -27.3829083,
+  "lng": 153.0321907,
+  "type": "mall"
+ },
+ "Westfield Mt Gravatt (Garden City), Cnr Logan & Kessels Rd, Upper Mt Gravatt QLD 4122": null,
+ "Westfield North Lakes, Cnr Anzac Ave & North Lakes Dr, North Lakes QLD 4509": null,
+ "Westfield North Lakes, QLD": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Westfield North Lakes, North Lakes Drive, Brisbane, Queensland, 4509, Australia",
+  "lat": -27.242142,
+  "lng": 153.0163745,
+  "type": "mall"
+ },
+ "Westpoint Browns Plains, 8-24 Browns Plains Rd, Browns Plains QLD 4118": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Westpoint, 8-24, Browns Plains Road, Browns Plains, Brisbane, Queensland, 4118, Australia",
+  "lat": -27.6596926,
+  "lng": 153.0391842,
+  "type": "mall"
+ },
+ "Wintergarden – Secure Parking Wintergarden Brisbane City, 162 Elizabeth Street, Brisbane QLD 4000": null,
+ "Wynnum Plaza, 2021 Wynnum Rd, Wynnum QLD 4178": null,
+ "Yamanto Central, 488 Warwick Road, Yamanto QLD 4305": {
+  "addresstype": "shop",
+  "category": "shop",
+  "display_name": "Yamanto Central, 488, Warwick Road, Yamanto, Brisbane, Queensland, 4305, Australia",
+  "lat": -27.6603471,
+  "lng": 152.7420088,
+  "type": "mall"
+ }
+}

@@ -54,3 +54,9 @@ data/*.csv
 
 # Local scratch / screenshots
 tmp/
+
+# Scraped car-park page captures (large, third-party content; re-fetch with data/carparks/scripts).
+# Keep the per-source scripts that live next to their captures.
+data/carparks/raw/**
+!data/carparks/raw/**/
+!data/carparks/raw/**/*.py

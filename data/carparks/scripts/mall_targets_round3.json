@@ -1,0 +1,39 @@
+[
+ {
+  "id": "gasworks-plaza",
+  "urls": [
+   "https://www.gasworksplaza.com.au/visit.html",
+   "https://pointparking.com.au/locations/gasworks-plaza/"
+  ]
+ },
+ {
+  "id": "bribie-island-central",
+  "urls": [
+   "https://www.bribieislandcentral.com.au/find-us"
+  ]
+ },
+ {
+  "id": "inala-plaza",
+  "urls": [
+   "https://inalaplaza.com.au/about/find-us/"
+  ]
+ },
+ {
+  "id": "yamanto-central",
+  "urls": [
+   "https://yamantocentral.com.au/centre-information"
+  ]
+ },
+ {
+  "id": "dfo-jindalee",
+  "urls": [
+   "https://dfojindalee.com.au/contact"
+  ]
+ },
+ {
+  "id": "brassall",
+  "urls": [
+   "https://brassallsc.com.au/parking/"
+  ]
+ }
+]

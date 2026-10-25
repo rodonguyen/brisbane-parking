@@ -1,0 +1,107 @@
+[
+ {
+  "id": "grand-plaza",
+  "urls": [
+   "https://www.grandplaza.com.au/directions/parking"
+  ],
+  "start": 2
+ },
+ {
+  "id": "capalaba-central",
+  "urls": [
+   "https://www.capalabacentral.com.au/centre-info/ev-chargers"
+  ],
+  "start": 1
+ },
+ {
+  "id": "indooroopilly",
+  "urls": [
+   "https://www.indooroopillyshopping.com.au/visit/parking/electric-vehicle-charging.html"
+  ],
+  "start": 2
+ },
+ {
+  "id": "morayfield",
+  "urls": [
+   "https://www.morayfieldshoppingcentre.com.au/visit/where-to-park/"
+  ],
+  "start": 1
+ },
+ {
+  "id": "southpoint-south-bank",
+  "urls": [
+   "https://southpointsouthbank.com.au/parking/"
+  ],
+  "start": 1
+ },
+ {
+  "id": "valley-metro",
+  "urls": [
+   "https://www.firstparking.com.au/locations/valley-metro"
+  ],
+  "start": 1
+ },
+ {
+  "id": "wynnum-plaza",
+  "urls": [
+   "https://www.wynnumplaza.com/centre-info/ev-charging-stations"
+  ],
+  "start": 1
+ },
+ {
+  "id": "macarthur-central",
+  "urls": [
+   "https://www.secureparking.com.au/en-au/car-parks/australia/qld/macarthur-central-brisbane-car-park/"
+  ],
+  "start": 1
+ },
+ {
+  "id": "mcwhirters",
+  "urls": [
+   "https://www.secureparking.com.au/en-au/car-parks/australia/qld/mcwhirters-fortitude-valley-car-park"
+  ],
+  "start": 1
+ },
+ {
+  "id": "market-square-sunnybank",
+  "urls": [
+   "https://www.secureparking.com.au/en-au/car-parks/australia/qld/market-square-shopping-centre-sunnybank-car-park"
+  ],
+  "start": 1
+ },
+ {
+  "id": "caboolture-square",
+  "urls": [
+   "https://caboolturesquare.com.au/getting-here"
+  ],
+  "start": 0
+ },
+ {
+  "id": "beenleigh-marketplace",
+  "urls": [
+   "https://www.beenleighmarketplace.com.au/"
+  ],
+  "start": 0
+ },
+ {
+  "id": "newmarket-village",
+  "urls": [
+   "https://www.newmarket-village.com.au/parking"
+  ],
+  "start": 1
+ },
+ {
+  "id": "toowong-village",
+  "urls": [
+   "https://cdn.prod.website-files.com/68f272db39cce3d7026e2182/69a77696efda5b8e290dac1f_Toowong%20Village%20%26%20Tower%20Car%20Park%20Conditions%20of%20Entry.pdf"
+  ],
+  "start": 2
+ },
+ {
+  "id": "queensplaza",
+  "urls": [
+   "https://a.storyblok.com/f/57006/x/70c0c63029/terms-and-conditions-car-parking-queens-plaza-final.pdf"
+  ],
+  "start": 2
+ }
+]
