@@ -1,4 +1,5 @@
 import type { Carpark } from './api'
+import './carpark.css'
 import type { LngLat } from './directions'
 import { directionsUrls, distanceMeters, formatDistance } from './directions'
 import { useMobileViewport, useSheetDrag } from './useSheetDrag'
@@ -44,13 +45,19 @@ export function CarparkPanel({ carpark: c, onClose, onDrag, userLoc }: Props) {
           {c.address && <p className="loc">{c.address}</p>}
         </div>
 
-        {(c.hours || c.height_m != null) && (
+        {(c.hours_lines.length > 0 || c.height_m != null) && (
           <section className="facts">
             <dl>
-              {c.hours && (
-                <div className={c.hours.length > 24 ? 'facts-wide' : undefined}>
+              {c.hours_lines.length > 0 && (
+                <div className={`carpark-hours${c.hours_lines.length > 1 ? ' facts-wide' : ''}`}>
                   <dt>Hours</dt>
-                  <dd>{c.hours}</dd>
+                  <dd>
+                    {c.hours_lines.map((ln, i) => (
+                      <span key={i} className="carpark-hours-line">
+                        {ln.days && <b>{ln.days}</b>} {ln.time}
+                      </span>
+                    ))}
+                  </dd>
                 </div>
               )}
               {c.height_m != null && (
@@ -102,10 +109,12 @@ export function CarparkPanel({ carpark: c, onClose, onDrag, userLoc }: Props) {
         </section>
 
         {c.url && (
-          <a className="carpark-link" href={c.url} target="_blank" rel="noopener noreferrer">
+          <a className="carpark-page-btn" href={c.url} target="_blank" rel="noopener noreferrer">
             View car park page
           </a>
         )}
+        {/* Room to scroll the last buttons up past the bottom edge / home indicator. */}
+        <div className="carpark-scroll-pad" aria-hidden="true" />
       </div>
     </aside>
   )

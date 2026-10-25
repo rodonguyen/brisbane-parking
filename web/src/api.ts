@@ -128,6 +128,8 @@ export type Carpark = {
   lat: number
   lng: number
   hours: string | null
+  /** Opening hours split for scanning: bold `days`, plain `time`. `days` null = free text / "Open 24/7". */
+  hours_lines: Array<{ days: string | null; time: string }>
   height_m: number | null
   url: string | null
   priced: boolean
@@ -144,17 +146,41 @@ export const FREE_PIN_COLOR = '#16c45a'
 /** Grey — clearway / no stopping / other no-parking. */
 export const NO_PARKING_PIN_COLOR = '#9a958c'
 
+export const MIXED_PIN_COLOR = '#d97706'
+export const UNLIKELY_PIN_COLOR = '#c23030'
+const UNKNOWN_PIN_COLOR = '#6e675c'
+
+export type PinCategory = 'likely' | 'mixed' | 'unlikely' | 'free' | 'none' | 'unknown'
+
+/** Legend buckets, in display order; colours match the map pins exactly. */
+export const PIN_CATEGORIES: Array<{ key: Exclude<PinCategory, 'unknown'>; label: string; color: string }> = [
+  { key: 'likely', label: 'Likely', color: LIKELY_PIN_COLOR },
+  { key: 'mixed', label: 'Mixed', color: MIXED_PIN_COLOR },
+  { key: 'unlikely', label: 'Unlikely', color: UNLIKELY_PIN_COLOR },
+  { key: 'free', label: 'Free', color: FREE_PIN_COLOR },
+  { key: 'none', label: 'No parking', color: NO_PARKING_PIN_COLOR },
+]
+
+export function pinCategory(
+  chance: number | null | undefined,
+  parkable: boolean | undefined = true,
+  parkStatus?: ParkStatus | null,
+): PinCategory {
+  if (parkStatus === 'free') return 'free'
+  if (parkStatus === 'restricted' || parkable === false) return 'none'
+  if (chance == null) return 'unknown'
+  if (chance >= 0.6) return 'likely'
+  if (chance >= 0.35) return 'mixed'
+  return 'unlikely'
+}
+
 export function chanceColor(
   chance: number | null | undefined,
   parkable: boolean | undefined = true,
   parkStatus?: ParkStatus | null,
 ): string {
-  if (parkStatus === 'free') return FREE_PIN_COLOR
-  if (parkStatus === 'restricted' || parkable === false) return NO_PARKING_PIN_COLOR
-  if (chance == null) return '#6e675c'
-  if (chance >= 0.6) return LIKELY_PIN_COLOR
-  if (chance >= 0.35) return '#d97706'
-  return '#c23030'
+  const cat = pinCategory(chance, parkable, parkStatus)
+  return cat === 'unknown' ? UNKNOWN_PIN_COLOR : PIN_CATEGORIES.find((c) => c.key === cat)!.color
 }
 
 export function formatPct(chance: number | null | undefined): string {

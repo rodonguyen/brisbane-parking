@@ -168,11 +168,11 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
           <div className="chart-wrap">
             <ResponsiveContainer width="100%" height={200}>
               <LineChart data={chartData} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
-                <CartesianGrid stroke="rgba(40,36,30,0.08)" vertical={false} />
+                <CartesianGrid stroke="rgba(15,27,45,0.08)" vertical={false} />
                 <XAxis
                   dataKey="hour"
                   tickFormatter={hourLabel}
-                  tick={{ fill: '#5c564c', fontSize: 11 }}
+                  tick={{ fill: '#526175', fontSize: 11 }}
                   axisLine={false}
                   tickLine={false}
                 />
@@ -180,7 +180,7 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
                   domain={[0, 100]}
                   ticks={[0, 20, 40, 60, 80, 100]}
                   tickFormatter={(v) => `${v}%`}
-                  tick={{ fill: '#5c564c', fontSize: 11 }}
+                  tick={{ fill: '#526175', fontSize: 11 }}
                   axisLine={false}
                   tickLine={false}
                   width={40}
@@ -189,10 +189,11 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
                   formatter={(value) => [`${value}%`, '']}
                   labelFormatter={(h) => hourLabel(Number(h))}
                   contentStyle={{
-                    background: '#f7f2e8',
-                    border: '1px solid rgba(40,36,30,0.12)',
-                    borderRadius: 0,
+                    background: '#ffffff',
+                    border: '1px solid rgba(15,27,45,0.1)',
+                    borderRadius: 10,
                     fontSize: 12,
+                    boxShadow: '0 6px 20px rgba(16,40,80,0.1)',
                   }}
                 />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
@@ -200,7 +201,7 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
                   type="monotone"
                   dataKey="typical"
                   name="Typical"
-                  stroke="#8a7a5c"
+                  stroke="#94a3b8"
                   strokeWidth={2}
                   dot={false}
                 />
@@ -208,7 +209,7 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
                   type="monotone"
                   dataKey="today"
                   name="Today"
-                  stroke="#1f5c8a"
+                  stroke="#0866d6"
                   strokeWidth={2.5}
                   dot={{ r: 3 }}
                 />
@@ -224,13 +225,13 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
           <div className="chart-wrap">
             <ResponsiveContainer width="100%" height={180}>
               <BarChart data={contextData} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
-                <CartesianGrid stroke="rgba(40,36,30,0.08)" vertical={false} />
-                <XAxis dataKey="label" tick={{ fill: '#5c564c', fontSize: 10 }} axisLine={false} tickLine={false} />
+                <CartesianGrid stroke="rgba(15,27,45,0.08)" vertical={false} />
+                <XAxis dataKey="label" tick={{ fill: '#526175', fontSize: 10 }} axisLine={false} tickLine={false} />
                 <YAxis
                   domain={[0, 100]}
                   ticks={[0, 20, 40, 60, 80, 100]}
                   tickFormatter={(v) => `${v}%`}
-                  tick={{ fill: '#5c564c', fontSize: 11 }}
+                  tick={{ fill: '#526175', fontSize: 11 }}
                   axisLine={false}
                   tickLine={false}
                   width={40}
@@ -241,13 +242,14 @@ export function DetailPanel({ insight, loading, onClose, onSelectNearby, onDrag,
                     'Chance',
                   ]}
                   contentStyle={{
-                    background: '#f7f2e8',
-                    border: '1px solid rgba(40,36,30,0.12)',
-                    borderRadius: 0,
+                    background: '#ffffff',
+                    border: '1px solid rgba(15,27,45,0.1)',
+                    borderRadius: 10,
                     fontSize: 12,
+                    boxShadow: '0 6px 20px rgba(16,40,80,0.1)',
                   }}
                 />
-                <Bar dataKey="chance" fill="#1f7a4c" radius={0} />
+                <Bar dataKey="chance" fill="#0866d6" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
